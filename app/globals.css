@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--cream: #faf6ef;
+	--cream-deep: #f2ead9;
+	--ink: #2e2822;
+	--brown: #6b5a48;
+	--brown-light: #a98a6c;
+	--accent: #c98a4b;
+	--border: #e6ddcd;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	--color-cream: var(--cream);
+	--color-cream-deep: var(--cream-deep);
+	--color-ink: var(--ink);
+	--color-brown: var(--brown);
+	--color-brown-light: var(--brown-light);
+	--color-accent: var(--accent);
+	--color-border: var(--border);
+	--font-sans: var(--font-noto-sans-jp);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--cream);
+	color: var(--ink);
+	font-family: var(--font-sans), "Hiragino Sans", sans-serif;
+	line-height: 1.85;
+}
+
+.eyebrow {
+	font-size: 0.75rem;
+	letter-spacing: 0.3em;
+	color: var(--brown-light);
+	margin-bottom: 0.4rem;
+}
+
+.section-heading {
+	font-size: clamp(2rem, 5vw, 3rem);
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	color: var(--ink);
+}
+
+/* ボタンのホバースイープ：白が左から右に広がり、文字色がアクセントカラーに反転する */
+.btn-sweep {
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	transition: color 0.5s ease;
+}
+
+.btn-sweep::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: #fff;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.5s ease;
+}
+
+.btn-sweep:hover,
+.btn-sweep:focus-visible {
+	color: var(--accent);
+}
+
+.btn-sweep:hover::before,
+.btn-sweep:focus-visible::before {
+	transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.btn-sweep,
+	.btn-sweep::before {
+		transition: none;
+	}
 }
