@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import ReasonCards from "../components/ReasonCards";
+import profilePhoto from "../assets/images/profile.jpg";
 
 export const metadata: Metadata = {
 	title: "なぜ、ひとりでやるのか｜VESWERK",
@@ -46,7 +48,20 @@ export default function WhySoloPage() {
 
 				<ReasonCards items={soloReasons} />
 
-				<div className="mt-10 rounded-3xl border border-white/60 bg-white/55 p-8 shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md">
+				<div className="mt-10 flex flex-col gap-8 rounded-3xl border border-white/60 bg-white/55 p-8 shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md sm:flex-row sm:items-start">
+					<div className="flex shrink-0 flex-col items-center gap-3 sm:items-start">
+						<Image
+							src={profilePhoto}
+							alt="中井駿吾"
+							width={140}
+							height={140}
+							className="rounded-full object-cover"
+						/>
+						<div className="text-center sm:text-left">
+							<p className="font-semibold text-ink">中井駿吾</p>
+							<p className="text-xs text-brown-light">20代</p>
+						</div>
+					</div>
 					<p className="text-brown">
 						普段は会社員としてシステムの要件定義から保守・運用まで携わっており、
 						その経験を活かして、ホームページ制作でもお客様の要望を丁寧に
@@ -56,7 +71,6 @@ export default function WhySoloPage() {
 						形にすることを大切にしています。まだ実績は少ない段階ですが、
 						その分、一件一件に向き合う時間を惜しまずに対応します。
 					</p>
-					<p className="mt-4 text-sm text-brown-light">（顔写真／名字またはフルネーム／20代）</p>
 				</div>
 			</div>
 		</section>
