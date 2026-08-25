@@ -134,7 +134,7 @@ export default function MenuOverlay() {
 				{/* 右：ナビゲーション本体 */}
 				<div className="flex flex-1 flex-col overflow-y-auto px-6 pb-10 sm:px-10">
 					<nav
-						className="flex flex-col gap-4 py-10"
+						className="flex flex-col gap-7 py-10"
 						aria-label="サイト内メインナビゲーション"
 					>
 						{navItems.map((item, i) => (
