@@ -36,7 +36,7 @@ export const plans: Plan[] = [
 		price: "98,000円〜",
 		maintenance: "保守：月15,000円〜（3ヶ月無料）",
 		features: [
-			{ text: "オーダーメイドデザイン", highlighted: true },
+			{ text: "お店に合わせたデザインカスタマイズ", highlighted: true },
 			{ text: "〜5ページ", highlighted: true },
 			{ text: "スマホの地図をタップしたら迷わずお店まで案内される仕組み" },
 			{ text: "電話番号をタップしたらそのまま発信できる仕組み" },
@@ -51,7 +51,7 @@ export const plans: Plan[] = [
 		price: "198,000円〜",
 		maintenance: "保守：月15,000円〜（6ヶ月無料）",
 		features: [
-			{ text: "オーダーメイドデザイン" },
+			{ text: "お店に合わせたデザインカスタマイズ" },
 			{ text: "〜6ページ以上", highlighted: true },
 			{ text: "スマホの地図をタップしたら迷わずお店まで案内される仕組み" },
 			{ text: "電話番号をタップしたらそのまま発信できる仕組み" },

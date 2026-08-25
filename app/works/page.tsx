@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "実績｜VESWERK",
-	description: "制作サンプルを公開準備中です。テンプレートを使わず、1件ずつ丁寧に作り込んでいます。",
+	description: "制作サンプルを公開準備中です。実績のある型をベースに、1件ずつ丁寧に仕上げています。",
 };
 
 export default function WorksPage() {
@@ -20,7 +20,7 @@ export default function WorksPage() {
 						1件ずつ丁寧に仕上げているところです。
 					</p>
 					<p className="mt-4 text-brown">
-						テンプレートを流用せず、お店ごとにオーダーメイドで設計しているため、
+						実績のあるデザインの型をベースに、お店ごとに丁寧に仕上げているため、
 						制作サンプルの公開まで今しばらくお時間をいただいています。
 						近日中に、実際の制作サンプルをこちらでご覧いただけるようになる予定です。
 					</p>
