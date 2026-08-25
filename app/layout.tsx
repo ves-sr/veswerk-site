@@ -15,6 +15,9 @@ export const metadata: Metadata = {
 	title: "VESWERK｜小さなお店のためのホームページ制作",
 	description:
 		"個人経営のカフェや飲食店など、小さなお店のホームページを専門に、要件定義から保守まで、ひとりで一貫して制作しています。",
+	verification: {
+		google: "kUfap1hsACbxei7rB2cPalQyMhwAtLt9NJFI3YEnSIQ",
+	},
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
