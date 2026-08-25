@@ -6,11 +6,11 @@ export default function Home() {
 			<section className="relative">
 				<div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center px-6 py-24">
 					<p className="eyebrow">HOMEPAGE PRODUCTION</p>
-					<h1 className="section-heading max-w-2xl">
+					<h1 className="section-heading section-heading--hero max-w-2xl">
 						テンプレートではなく、
-						<br />
+						<br className="hidden sm:inline" />
 						あなたのお店だけの
-						<br />
+						<br className="hidden sm:inline" />
 						ホームページを。
 					</h1>
 					<p className="mt-6 max-w-xl text-brown">

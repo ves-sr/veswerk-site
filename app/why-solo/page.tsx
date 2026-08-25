@@ -12,23 +12,23 @@ export const metadata: Metadata = {
 const soloReasons = [
 	{
 		no: "01",
-		title: "伝言ゲームがない",
-		desc: "聞いた人が、そのまま作る人です。",
+		title: "要望がそのまま形になる",
+		desc: "ヒアリングした本人が設計から制作まで一貫して担当するため、営業や別担当者を挟みません。「伝えたことが違う形で仕上がる」心配がなく、イメージのズレも早い段階で解消できます。",
 	},
 	{
 		no: "02",
 		title: "意思決定が速い",
-		desc: "社内稟議も、担当者の引き継ぎもありません。",
+		desc: "社内承認や複数部署への確認が不要なため、ご相談から回答まで日をまたがずお応えできます。ちょっとした修正でも、そのつど打ち合わせを設定する必要はありません。",
 	},
 	{
 		no: "03",
 		title: "柔軟に対応できる",
-		desc: "お店の事情やペースに合わせて動けます。",
+		desc: "営業時間外のご相談や、お店の繁忙期を避けたスケジュール調整など、画一的なルールではなくお店ごとの事情に合わせて進め方を調整します。",
 	},
 	{
 		no: "04",
 		title: "適正な価格でご提供",
-		desc: "オフィスや大人数の人件費がかからない分を、価格に還元しています。",
+		desc: "オフィスの家賃や複数人分の人件費、営業担当を挟む中間コストがかからない分を、そのまま制作費に反映しています。少人数のお店でも無理なく依頼できる価格帯を意識しています。",
 	},
 ];
 
@@ -48,7 +48,7 @@ export default function WhySoloPage() {
 
 				<ReasonCards items={soloReasons} />
 
-				<div className="mt-10 flex flex-col gap-8 rounded-3xl border border-white/60 bg-white/55 p-8 shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md sm:flex-row sm:items-start">
+				<div className="mt-10 flex flex-col gap-8 rounded-3xl border border-white/60 bg-white/55 p-8 shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md sm:flex-row sm:items-center">
 					<div className="flex shrink-0 flex-col items-center gap-3 sm:items-start">
 						<Image
 							src={profilePhoto}
