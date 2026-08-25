@@ -42,6 +42,13 @@ body {
 	color: var(--ink);
 }
 
+/* ホームのヒーロー見出しのみ、狭い画面で長いフレーズが折り返さないようフォントサイズを縮小 */
+@media (max-width: 639px) {
+	.section-heading--hero {
+		font-size: 1.7rem;
+	}
+}
+
 /* ボタンのホバースイープ：白が左から右に広がり、文字色がアクセントカラーに反転する */
 .btn-sweep {
 	position: relative;

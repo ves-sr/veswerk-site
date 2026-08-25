@@ -13,13 +13,21 @@ export default function MenuOverlay() {
 	const triggerRef = useRef<HTMLButtonElement>(null);
 	const dialogRef = useRef<HTMLDivElement>(null);
 	const firstLinkRef = useRef<HTMLAnchorElement>(null);
+	const prevOpenRef = useRef(open);
 
 	useEffect(() => {
 		setMounted(true);
 	}, []);
 
 	// Escapeで閉じる／開いたら最初のリンクにフォーカス／閉じたらトリガーに戻す
+	// （openが実際に変化した時だけ動かす。マウント時やStrictModeの二重実行では
+	// 前回値と同じになるため、意図せずハンバーガーボタン等へフォーカスが移ってしまうのを防ぐ。
+	// このガードはopenの変化専用なので、依存配列に他の値を追加する場合は要見直し）
 	useEffect(() => {
+		const prevOpen = prevOpenRef.current;
+		prevOpenRef.current = open;
+		if (prevOpen === open) return;
+
 		if (open) {
 			firstLinkRef.current?.focus();
 
