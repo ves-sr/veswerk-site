@@ -7,9 +7,9 @@ export default function Home() {
 				<div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center px-6 py-24">
 					<p className="eyebrow">HOMEPAGE PRODUCTION</p>
 					<h1 className="section-heading section-heading--hero max-w-2xl">
-						テンプレートではなく、
+						あなたのお店に、
 						<br className="hidden sm:inline" />
-						あなたのお店だけの
+						ちょうどいい
 						<br className="hidden sm:inline" />
 						ホームページを。
 					</h1>
