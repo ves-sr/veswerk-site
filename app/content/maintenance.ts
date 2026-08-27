@@ -2,6 +2,7 @@ export type MaintenanceItem = {
 	key: string;
 	title: string;
 	description: string;
+	featured?: boolean;
 };
 
 export const maintenanceItems: MaintenanceItem[] = [
@@ -21,6 +22,12 @@ export const maintenanceItems: MaintenanceItem[] = [
 		description: "実際にテスト送信を行い、通知が届くかを確認します。",
 	},
 	{
+		key: "backup",
+		title: "サイトのバックアップ",
+		description: "サイトのコードやデータの変更履歴をすべて記録し、いつでも過去の状態に戻せる体制を維持しています。万が一の作業ミスやトラブルの際も、慌てず元通りに復旧できます。",
+		featured: true,
+	},
+	{
 		key: "update",
 		title: "軽微な更新代行（月2回まで）",
 		description: "営業時間や料金など、ちょっとした文章・写真の差し替えに対応します。",
@@ -33,6 +40,7 @@ export const maintenanceItems: MaintenanceItem[] = [
 	{
 		key: "search",
 		title: "検索状況の確認",
-		description: "Googleでの見え方に異常がないか、月次で確認します。",
+		description: "Googleでの表示に異常がないか、検索結果からきちんとアクセスできる状態が保たれているかを月次で確認します。気づかないうちに検索から見つからなくなる、といった事態を防ぎます。",
+		featured: true,
 	},
 ];

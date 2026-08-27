@@ -6,7 +6,9 @@ export default function MaintenanceCards() {
 			{maintenanceItems.map((item) => (
 				<div
 					key={item.key}
-					className="rounded-3xl border border-white/60 bg-white/45 p-6 shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md"
+					className={`rounded-3xl border border-white/60 bg-white/45 p-6 shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md ${
+						item.featured ? "sm:col-span-2 lg:col-span-2" : ""
+					}`}
 				>
 					<h3 className="text-lg font-bold text-ink">{item.title}</h3>
 					<p className="mt-2 text-sm text-brown">{item.description}</p>
