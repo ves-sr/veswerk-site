@@ -5,7 +5,7 @@ export type PlanFeature = {
 export const plan = {
 	price: "500円",
 	priceNote: "実績作りのための特別価格です。",
-	maintenance: "保守：月15,000円〜",
+	maintenance: "保守：月9,800円〜",
 	maintenanceNote: "サイト公開月から、毎月お支払いいただきます。",
 	features: [
 		{ text: "スマホの地図をタップしたら迷わずお店まで案内される仕組み" },
