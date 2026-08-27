@@ -1,66 +1,65 @@
 export type PlanFeature = {
 	text: string;
-	highlighted?: boolean;
 };
 
-export type Plan = {
-	key: string;
+export const plan = {
+	price: "500円",
+	priceNote: "実績作りのための特別価格です。",
+	maintenance: "保守：月15,000円〜",
+	maintenanceNote: "サイト公開月から、毎月お支払いいただきます。",
+	features: [
+		{ text: "オーダーメイドデザイン" },
+		{ text: "スマホの地図をタップしたら迷わずお店まで案内される仕組み" },
+		{ text: "電話番号をタップしたらそのまま発信できる仕組み" },
+		{ text: "Googleマップとサイトの情報を一致させ、検索やマップで見つけてもらいやすくする" },
+	] satisfies PlanFeature[],
+};
+
+export type ProductionAddonItem = {
 	name: string;
-	badge: string;
-	recommended?: boolean;
 	price: string;
-	maintenance: string;
-	features: PlanFeature[];
+	unit: string;
 };
 
-export const plans: Plan[] = [
+export const productionAddonItems: ProductionAddonItem[] = [
+	{ name: "色の追加・変更", price: "500円", unit: "1色ごと" },
+	{ name: "フォントの追加", price: "500円", unit: "1種類ごと" },
+	{ name: "お写真の追加", price: "500円", unit: "1枚ごと" },
+];
+
+export const productionAddonNote =
+	"最初にご提案するデザイン（色・フォント・お写真）は制作費に含まれます。そこから追加・変更したい項目がある場合、上記の費用を項目ごとにいただいております。";
+
+export type MaintenanceAddonItem = {
+	name: string;
+	price: string;
+	description: string;
+};
+
+export const maintenanceAddonItems: MaintenanceAddonItem[] = [
 	{
-		key: "light",
-		name: "Light",
-		badge: "まず試したい方に",
-		price: "38,000円〜",
-		maintenance: "保守：別途契約",
-		features: [
-			{ text: "テンプレートベースのデザイン" },
-			{ text: "1〜3ページ" },
-			{ text: "スマホの地図をタップしたら迷わずお店まで案内される仕組み" },
-			{ text: "電話番号をタップしたらそのまま発信できる仕組み" },
-			{ text: "Googleマップとサイトの情報を一致させ、検索やマップで見つけてもらいやすくする" },
-		],
+		name: "Instagram連携",
+		price: "月1,000円",
+		description: "InstagramのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方のみ）。",
 	},
 	{
-		key: "standard",
-		name: "Standard",
-		badge: "しっかり作り込みたい方に",
-		recommended: true,
-		price: "98,000円〜",
-		maintenance: "保守：月15,000円〜（3ヶ月無料）",
-		features: [
-			{ text: "お店に合わせたデザインカスタマイズ", highlighted: true },
-			{ text: "〜5ページ", highlighted: true },
-			{ text: "スマホの地図をタップしたら迷わずお店まで案内される仕組み" },
-			{ text: "電話番号をタップしたらそのまま発信できる仕組み" },
-			{ text: "Googleマップとサイトの情報を一致させ、検索やマップで見つけてもらいやすくする" },
-			{ text: "保守費3ヶ月無料", highlighted: true },
-		],
+		name: "X（Twitter）連携",
+		price: "月1,000円",
+		description: "XのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方のみ）。",
 	},
 	{
-		key: "premium",
-		name: "Premium",
-		badge: "こだわりたい方に",
-		price: "198,000円〜",
-		maintenance: "保守：月15,000円〜（6ヶ月無料）",
-		features: [
-			{ text: "お店に合わせたデザインカスタマイズ" },
-			{ text: "〜6ページ以上", highlighted: true },
-			{ text: "スマホの地図をタップしたら迷わずお店まで案内される仕組み" },
-			{ text: "電話番号をタップしたらそのまま発信できる仕組み" },
-			{ text: "Googleマップとサイトの情報を一致させ、検索やマップで見つけてもらいやすくする" },
-			{ text: "写真撮影込み", highlighted: true },
-			{ text: "ご自身でブログ・お知らせを更新できる仕組み込み", highlighted: true },
-			{ text: "検索結果によりお店の情報が表示されやすくなるよう、サイトの中身を細かく整理", highlighted: true },
-			{ text: "優先対応（通常より早い納期でご案内）", highlighted: true },
-			{ text: "保守費6ヶ月無料", highlighted: true },
-		],
+		name: "Facebook連携",
+		price: "月1,000円",
+		description: "FacebookのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方のみ）。",
 	},
+];
+
+export const maintenanceAddonNotePrefix =
+	"複数のSNS連携をご希望の場合、連携数に応じて費用を合算いたします（例：2つご希望の場合は";
+export const maintenanceAddonNoteEmphasis = "月2,000円）。";
+
+export const notIncludedItems = [
+	"ブログ機能",
+	"LINE通知連携",
+	"多言語対応",
 ];

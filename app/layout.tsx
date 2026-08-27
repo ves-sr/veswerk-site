@@ -12,9 +12,9 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-	title: "VESWERK｜小さなお店のためのホームページ制作",
+	title: "VESWERK｜吉祥寺・武蔵野の小さなお店のためのホームページ制作",
 	description:
-		"個人経営のカフェや飲食店など、小さなお店のホームページを専門に、要件定義から保守まで、ひとりで一貫して制作しています。",
+		"吉祥寺・武蔵野エリアの個人経営カフェを中心に、小さなお店のホームページを専門に、要件定義から保守まで、ひとりで一貫して制作しています。",
 	verification: {
 		google: "kUfap1hsACbxei7rB2cPalQyMhwAtLt9NJFI3YEnSIQ",
 	},

@@ -15,6 +15,6 @@ export const navItems = [
 	{ href: "/service", label: "事業紹介", shortLabel: "事業紹介" },
 	{ href: "/why-solo", label: "なぜ、ひとりでやるのか", shortLabel: "こだわり" },
 	{ href: "/works", label: "実績", shortLabel: "実績" },
-	{ href: "/pricing", label: "料金プラン", shortLabel: "料金プラン" },
+	{ href: "/pricing", label: "ご利用料金", shortLabel: "ご利用料金" },
 	{ href: "/contact", label: "お問い合わせ", shortLabel: "お問い合わせ" },
 ] as const;
