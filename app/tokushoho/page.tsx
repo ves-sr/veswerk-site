@@ -36,7 +36,7 @@ const rows: { label: string; value: React.ReactNode }[] = [
 		value: (
 			<>
 				<a href="/pricing" className="text-accent underline underline-offset-2">
-					料金プランページ
+					ご利用料金ページ
 				</a>
 				に記載の金額（表示価格は税込です）。追加オプションをご希望の場合は、内容に応じて別途お見積りいたします。
 			</>
