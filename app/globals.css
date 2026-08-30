@@ -84,3 +84,163 @@ body {
 		transition: none;
 	}
 }
+
+/*
+ * イントロローディング
+ * ロゴが静かにフェードイン→少し遅れてコピーが浮かび上がる→細いラインが
+ * 左から右へ流れる→短い余韻の後、画面全体がゆっくりフェードアウトして
+ * Homeへ溶け込む。ダーク背景ではなくHomeと同じcream基調にすることで、
+ * 切り替わりの瞬間に「別の画面に飛んだ」印象を与えない。
+ */
+.intro-loader {
+	position: fixed;
+	inset: 0;
+	z-index: 200;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background: var(--cream);
+	opacity: 1;
+	transition: opacity 0.9s ease;
+}
+
+.intro-loader[data-exiting="true"] {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.intro-loader__content {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.25rem;
+	padding: 0 1.5rem;
+	text-align: center;
+}
+
+.intro-loader__mark {
+	opacity: 0;
+	transform: scale(0.9);
+	transition:
+		opacity 0.9s ease,
+		transform 0.9s ease;
+}
+
+.intro-loader__mark[data-mounted="true"] {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/*
+ * ロゴのPNGファイルは256x256のキャンバスに対し、実際のマーク部分は
+ * 中央のごく一部（幅約47%・高さ約39%）にしか描かれていない
+ * （ロゴファイル自体は変更しない方針のため、表示側で拡大して余白を相殺する）。
+ */
+.intro-loader__mark img {
+	transform: scale(2.4);
+}
+
+.intro-loader__copy {
+	margin: 0;
+	color: var(--ink);
+	font-weight: 400;
+	font-size: clamp(1.125rem, 1.5vw + 0.75rem, 2.25rem);
+	letter-spacing: 0.14em;
+	opacity: 0;
+	transform: translateY(16px);
+	transition:
+		opacity 0.8s ease 0.35s,
+		transform 0.8s ease 0.35s;
+}
+
+.intro-loader__copy[data-mounted="true"] {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.intro-loader__lines {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+}
+
+.intro-loader__line {
+	position: absolute;
+	left: 0;
+	width: 42%;
+	height: 1.5px;
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		var(--accent) 40%,
+		var(--accent) 60%,
+		transparent 100%
+	);
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+.intro-loader__lines[data-mounted="true"] .intro-loader__line--1 {
+	top: 22%;
+	animation: intro-line-flow 3.2s ease-in-out 0.15s 1 both;
+}
+
+.intro-loader__lines[data-mounted="true"] .intro-loader__line--2 {
+	top: 78%;
+	animation: intro-line-flow 3.6s ease-in-out 0.55s 1 both;
+}
+
+.intro-loader__lines[data-mounted="true"] .intro-loader__line--3 {
+	top: 88%;
+	animation: intro-line-flow 3.4s ease-in-out 0.95s 1 both;
+}
+
+@keyframes intro-line-flow {
+	0% {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	20% {
+		opacity: 0.85;
+	}
+	50% {
+		opacity: 0.85;
+	}
+	85% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(250%);
+	}
+}
+
+@media (max-width: 639px) {
+	.intro-loader__mark img {
+		width: 56px;
+		height: 56px;
+	}
+
+	.intro-loader__line {
+		width: 60%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.intro-loader {
+		transition: opacity 0.3s ease;
+	}
+
+	.intro-loader__mark,
+	.intro-loader__copy {
+		transition: opacity 0.3s ease;
+		transform: none;
+	}
+
+	.intro-loader__line {
+		display: none;
+	}
+}
