@@ -64,6 +64,7 @@ export default function WhySoloPage() {
 							<Image
 								src={profilePhoto}
 								alt="中井駿吾"
+								priority
 								className="h-full w-full object-cover"
 							/>
 						</div>
