@@ -41,7 +41,7 @@ export default function Home() {
 					</h1>
 				</div>
 
-				<div className="mt-10 pl-6 sm:pl-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
+				<div className="mt-10">
 					<ProblemCarousel items={problemsWithIcons} />
 				</div>
 

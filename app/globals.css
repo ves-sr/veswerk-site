@@ -247,19 +247,34 @@ body {
 
 /*
  * 悩みカルーセル（Home）
- * ネイティブのスクロールスナップで横方向に流す。カード幅は画面幅に応じて
- * 「次のカードが少し見える」余白を残すことで、まだ続きがあると分かるように
- * する（画面ぴったりに収めると、そこで終わりに見えてしまうため）。
- * スクロールバー自体は非表示にし、Nextボタン主体の操作に見せる。
+ * 常時右から左へ流れ続けるマーキー形式。アイテム配列をJS側で2セット
+ * 連結して描画し、CSSアニメーションで「1セット分の幅」だけ左へ移動して
+ * 0%に戻す、を繰り返すことで、7→1の継ぎ目も途切れず流れて見える
+ * （実写のトラックは2周目に入った瞬間、見た目が1周目と同じ地点に
+ * 戻っているため、ユーザーには無限ループに見える）。
  */
-.problem-carousel-track {
-	scroll-snap-type: x mandatory;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
+.problem-carousel-viewport {
+	overflow: hidden;
 }
 
-.problem-carousel-track::-webkit-scrollbar {
-	display: none;
+.problem-carousel-track {
+	display: flex;
+	gap: 1rem;
+	width: max-content;
+	animation: problem-marquee 42s linear infinite;
+}
+
+.problem-carousel-track[data-paused="true"] {
+	animation-play-state: paused;
+}
+
+@keyframes problem-marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
 }
 
 .problem-card {
@@ -278,5 +293,11 @@ body {
 	.problem-card {
 		width: 22vw;
 		max-width: 15.5rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.problem-carousel-track {
+		animation: none;
 	}
 }
