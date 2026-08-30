@@ -1,4 +1,6 @@
 import PlanCards from "./components/PlanCards";
+import ProblemList from "./components/ProblemList";
+import { heroProblems } from "./content/home";
 
 export default function Home() {
 	return (
@@ -7,16 +9,28 @@ export default function Home() {
 				<div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center px-6 py-24">
 					<p className="eyebrow">HOMEPAGE PRODUCTION</p>
 					<h1 className="section-heading section-heading--hero max-w-2xl">
-						吉祥寺・武蔵野の
+						吉祥寺・武蔵野で、
 						<br className="hidden sm:inline" />
-						お店に、ちょうどいい
+						ホームページに
 						<br className="hidden sm:inline" />
-						ホームページを。
+						お困りの方へ。
 					</h1>
-					<p className="mt-6 max-w-xl text-brown">
-						吉祥寺・武蔵野エリアの個人経営カフェを中心に、小さなお店のホームページを専門に、
-						要件定義から保守まで、ひとりで一貫して制作しています。
+
+					<ProblemList items={heroProblems} />
+
+					<p className="mt-8 max-w-xl text-brown">
+						そんなホームページの悩みを、VESWERKが解決します。
+						<br />
+						吉祥寺・武蔵野を中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。
+						デザインだけでなく、検索で見つけてもらうための対策や、スマートフォンでの使いやすさ、
+						公開後の保守まで考えて制作します。
 					</p>
+					<p className="mt-4 max-w-xl font-medium text-ink">
+						「ホームページを作りたいけど、費用も手間もかけすぎたくない。」
+						<br />
+						そんな方に、無理なく続けられるホームページを。
+					</p>
+
 					<div className="mt-8 flex flex-wrap gap-4">
 						<a
 							href="/contact"

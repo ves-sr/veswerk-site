@@ -1,7 +1,10 @@
+import type { ReactNode } from "react";
+
 type TimelineItem = {
 	no: string;
 	title: string;
 	desc: string;
+	icon?: ReactNode;
 };
 
 export default function NumberedTimeline({ items }: { items: readonly TimelineItem[] }) {
@@ -24,6 +27,11 @@ export default function NumberedTimeline({ items }: { items: readonly TimelineIt
 						aria-hidden="true"
 						className="absolute top-1.5 left-0 h-3 w-3 rounded-full border-2 border-accent bg-cream lg:static lg:mb-4 lg:block"
 					/>
+					{item.icon && (
+						<div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/60 bg-white/55 shadow-[0_8px_24px_-14px_rgba(107,90,72,0.4)] backdrop-blur-md">
+							{item.icon}
+						</div>
+					)}
 					<span className="text-sm font-semibold text-brown-light">{item.no}</span>
 					<h3 className="mt-2 text-lg font-semibold text-ink">{item.title}</h3>
 					<p className="mt-2 text-sm text-brown">{item.desc}</p>
