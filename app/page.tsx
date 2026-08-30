@@ -1,5 +1,5 @@
-import PlanCards from "./components/PlanCards";
 import ProblemCarousel from "./components/ProblemCarousel";
+import HomePlanTeaser from "./components/HomePlanTeaser";
 import { heroProblems } from "./content/home";
 import {
 	OldSiteIllustration,
@@ -29,62 +29,61 @@ const problemsWithIcons = heroProblems.map((item, i) => {
 export default function Home() {
 	return (
 		<>
-			<section className="relative pt-24 pb-16">
+			<section className="relative pt-20 pb-28 sm:pt-28">
 				<div className="mx-auto max-w-6xl px-6">
 					<p className="eyebrow">HOMEPAGE PRODUCTION</p>
-					<h1 className="section-heading section-heading--hero max-w-2xl">
-						吉祥寺・武蔵野で、
-						<br className="hidden sm:inline" />
-						ホームページに
-						<br className="hidden sm:inline" />
+					<h1 className="section-heading section-heading--hero max-w-3xl">
+						<span className="block text-lg font-medium text-brown sm:text-xl">
+							吉祥寺・武蔵野で、
+						</span>
+						ホームページに、
+						<br />
 						お困りの方へ。
 					</h1>
+					<p className="mt-8 max-w-md text-brown">
+						そんな悩みを、VESWERKが解決します。
+					</p>
 				</div>
 
-				<div className="mt-10">
+				<div className="mt-16">
 					<ProblemCarousel items={problemsWithIcons} />
 				</div>
 
 				<div className="mx-auto max-w-6xl px-6">
-					<p className="mt-10 max-w-xl text-brown">
-						そんなホームページの悩みを、VESWERKが解決します。
-						<br />
+					<p className="mt-16 max-w-xl text-brown">
 						吉祥寺・武蔵野を中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。
 						デザインだけでなく、検索で見つけてもらうための対策や、スマートフォンでの使いやすさ、
 						公開後の保守まで考えて制作します。
 					</p>
-					<p className="mt-4 max-w-xl font-medium text-ink">
-						「ホームページを作りたいけど、費用も手間もかけすぎたくない。」
-						<br />
-						そんな方に、無理なく続けられるホームページを。
-					</p>
 
-					<div className="mt-8 flex flex-wrap gap-4">
+					<div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
 						<a
 							href="/contact"
-							className="btn-sweep rounded-full bg-accent px-7 py-3 text-sm font-medium text-white"
+							className="group inline-flex items-center gap-2 text-sm font-medium text-ink"
 						>
-							無料で相談する
+							<span className="border-b border-accent pb-0.5">無料で相談する</span>
+							<span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
 						</a>
 						<a
 							href="/works"
-							className="rounded-full border border-border bg-white/70 px-7 py-3 text-sm font-medium text-ink hover:bg-white"
+							className="group inline-flex items-center gap-2 text-sm text-brown"
 						>
-							制作サンプルを見る
+							<span className="border-b border-transparent pb-0.5 transition-colors group-hover:border-brown">
+								制作サンプルを見る
+							</span>
 						</a>
 					</div>
 				</div>
 			</section>
 
-			<section id="plan" className="border-t border-border bg-white/55 py-24">
+			<section id="plan" className="border-t border-border py-24">
 				<div className="mx-auto max-w-6xl px-6">
 					<p className="eyebrow">ご利用料金</p>
-					<h2 className="section-heading">FEE</h2>
-					<p className="mt-6 max-w-2xl text-brown">
-						実績作りのため、現在は特別価格でホームページ制作を承っています。
-					</p>
+					<h2 className="section-heading">
+						費用も手間も、かけすぎない。
+					</h2>
 
-					<PlanCards />
+					<HomePlanTeaser />
 				</div>
 			</section>
 		</>

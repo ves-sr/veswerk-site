@@ -21,47 +21,50 @@ export default function PricingPage() {
 				</p>
 
 				<PlanCards />
+			</div>
 
-				<div className="mt-24">
-					<p className="eyebrow">保守プランの内容</p>
-					<h2 className="section-heading">MAINTENANCE</h2>
-					<p className="mt-6 max-w-2xl text-brown">
-						公開後も、サイトが正常に動き続けるように継続的に見守ります。保守契約には以下の内容が含まれます。
-					</p>
-					<MaintenanceCards />
+			<div className="mx-auto mt-28 max-w-6xl border-t border-border px-6 pt-20">
+				<p className="eyebrow">保守プランの内容</p>
+				<h2 className="subsection-heading">公開後も、継続して見守ります</h2>
+				<p className="mt-4 max-w-2xl text-sm text-brown">
+					公開後も、サイトが正常に動き続けるように継続的に見守ります。保守契約には以下の内容が含まれます。
+				</p>
+				<MaintenanceCards />
+			</div>
+
+			<div className="mx-auto mt-20 max-w-6xl px-6">
+				<div className="grid gap-16 border-t border-border pt-16 sm:grid-cols-2">
+					<div>
+						<p className="eyebrow">制作時の追加オプション</p>
+						<h2 className="subsection-heading">CUSTOMIZE</h2>
+						<p className="mt-3 text-sm text-brown">
+							最初にご提案する内容から、色・フォント・お写真を追加したい場合は、項目ごとに以下の費用をいただいております。
+						</p>
+						<AddonCards />
+					</div>
+
+					<div>
+						<p className="eyebrow">保守の追加オプション</p>
+						<h2 className="subsection-heading">MAINTENANCE ADD-ON</h2>
+						<p className="mt-3 text-sm text-brown">
+							ご希望の方のみ、保守費に追加してご案内しているオプションです。
+						</p>
+						<MaintenanceAddonCards />
+					</div>
 				</div>
+			</div>
 
-				<div className="mt-24">
-					<p className="eyebrow">制作時の追加オプション</p>
-					<h2 className="section-heading">CUSTOMIZE</h2>
-					<p className="mt-6 max-w-2xl text-brown">
-						最初にご提案する内容から、色・フォント・お写真を追加したい場合は、項目ごとに以下の費用をいただいております。
-					</p>
-					<AddonCards />
-				</div>
-
-				<div className="mt-24">
-					<p className="eyebrow">保守の追加オプション</p>
-					<h2 className="section-heading">MAINTENANCE ADD-ON</h2>
-					<p className="mt-6 max-w-2xl text-brown">
-						ご希望の方のみ、保守費に追加してご案内しているオプションです。
-					</p>
-					<MaintenanceAddonCards />
-				</div>
-
-				<div className="mt-24">
+			<div className="mx-auto mt-20 max-w-6xl px-6">
+				<div className="border-t border-border pt-16">
 					<p className="eyebrow">含まれないもの</p>
-					<h2 className="section-heading">NOT INCLUDED</h2>
-					<p className="mt-6 max-w-2xl text-brown">
+					<h2 className="subsection-heading">NOT INCLUDED</h2>
+					<p className="mt-3 max-w-2xl text-sm text-brown">
 						実績作りを目的とした特別価格プランのため、以下の機能は今回のサイトには含まれません。
 						ご契約期間（1年間）終了後にご希望される場合は、正式なご依頼として別途お見積もりいたします。
 					</p>
-					<ul className="mt-6 flex flex-wrap gap-3">
+					<ul className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
 						{notIncludedItems.map((item) => (
-							<li
-								key={item}
-								className="rounded-full border border-border bg-white/70 px-5 py-2 text-sm text-brown"
-							>
+							<li key={item} className="text-sm text-brown-light">
 								{item}
 							</li>
 						))}

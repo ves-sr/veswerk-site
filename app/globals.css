@@ -26,27 +26,56 @@ body {
 	color: var(--ink);
 	font-family: var(--font-sans), "Hiragino Sans", sans-serif;
 	line-height: 1.85;
+	font-feature-settings: "palt";
 }
 
+/*
+ * タイポグラフィスケール
+ * 「見出し＋カード」の反復で情報が均質化しないよう、H1/H2/H3/eyebrowに
+ * それぞれ異なる役割と視覚的な重みを与える。太さで主張するのではなく、
+ * サイズ差・字間・余白で階層を作る（section-headingの太字700→600に
+ * 落とし、代わりにサイズのレンジを広げて階層をはっきりさせた）。
+ */
+
+/* eyebrow: ページの文脈を示す英字ラベル。装飾ではなく「今どの階層にいるか」を示す道標として使う */
 .eyebrow {
-	font-size: 0.75rem;
-	letter-spacing: 0.3em;
+	font-size: 0.6875rem;
+	font-weight: 500;
+	letter-spacing: 0.32em;
 	color: var(--brown-light);
-	margin-bottom: 0.4rem;
+	margin-bottom: 0.6rem;
 }
 
+/* H1: ページの主見出し。ページごとに1つだけ */
 .section-heading {
-	font-size: clamp(2rem, 5vw, 3rem);
-	font-weight: 700;
-	letter-spacing: 0.02em;
+	font-size: clamp(1.875rem, 4vw, 2.75rem);
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	line-height: 1.4;
 	color: var(--ink);
 }
 
-/* ホームのヒーロー見出しのみ、狭い画面で長いフレーズが折り返さないようフォントサイズを縮小 */
+/* Homeのヒーローのみ、より大きく・より広い行間で「静かな主張」を持たせる */
+.section-heading--hero {
+	font-size: clamp(2rem, 5.2vw, 3.25rem);
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	line-height: 1.45;
+}
+
 @media (max-width: 639px) {
 	.section-heading--hero {
-		font-size: 1.7rem;
+		font-size: 1.85rem;
 	}
+}
+
+/* H2: セクション内の中見出し。H1より明確に小さく、字間を締めて「本文に近い」トーンにする */
+.subsection-heading {
+	font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+	font-weight: 600;
+	letter-spacing: 0;
+	line-height: 1.6;
+	color: var(--ink);
 }
 
 /* ボタンのホバースイープ：白が左から右に広がり、文字色がアクセントカラーに反転する */

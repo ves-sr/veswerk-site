@@ -2,19 +2,20 @@ import { plan } from "../content/plans";
 
 export default function PlanCards() {
 	return (
-		<div className="mt-14 mx-auto max-w-2xl rounded-3xl border border-accent bg-white/70 p-10 text-center shadow-[0_16px_40px_-14px_rgba(201,138,75,0.5)] backdrop-blur-md">
-			<p className="text-sm font-medium tracking-wide text-ink">{plan.priceLabel}</p>
-			<p className="mt-1 text-2xl font-bold text-ink sm:text-3xl">{plan.price}</p>
-			<p className="mt-2 text-sm text-brown-light">{plan.priceNote}</p>
+		<div className="mt-14 max-w-2xl">
+			<div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+				<div>
+					<p className="text-sm font-medium tracking-wide text-brown-light">{plan.priceLabel}</p>
+					<p className="mt-2 text-5xl font-semibold text-ink sm:text-6xl">{plan.price}</p>
+					<p className="mt-3 max-w-xs text-sm leading-relaxed text-brown-light">{plan.priceNote}</p>
+				</div>
+				<div className="sm:text-right">
+					<p className="text-lg font-semibold text-ink">{plan.maintenance}</p>
+					<p className="mt-1 text-sm text-brown-light">{plan.maintenanceNote}</p>
+				</div>
+			</div>
 
-			<hr className="my-6 border-border" />
-
-			<p className="text-xl font-bold text-ink">{plan.maintenance}</p>
-			<p className="mt-1 text-sm text-brown-light">{plan.maintenanceNote}</p>
-
-			<hr className="my-6 border-border" />
-
-			<div className="text-left">
+			<div className="mt-10 border-t border-border pt-10">
 				<p className="text-base font-semibold text-ink">{plan.maintenanceHeading}</p>
 				<p className="mt-2 text-sm leading-relaxed text-brown">{plan.maintenanceLead}</p>
 
@@ -44,7 +45,7 @@ export default function PlanCards() {
 
 			<a
 				href="/contact"
-				className="btn-sweep mt-8 inline-block rounded-full bg-accent px-8 py-3 text-sm font-medium text-white"
+				className="btn-sweep mt-10 inline-block rounded-full bg-accent px-8 py-3 text-sm font-medium text-white"
 			>
 				相談する
 			</a>
