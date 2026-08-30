@@ -68,18 +68,30 @@ export default function WorksPage() {
 			</div>
 
 			<div className="mx-auto mt-28 max-w-6xl border-t border-border px-6 pt-16 sm:mt-40">
-				<div className="max-w-xl">
-					<h2 className="subsection-heading">自分のお店なら、どうなるだろう</h2>
-					<p className="mt-4 text-brown">
-						ここでご紹介したのは、あくまで制作サンプルです。実際のご依頼では、
-						お店の雰囲気やこだわりをヒアリングしたうえで、一件ずつデザインをご提案します。
-						まずはお気軽にご相談ください。
-					</p>
+				<div className="max-w-2xl">
+					<h2 className="subsection-heading">自分のお店なら、どうなるだろう。</h2>
+					<div className="mt-6 flex flex-col gap-4 text-brown">
+						<p>ここでご紹介しているWebサイトは、VESWERKが考えるデザインの一例です。</p>
+						<p>
+							実際のご依頼では、気になるデザインをひとつの方向性として、
+							お店の雰囲気やこだわり、伝えたいことに合わせて内容やデザインを整えていきます。
+						</p>
+						<p className="text-ink">
+							「この雰囲気が好き」
+							<br />
+							「ここは自分のお店らしく変えたい」
+						</p>
+						<p>そんなイメージからでも大丈夫です。</p>
+						<p>
+							掲載しているデザインを眺めながら、あなたのお店ならどんなWebサイトになるのか、
+							一緒に形にしていきます。
+						</p>
+					</div>
 					<a
 						href="/contact"
 						className="btn-sweep mt-8 inline-block rounded-full bg-accent px-8 py-3 text-sm font-medium text-white"
 					>
-						無料で相談する
+						まずはお気軽にご相談ください
 					</a>
 				</div>
 			</div>
