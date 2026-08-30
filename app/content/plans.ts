@@ -4,10 +4,14 @@ export type PlanFeature = {
 };
 
 export const plan = {
+	campaignLabel: "期間限定モニターキャンペーン",
+	campaignNote:
+		"9月末までにお申し込みの先着5名様限定。実績（事例）としての掲載を条件に、初期制作費を無料、保守費も月9,800円でご提供します。",
+	regularPriceLabel: "本来の価格",
+	regularPrice: "初期制作費 50,000円／保守 月19,800円",
 	priceLabel: "初期制作費",
 	price: "無料",
-	priceNote: "実績作りのための特別価格です（9月末までのお申し込み限定）。",
-	maintenance: "保守：月1,980円",
+	maintenance: "保守：月9,800円",
 	maintenanceNote: "サイト公開月から、毎月お支払いいただきます。",
 	maintenanceHeading: "ホームページを作った後も、ずっとお店の味方で。",
 	maintenanceLead:
