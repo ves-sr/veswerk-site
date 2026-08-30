@@ -244,3 +244,39 @@ body {
 		display: none;
 	}
 }
+
+/*
+ * 悩みカルーセル（Home）
+ * ネイティブのスクロールスナップで横方向に流す。カード幅は画面幅に応じて
+ * 「次のカードが少し見える」余白を残すことで、まだ続きがあると分かるように
+ * する（画面ぴったりに収めると、そこで終わりに見えてしまうため）。
+ * スクロールバー自体は非表示にし、Nextボタン主体の操作に見せる。
+ */
+.problem-carousel-track {
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.problem-carousel-track::-webkit-scrollbar {
+	display: none;
+}
+
+.problem-card {
+	width: 78vw;
+	max-width: 19rem;
+}
+
+@media (min-width: 640px) {
+	.problem-card {
+		width: 46vw;
+		max-width: 17rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.problem-card {
+		width: 22vw;
+		max-width: 15.5rem;
+	}
+}

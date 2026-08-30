@@ -1,12 +1,36 @@
 import PlanCards from "./components/PlanCards";
-import ProblemList from "./components/ProblemList";
+import ProblemCarousel from "./components/ProblemCarousel";
 import { heroProblems } from "./content/home";
+import {
+	OldSiteIllustration,
+	ConfusedIllustration,
+	DIYIllustration,
+	SearchWorryIllustration,
+	CostIllustration,
+	ResponsiveIllustration,
+	MaintainIllustration,
+} from "./components/ProblemIllustrations";
+
+const problemIcons = [
+	OldSiteIllustration,
+	ConfusedIllustration,
+	DIYIllustration,
+	SearchWorryIllustration,
+	CostIllustration,
+	ResponsiveIllustration,
+	MaintainIllustration,
+];
+
+const problemsWithIcons = heroProblems.map((item, i) => {
+	const Icon = problemIcons[i];
+	return { ...item, icon: <Icon className="h-6 w-6" /> };
+});
 
 export default function Home() {
 	return (
 		<>
-			<section className="relative">
-				<div className="mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center px-6 py-24">
+			<section className="relative pt-24 pb-16">
+				<div className="mx-auto max-w-6xl px-6">
 					<p className="eyebrow">HOMEPAGE PRODUCTION</p>
 					<h1 className="section-heading section-heading--hero max-w-2xl">
 						吉祥寺・武蔵野で、
@@ -15,10 +39,14 @@ export default function Home() {
 						<br className="hidden sm:inline" />
 						お困りの方へ。
 					</h1>
+				</div>
 
-					<ProblemList items={heroProblems} />
+				<div className="mt-10 pl-6 sm:pl-[max(1.5rem,calc((100vw-72rem)/2+1.5rem))]">
+					<ProblemCarousel items={problemsWithIcons} />
+				</div>
 
-					<p className="mt-8 max-w-xl text-brown">
+				<div className="mx-auto max-w-6xl px-6">
+					<p className="mt-10 max-w-xl text-brown">
 						そんなホームページの悩みを、VESWERKが解決します。
 						<br />
 						吉祥寺・武蔵野を中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。
