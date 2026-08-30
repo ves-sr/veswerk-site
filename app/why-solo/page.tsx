@@ -70,7 +70,7 @@ export default function WhySoloPage() {
 						/>
 						<div className="text-center sm:text-left">
 							<p className="font-semibold text-ink">中井駿吾</p>
-							<p className="text-xs text-brown-light">20代</p>
+							<p className="text-xs text-brown-light">23歳</p>
 						</div>
 					</div>
 					<p className="text-brown">
