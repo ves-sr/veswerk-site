@@ -41,38 +41,40 @@ export default function WhySoloPage() {
 	return (
 		<section className="py-24">
 			<div className="mx-auto max-w-6xl px-6">
-				<p className="eyebrow">なぜ、ひとりでやるのか</p>
-				<h1 className="section-heading">WHY SOLO</h1>
-				<p className="mt-6 max-w-2xl text-brown">
-					ホームページ制作は、大手・中堅の制作会社に頼めば50万円以上かかることも
-					珍しくありません。同じくらいの規模感でフリーランスに依頼する場合でも、
-					要件のヒアリングと実際の制作を別の担当者が分担しているケースがあり、
-					公開後の運用・保守まで対応してもらえるかどうかは、事前の確認が必要な
-					ことも多いようです。
-				</p>
-				<p className="mt-4 max-w-2xl text-brown">
-					私は、吉祥寺・武蔵野エリアを拠点に、ヒアリングから制作、公開後の保守まで、
-					すべてひとりで担当しています。本業でシステムの要件定義から保守・運用まで
-					携わってきた経験を活かし、見た目のデザインだけでなく、裏側の仕組みまで
-					理解したうえでご提案します。
-				</p>
+				<div className="grid gap-12 sm:grid-cols-[minmax(0,1fr)_18rem] sm:items-start sm:gap-16">
+					<div>
+						<p className="eyebrow">なぜ、ひとりでやるのか</p>
+						<h1 className="section-heading">WHY SOLO</h1>
+						<p className="mt-6 max-w-xl text-brown">
+							ホームページ制作は、大手・中堅の制作会社に頼めば50万円以上かかることも珍しくありません。
+							同じくらいの規模感でフリーランスに依頼する場合でも、要件のヒアリングと実際の制作を
+							別の担当者が分担しているケースがあり、公開後の運用・保守まで対応してもらえるかどうかは、
+							事前の確認が必要なことも多いようです。
+						</p>
+						<p className="mt-4 max-w-xl text-brown">
+							私は、吉祥寺・武蔵野エリアを拠点に、ヒアリングから制作、公開後の保守まで、
+							すべてひとりで担当しています。本業でシステムの要件定義から保守・運用まで
+							携わってきた経験を活かし、見た目のデザインだけでなく、裏側の仕組みまで
+							理解したうえでご提案します。
+						</p>
+					</div>
+
+					<div className="sm:pt-2">
+						<div className="aspect-3/4 overflow-hidden rounded-2xl">
+							<Image
+								src={profilePhoto}
+								alt="中井駿吾"
+								className="h-full w-full object-cover"
+							/>
+						</div>
+						<p className="mt-4 font-semibold text-ink">中井駿吾</p>
+						<p className="text-sm text-brown-light">23歳・N-Tech代表</p>
+					</div>
+				</div>
 
 				<ReasonCards items={soloReasons} />
 
-				<div className="mt-10 flex flex-col gap-8 rounded-3xl border border-white/60 bg-white/55 p-8 shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md sm:flex-row sm:items-center">
-					<div className="flex shrink-0 flex-col items-center gap-3 sm:items-start">
-						<Image
-							src={profilePhoto}
-							alt="中井駿吾"
-							width={140}
-							height={140}
-							className="rounded-full object-cover"
-						/>
-						<div className="text-center sm:text-left">
-							<p className="font-semibold text-ink">中井駿吾</p>
-							<p className="text-xs text-brown-light">23歳</p>
-						</div>
-					</div>
+				<div className="mt-20 max-w-3xl border-t border-border pt-16">
 					<p className="text-brown">
 						普段は会社員としてシステムの要件定義から保守・運用まで携わっており、
 						その経験を活かして、ホームページ制作でもお客様の要望を丁寧に
