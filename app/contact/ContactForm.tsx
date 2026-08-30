@@ -61,7 +61,7 @@ export default function ContactForm() {
 		<form onSubmit={handleSubmit} className="flex flex-col gap-8">
 			<div>
 				<label htmlFor="name" className="mb-2 block font-semibold text-ink">
-					お名前<span className="ml-1 text-xs font-normal text-accent">必須</span>
+					お名前<span className="ml-2 rounded-full bg-accent/10 px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
 				</label>
 				<input id="name" name="name" type="text" required placeholder="山田 太郎" className={inputClass} />
 			</div>
@@ -75,7 +75,7 @@ export default function ContactForm() {
 
 			<div>
 				<label htmlFor="email" className="mb-2 block font-semibold text-ink">
-					メールアドレス<span className="ml-1 text-xs font-normal text-accent">必須</span>
+					メールアドレス<span className="ml-2 rounded-full bg-accent/10 px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
 				</label>
 				<input
 					id="email"
@@ -96,7 +96,7 @@ export default function ContactForm() {
 
 			<fieldset>
 				<legend className="mb-3 font-semibold text-ink">
-					お問い合わせの種類<span className="ml-1 text-xs font-normal text-accent">必須</span>
+					お問い合わせの種類<span className="ml-2 rounded-full bg-accent/10 px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
 				</legend>
 				<div className="grid gap-3 sm:grid-cols-2">
 					{inquiryTypes.map((type) => (
@@ -119,7 +119,7 @@ export default function ContactForm() {
 
 			<div>
 				<label htmlFor="message" className="mb-2 block font-semibold text-ink">
-					お問い合わせ内容<span className="ml-1 text-xs font-normal text-accent">必須</span>
+					お問い合わせ内容<span className="ml-2 rounded-full bg-accent/10 px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
 				</label>
 				<textarea
 					id="message"

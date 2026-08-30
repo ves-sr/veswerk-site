@@ -7,34 +7,24 @@ type TimelineItem = {
 	icon?: ReactNode;
 };
 
+/**
+ * アイコンボックス自体がすでに視覚的なアンカーとして機能するため、
+ * 接続線・丸ドットといった補助装飾は設けない（意味を持たない線や図形の
+ * 追加を避け、アイコン＋番号＋見出し＋本文というシンプルな縦積みにする）。
+ */
 export default function NumberedTimeline({ items }: { items: readonly TimelineItem[] }) {
 	return (
-		<ol className="relative mt-14 flex flex-col gap-12 lg:grid lg:grid-cols-4 lg:gap-x-6 lg:gap-y-0">
-			{/* 縦の接続線（lg未満：1カラムのあいだ、途切れず表示） */}
-			<span
-				aria-hidden="true"
-				className="absolute top-2 bottom-2 left-[0.6rem] w-px bg-border lg:hidden"
-			/>
-			{/* 横の接続線（lg以上：4カラム横並び） */}
-			<span
-				aria-hidden="true"
-				className="absolute top-[0.6rem] right-0 left-0 hidden h-px bg-border lg:block"
-			/>
-
+		<ol className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
 			{items.map((item) => (
-				<li key={item.no} className="relative pl-8 lg:pl-0">
-					<span
-						aria-hidden="true"
-						className="absolute top-1.5 left-0 h-3 w-3 rounded-full border-2 border-accent bg-cream lg:static lg:mb-4 lg:block"
-					/>
+				<li key={item.no}>
 					{item.icon && (
-						<div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/60 bg-white/55 shadow-[0_8px_24px_-14px_rgba(107,90,72,0.4)] backdrop-blur-md">
+						<div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-white/55">
 							{item.icon}
 						</div>
 					)}
-					<span className="text-sm font-semibold text-brown-light">{item.no}</span>
+					<span className="mt-4 block text-sm font-semibold text-brown-light">{item.no}</span>
 					<h3 className="mt-2 text-lg font-semibold text-ink">{item.title}</h3>
-					<p className="mt-2 text-sm text-brown">{item.desc}</p>
+					<p className="mt-2 text-sm leading-relaxed text-brown">{item.desc}</p>
 				</li>
 			))}
 		</ol>
