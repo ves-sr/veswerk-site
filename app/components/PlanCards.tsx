@@ -6,11 +6,11 @@ export default function PlanCards() {
 			<span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-semibold tracking-wide text-white">
 				{plan.campaignLabel}
 			</span>
-			<p className="mt-4 text-xs text-brown-light">
-				{plan.regularPriceLabel}：<span className="line-through">{plan.regularPrice}</span>
+			<p className="mt-5 text-sm text-brown">
+				{plan.regularPriceLabel}：<span className="line-through decoration-brown-light">{plan.regularPrice}</span>
 			</p>
 
-			<div className="mt-4 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+			<div className="mt-5 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
 				<div>
 					<p className="text-sm font-medium tracking-wide text-brown-light">{plan.priceLabel}</p>
 					<p className="mt-2 text-5xl font-semibold text-ink sm:text-6xl">{plan.price}</p>
