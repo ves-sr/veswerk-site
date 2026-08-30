@@ -3,7 +3,7 @@ import { plan } from "../content/plans";
 export default function PlanCards() {
 	return (
 		<div className="mt-14 mx-auto max-w-2xl rounded-3xl border border-accent bg-white/70 p-10 text-center shadow-[0_16px_40px_-14px_rgba(201,138,75,0.5)] backdrop-blur-md">
-			<p className="text-sm font-medium tracking-wide text-brown-light">{plan.priceLabel}</p>
+			<p className="text-sm font-medium tracking-wide text-ink">{plan.priceLabel}</p>
 			<p className="mt-1 text-2xl font-bold text-ink sm:text-3xl">{plan.price}</p>
 			<p className="mt-2 text-sm text-brown-light">{plan.priceNote}</p>
 
