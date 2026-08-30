@@ -29,7 +29,7 @@ export default function Footer() {
 					</div>
 					<p className="mt-2 max-w-xs text-sm text-cream-deep/70 md:ml-auto">
 						吉祥寺・武蔵野を中心に、ホームページを要件定義から保守まで
-						ひとりで一貫して制作しています。
+						一貫して制作しています。
 					</p>
 				</div>
 			</div>
