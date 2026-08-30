@@ -3,17 +3,25 @@ import { plan } from "../content/plans";
 export default function PlanCards() {
 	return (
 		<div className="mt-14 max-w-2xl">
-			<div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+			<span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-semibold tracking-wide text-white">
+				{plan.campaignLabel}
+			</span>
+			<p className="mt-4 text-xs text-brown-light">
+				{plan.regularPriceLabel}：<span className="line-through">{plan.regularPrice}</span>
+			</p>
+
+			<div className="mt-4 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
 				<div>
 					<p className="text-sm font-medium tracking-wide text-brown-light">{plan.priceLabel}</p>
 					<p className="mt-2 text-5xl font-semibold text-ink sm:text-6xl">{plan.price}</p>
-					<p className="mt-3 max-w-xs text-sm leading-relaxed text-brown-light">{plan.priceNote}</p>
 				</div>
 				<div className="sm:text-right">
 					<p className="text-lg font-semibold text-ink">{plan.maintenance}</p>
 					<p className="mt-1 text-sm text-brown-light">{plan.maintenanceNote}</p>
 				</div>
 			</div>
+
+			<p className="mt-4 max-w-lg text-sm leading-relaxed text-brown-light">{plan.campaignNote}</p>
 
 			<div className="mt-10 border-t border-border pt-10">
 				<p className="text-base font-semibold text-ink">{plan.maintenanceHeading}</p>
