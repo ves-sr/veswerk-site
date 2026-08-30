@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
 	title: "事業紹介｜VESWERK",
 	description:
-		"吉祥寺・武蔵野エリアを中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。デザイン・SEO・スマートフォン対応から公開後の保守まで、すべてをひとりで担当しています。",
+		"吉祥寺・武蔵野エリアを中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。デザイン・SEO・スマートフォン対応から公開後の保守まで、一貫して対応しています。",
 };
 
 const icons = [OrganizeIllustration, DesignIllustration, SearchIllustration, SupportIllustration];

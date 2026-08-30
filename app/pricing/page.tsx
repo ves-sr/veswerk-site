@@ -7,7 +7,7 @@ import { notIncludedItems } from "../content/plans";
 
 export const metadata: Metadata = {
 	title: "ご利用料金｜VESWERK",
-	description: "実績作りのための特別価格プラン。ヒアリングから公開後の保守まで、ひとりで一貫して制作します。",
+	description: "実績作りのための特別価格プラン。ヒアリングから公開後の保守まで、一貫して制作します。",
 };
 
 export default function PricingPage() {
