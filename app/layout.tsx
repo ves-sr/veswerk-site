@@ -13,9 +13,9 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-	title: "VESWERK｜吉祥寺・武蔵野の小さなお店のためのホームページ制作",
+	title: "VESWERK｜吉祥寺・武蔵野のホームページ制作",
 	description:
-		"吉祥寺・武蔵野エリアの個人経営カフェを中心に、小さなお店のホームページを専門に、要件定義から保守まで、ひとりで一貫して制作しています。",
+		"吉祥寺・武蔵野エリアを中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。デザインだけでなく、検索対策・スマートフォン対応・公開後の保守まで、ひとりで一貫して手がけています。",
 	verification: {
 		google: "kUfap1hsACbxei7rB2cPalQyMhwAtLt9NJFI3YEnSIQ",
 	},

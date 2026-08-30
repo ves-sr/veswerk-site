@@ -244,3 +244,60 @@ body {
 		display: none;
 	}
 }
+
+/*
+ * 悩みカルーセル（Home）
+ * 常時右から左へ流れ続けるマーキー形式。アイテム配列をJS側で2セット
+ * 連結して描画し、CSSアニメーションで「1セット分の幅」だけ左へ移動して
+ * 0%に戻す、を繰り返すことで、7→1の継ぎ目も途切れず流れて見える
+ * （実写のトラックは2周目に入った瞬間、見た目が1周目と同じ地点に
+ * 戻っているため、ユーザーには無限ループに見える）。
+ */
+.problem-carousel-viewport {
+	overflow: hidden;
+}
+
+.problem-carousel-track {
+	display: flex;
+	gap: 1rem;
+	width: max-content;
+	animation: problem-marquee 42s linear infinite;
+}
+
+.problem-carousel-track[data-paused="true"] {
+	animation-play-state: paused;
+}
+
+@keyframes problem-marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+.problem-card {
+	width: 78vw;
+	max-width: 19rem;
+}
+
+@media (min-width: 640px) {
+	.problem-card {
+		width: 46vw;
+		max-width: 17rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.problem-card {
+		width: 22vw;
+		max-width: 15.5rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.problem-carousel-track {
+		animation: none;
+	}
+}

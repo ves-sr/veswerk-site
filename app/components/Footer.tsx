@@ -28,7 +28,7 @@ export default function Footer() {
 						{siteName}
 					</div>
 					<p className="mt-2 max-w-xs text-sm text-cream-deep/70 md:ml-auto">
-						個人経営の小さなお店のホームページを、要件定義から保守まで
+						吉祥寺・武蔵野を中心に、ホームページを要件定義から保守まで
 						ひとりで一貫して制作しています。
 					</p>
 				</div>
