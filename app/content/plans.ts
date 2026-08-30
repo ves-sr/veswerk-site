@@ -4,7 +4,8 @@ export type PlanFeature = {
 };
 
 export const plan = {
-	price: "初期制作費 無料",
+	priceLabel: "初期制作費",
+	price: "無料",
 	priceNote: "実績作りのための特別価格です（9月末までのお申し込み限定）。",
 	maintenance: "保守：月1,980円",
 	maintenanceNote: "サイト公開月から、毎月お支払いいただきます。",
