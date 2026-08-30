@@ -4,26 +4,27 @@ import {
 	maintenanceAddonNoteEmphasis,
 } from "../content/plans";
 
+/**
+ * AddonCardsと同様、補助的なオプション情報のためカードグリッドをやめて
+ * 一覧行にする（FEEページ内でカードUIが連続しすぎないようにするため）。
+ */
 export default function MaintenanceAddonCards() {
 	return (
-		<>
-			<div className="mt-8 grid gap-6 sm:grid-cols-3">
+		<div className="mt-8 max-w-2xl">
+			<dl className="divide-y divide-border">
 				{maintenanceAddonItems.map((item) => (
-					<div
-						key={item.name}
-						className="rounded-3xl border border-white/60 bg-white/45 p-6 shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md"
-					>
-						<div className="flex items-baseline justify-between gap-3">
-							<p className="text-sm font-medium text-ink">{item.name}</p>
-							<p className="text-lg font-bold text-accent">{item.price}</p>
+					<div key={item.name} className="py-4">
+						<div className="flex items-baseline justify-between gap-4">
+							<dt className="text-sm text-brown">{item.name}</dt>
+							<dd className="text-base font-semibold text-ink">{item.price}</dd>
 						</div>
-						<p className="mt-2 text-xs leading-relaxed text-brown-light">{item.description}</p>
+						<p className="mt-1 text-xs leading-relaxed text-brown-light">{item.description}</p>
 					</div>
 				))}
-			</div>
-			<p className="mt-6 max-w-2xl text-sm text-brown-light">
+			</dl>
+			<p className="mt-6 text-sm text-brown-light">
 				{maintenanceAddonNotePrefix} <span className="whitespace-nowrap">{maintenanceAddonNoteEmphasis}</span>
 			</p>
-		</>
+		</div>
 	);
 }
