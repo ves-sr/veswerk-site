@@ -29,7 +29,11 @@ export default function ServicePage() {
 		<section className="py-24">
 			<div className="mx-auto max-w-6xl px-6">
 				<p className="eyebrow">事業紹介</p>
-				<h1 className="section-heading max-w-2xl">{about.heading}</h1>
+				<h1 className="section-heading max-w-2xl">
+					ホームページを作る。
+					<br />
+					その先まで考える。
+				</h1>
 				<div className="mt-6 flex max-w-xl flex-col gap-3">
 					{about.body.map((p) => (
 						<p key={p} className="text-brown">
