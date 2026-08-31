@@ -7,8 +7,10 @@ export const legalName = "N-Tech";
 
 // SNSは未開設。開設したら実際のURLに差し替える
 export const snsLinks = [
-	{ label: "Instagram", href: "#" },
-	{ label: "X", href: "#" },
+	{
+		label: "Instagram",
+		href: "https://www.instagram.com/veswerk?igsi=OHRmajFyOGU5emdn&utm_source=qr",
+	},
 ] as const;
 
 export const navItems = [
