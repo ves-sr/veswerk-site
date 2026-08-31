@@ -59,7 +59,7 @@ export default function WhyVeswerkPage() {
 						<div
 							key={pillar.no}
 							className={`flex flex-col gap-6 border-t border-border py-14 first:border-t-0 first:pt-0 sm:gap-10 sm:py-20 ${
-								i % 2 === 1 ? "sm:flex-row-reverse sm:text-right" : "sm:flex-row"
+								i % 2 === 1 ? "sm:flex-row-reverse" : "sm:flex-row"
 							}`}
 						>
 							<span className="text-3xl font-light text-border sm:shrink-0 sm:text-4xl">
