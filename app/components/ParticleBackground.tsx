@@ -56,7 +56,7 @@ export default function ParticleBackground() {
 				if (p.y < 0 || p.y > height) p.vy *= -1;
 			}
 
-			ctx!.fillStyle = "rgba(169, 138, 108, 0.35)";
+			ctx!.fillStyle = "rgba(169, 138, 108, 0.6)";
 			for (const p of points) {
 				ctx!.beginPath();
 				ctx!.arc(p.x, p.y, 1.6, 0, Math.PI * 2);
@@ -71,7 +71,7 @@ export default function ParticleBackground() {
 					const dy = a.y - b.y;
 					const dist = Math.sqrt(dx * dx + dy * dy);
 					if (dist < LINK_DISTANCE) {
-						ctx!.strokeStyle = `rgba(169, 138, 108, ${0.1 * (1 - dist / LINK_DISTANCE)})`;
+						ctx!.strokeStyle = `rgba(169, 138, 108, ${0.22 * (1 - dist / LINK_DISTANCE)})`;
 						ctx!.lineWidth = 1;
 						ctx!.beginPath();
 						ctx!.moveTo(a.x, a.y);
