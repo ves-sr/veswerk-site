@@ -3,45 +3,51 @@ import { plan } from "../content/plans";
 export default function PlanCards() {
 	return (
 		<div className="mt-14">
-			<div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_22rem] md:gap-16">
-				<div>
-					<span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-semibold tracking-wide text-white">
-						{plan.campaignLabel}
-					</span>
-					<p className="mt-5 text-sm text-brown">
-						{plan.regularPriceLabel}：
-						<span className="line-through decoration-brown-light">{plan.regularPrice}</span>
-					</p>
+			<div className="flex flex-col items-center rounded-3xl border border-white/60 bg-white/45 p-8 text-center shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md sm:mx-18.75 sm:p-12">
+				<span className="inline-block rounded-sm border border-accent px-3 py-1 text-xs font-semibold tracking-[0.15em] text-accent">
+					{plan.campaignLabel}
+				</span>
+				<p className="mt-5 text-sm text-brown">
+					{plan.regularPriceLabel}：
+					<span className="line-through decoration-brown-light">{plan.regularPrice}</span>
+				</p>
 
-					<p className="mt-8 text-sm font-medium tracking-wide text-brown-light">{plan.priceLabel}</p>
-					<p className="mt-2 text-6xl font-semibold text-ink sm:text-7xl">{plan.price}</p>
+				{/* 「初期制作費0円＋保守月9,800円」がワンセットの料金体系だと一目で分かるよう、
+				   2つの価格を同じ文字サイズ・同じ高さで横並びにし、＋でつないでいる（左右に分散させない） */}
+				<div className="mt-8 flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:gap-8">
+					<div>
+						<p className="text-sm font-medium tracking-wide text-brown-light">{plan.priceLabel}</p>
+						<p className="mt-2 text-3xl font-semibold text-ink sm:text-4xl">{plan.price}</p>
+					</div>
 
-					<p className="mt-6 max-w-md text-sm leading-relaxed text-brown-light">{plan.campaignNote}</p>
+					<span className="text-xl font-light text-border sm:pt-9 sm:text-2xl">＋</span>
 
-					<a
-						href="/contact"
-						className="btn-sweep mt-10 inline-block rounded-full bg-accent px-8 py-3 text-sm font-medium text-white"
-					>
-						相談する
-					</a>
+					<div>
+						<p className="text-sm font-medium tracking-wide text-brown-light">保守費</p>
+						<p className="mt-2 text-3xl font-semibold text-ink sm:text-4xl">
+							{plan.maintenance.replace("保守：", "")}
+						</p>
+						<p className="mt-1 text-sm text-brown-light">{plan.maintenanceNote}</p>
+					</div>
 				</div>
 
-				<div className="h-fit rounded-3xl border border-white/60 bg-white/45 p-7 shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md md:mt-2">
-					<p className="text-xs font-medium tracking-[0.2em] text-brown-light">MAINTENANCE</p>
-					<p className="mt-3 text-2xl font-semibold text-ink">{plan.maintenance}</p>
-					<p className="mt-2 text-sm text-brown-light">{plan.maintenanceNote}</p>
-				</div>
+				<p className="mt-8 max-w-2xl text-sm leading-relaxed text-brown-light">{plan.campaignNote}</p>
+
+				<a
+					href="/contact"
+					className="btn-sweep mt-8 inline-block rounded-full bg-accent px-8 py-3 text-sm font-medium text-white"
+				>
+					相談する
+				</a>
 			</div>
 
-			{/* maintenanceHeading/Leadはcontent/plans.tsではMAINTENANCE価格と隣接しているが、
-			   ここではfeatures一覧の導入文として使うため意図的に離して配置している */}
 			<div className="mt-20 grid gap-8 border-t border-border pt-16 md:grid-cols-[20rem_minmax(0,1fr)] md:gap-16">
 				<div>
 					<p className="text-lg font-semibold text-ink">{plan.maintenanceHeading}</p>
 					<p className="mt-3 text-sm leading-relaxed text-brown">{plan.maintenanceLead}</p>
 				</div>
 
-				<ul className="grid gap-x-8 gap-y-7 md:grid-cols-2">
+				<ul className="flex flex-col gap-8">
 					{plan.features.map((f) => (
 						<li key={f.title} className="flex items-start gap-3">
 							<svg
@@ -58,7 +64,7 @@ export default function PlanCards() {
 							</svg>
 							<div>
 								<p className="text-sm font-semibold text-ink">{f.title}</p>
-								<p className="mt-0.5 text-sm leading-relaxed text-brown">{f.text}</p>
+								<p className="mt-1.5 text-sm leading-relaxed text-brown">{f.text}</p>
 							</div>
 						</li>
 					))}
