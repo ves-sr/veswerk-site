@@ -20,7 +20,8 @@ const pillars = [
 		no: "02",
 		eyebrow: "LOCAL BUSINESS",
 		heading: "小さなお店に、本当に必要なホームページを。",
-		body: "吉祥寺・武蔵野エリアで営むお店・地域密着型の事業者を主な対象にしています。大企業のように情報を詰め込むのではなく、お店の雰囲気、商品・サービス、営業時間、アクセス、予約・問い合わせ、お店の想い——本当に必要な情報を、必要な人にきちんと届けることを大切にしています。",
+		body: "吉祥寺・武蔵野エリアで営むお店・地域密着型の事業者を主な対象にしています。大企業のように情報を詰め込むのではなく、本当に必要な情報を、必要な人にきちんと届けることを大切にしています。",
+		items: ["お店の雰囲気", "商品・サービス", "営業時間・アクセス", "予約・問い合わせ", "お店の想い"],
 	},
 	{
 		no: "03",
@@ -70,6 +71,22 @@ export default function WhyVeswerkPage() {
 								</p>
 								<h2 className="subsection-heading mt-3">{pillar.heading}</h2>
 								<p className="mt-4 text-sm leading-relaxed text-brown">{pillar.body}</p>
+								{pillar.items && (
+									<ul
+										className={`mt-5 flex flex-wrap gap-2 ${
+											i % 2 === 1 ? "sm:justify-end" : ""
+										}`}
+									>
+										{pillar.items.map((item) => (
+											<li
+												key={item}
+												className="rounded-full border border-border bg-cream-deep px-4 py-1.5 text-xs text-brown"
+											>
+												{item}
+											</li>
+										))}
+									</ul>
+								)}
 								{pillar.showCta && (
 									<Link
 										href="/pricing"
@@ -91,53 +108,57 @@ export default function WhyVeswerkPage() {
 				</div>
 			</div>
 
-			<div className="mx-auto mt-24 max-w-6xl border-t border-border px-6 pt-20 sm:mt-32 sm:pt-28">
-				<div className="grid gap-12 sm:grid-cols-[18rem_minmax(0,1fr)] sm:items-start sm:gap-16">
-					<div className="sm:pt-2">
-						<div className="aspect-3/4 overflow-hidden rounded-2xl">
-							<Image
-								src={profilePhoto}
-								alt="中井駿吾"
-								priority
-								className="h-full w-full object-cover"
-							/>
+			<div className="mt-24 bg-cream-deep py-20 sm:mt-32 sm:py-28">
+				<div className="mx-auto max-w-6xl px-6">
+					<div className="grid gap-12 sm:grid-cols-[18rem_minmax(0,1fr)] sm:items-start sm:gap-16">
+						<div className="sm:pt-2">
+							<div className="aspect-3/4 overflow-hidden rounded-2xl">
+								<Image
+									src={profilePhoto}
+									alt="中井駿吾"
+									priority
+									className="h-full w-full object-cover"
+								/>
+							</div>
+							<p className="mt-4 font-semibold text-ink">中井駿吾</p>
+							<p className="text-sm text-brown-light">VESWERK</p>
 						</div>
-						<p className="mt-4 font-semibold text-ink">中井駿吾</p>
-						<p className="text-sm text-brown-light">VESWERK</p>
-					</div>
 
-					<div>
-						<p className="text-xs font-semibold tracking-[0.3em] text-accent">
-							ENGINEERING EXPERIENCE
-						</p>
-						<h2 className="subsection-heading mt-3 max-w-lg">
-							実際のプロダクト開発の現場で培った経験を、Web制作へ。
-						</h2>
-						<p className="mt-5 max-w-xl text-brown">
-							普段は東証プライム上場企業グループで自社開発に携わる、現役のソフトウェアエンジニアです。
-							要件定義、設計、開発、テスト、運用、保守——ソフトウェア開発の一連の工程に、日々携わっています。
-						</p>
-						<p className="mt-4 max-w-xl text-brown">
-							この経験を活かし、VESWERKでも「見た目がきれいなホームページ」だけで終わらせず、
-							実際に使われ、運用され続けるホームページを考えて設計することを強みにしています。
-						</p>
+						<div>
+							<p className="text-xs font-semibold tracking-[0.3em] text-accent">
+								ENGINEERING EXPERIENCE
+							</p>
+							<h2 className="subsection-heading mt-3 max-w-lg">
+								実際のプロダクト開発の現場で培った経験を、Web制作へ。
+							</h2>
+							<p className="mt-5 max-w-xl text-brown">
+								普段は東証プライム上場企業グループで自社開発に携わる、現役のソフトウェアエンジニアです。
+								要件定義、設計、開発、テスト、運用、保守——ソフトウェア開発の一連の工程に、日々携わっています。
+							</p>
+							<p className="mt-4 max-w-xl text-brown">
+								この経験を活かし、VESWERKでも「見た目がきれいなホームページ」だけで終わらせず、
+								実際に使われ、運用され続けるホームページを考えて設計することを強みにしています。
+							</p>
 
-						<ul className="mt-8 flex flex-wrap gap-3">
-							<li className="rounded-full border border-border px-4 py-1.5 text-xs text-brown">
-								東証プライム上場企業グループ
-							</li>
-							<li className="rounded-full border border-border px-4 py-1.5 text-xs text-brown">
-								自社開発
-							</li>
-							<li className="rounded-full border border-border px-4 py-1.5 text-xs text-brown">
-								現役ソフトウェアエンジニア
-							</li>
-						</ul>
+							<ul className="mt-8 flex flex-wrap gap-3">
+								<li className="rounded-full border border-border bg-cream px-4 py-1.5 text-xs text-brown">
+									東証プライム上場企業グループ
+								</li>
+								<li className="rounded-full border border-border bg-cream px-4 py-1.5 text-xs text-brown">
+									自社開発
+								</li>
+								<li className="rounded-full border border-border bg-cream px-4 py-1.5 text-xs text-brown">
+									現役ソフトウェアエンジニア
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div className="mx-auto mt-24 max-w-6xl border-t border-border px-6 pt-20 sm:mt-32 sm:pt-28">
+			{/* 直前のENGINEERING EXPERIENCEブロックが背景色の切り替わりで区切り線の役割を
+			   果たしているため、ここではborder-topを付けていない。並び順を変える場合は要調整 */}
+			<div className="mx-auto mt-24 max-w-6xl px-6 sm:mt-32">
 				<div className="mx-auto max-w-2xl text-center">
 					<p className="eyebrow justify-center">VESWERK&apos;S PHILOSOPHY</p>
 					<p className="section-heading text-2xl leading-[1.9] sm:text-3xl">
