@@ -64,7 +64,7 @@ export default function WhyVeswerkPage() {
 							<span className="text-3xl font-light text-border sm:shrink-0 sm:text-4xl">
 								{pillar.no}
 							</span>
-							<div className="max-w-xl sm:ml-auto">
+							<div className={`max-w-xl ${i % 2 === 1 ? "sm:ml-auto" : ""}`}>
 								<p className="text-xs font-semibold tracking-[0.3em] text-accent">
 									{pillar.eyebrow}
 								</p>

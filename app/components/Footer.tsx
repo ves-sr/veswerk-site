@@ -42,20 +42,23 @@ export default function Footer() {
 							<a
 								key={sns.label}
 								href={sns.href}
+								target="_blank"
+								rel="noopener noreferrer"
 								aria-label={sns.label}
 								className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 hover:border-white/40 hover:text-white"
 							>
-								{sns.label === "Instagram" ? (
-									<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">
-										<rect x="3" y="3" width="18" height="18" rx="5" />
-										<circle cx="12" cy="12" r="4" />
-										<circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
-									</svg>
-								) : (
-									<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
-										<path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.8l-5.3-6.9L5 22H1.9l8-9.2L1 2h7l4.8 6.4L18.9 2Zm-1.2 18h1.9L7.4 4H5.4l12.3 16Z" />
-									</svg>
-								)}
+								<svg
+									aria-hidden="true"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="1.6"
+									className="h-4 w-4"
+								>
+									<rect x="3" y="3" width="18" height="18" rx="5" />
+									<circle cx="12" cy="12" r="4" />
+									<circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+								</svg>
 							</a>
 						))}
 						<a href="/privacy-policy" className="hover:text-white">プライバシーポリシー</a>
