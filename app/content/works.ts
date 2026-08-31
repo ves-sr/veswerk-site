@@ -16,14 +16,14 @@ export type WorkSample = {
 
 export const workSamples: WorkSample[] = [
 	{
-		slug: "roastery-cafe",
+		slug: "toda-setsubi",
 		no: "01",
-		category: "CAFE / SAMPLE",
-		name: "ROASTERY & CAFE",
-		concept: "自家焙煎の香りと余白を、静かな一杯とともに。",
-		tags: ["個人経営カフェ", "ダークトーン", "予約導線"],
-		image: thumbCafeD,
-		imageAlt: "夕暮れの光が差し込む木目調の店内を背景に、大きな見出しコピーを重ねたダークトーンのトップページ",
+		category: "LOCAL BUSINESS / SAMPLE",
+		name: "戸田設備工業",
+		concept: "地域に根ざした信頼を、実直な情報設計で伝える。",
+		tags: ["地域密着型事業者", "多ページ構成", "施工事例訴求"],
+		image: thumbPlumbingB,
+		imageAlt: "緑豊かな渓流の写真を背景に「地元の水道屋だから、安心。」という見出しを掲げたトップページ",
 	},
 	{
 		slug: "petit-ciel",
@@ -46,13 +46,13 @@ export const workSamples: WorkSample[] = [
 		imageAlt: "観葉植物とラテアートのカップを配した、木の質感を活かした温かみのあるトップページ",
 	},
 	{
-		slug: "toda-setsubi",
+		slug: "roastery-cafe",
 		no: "04",
-		category: "LOCAL BUSINESS / SAMPLE",
-		name: "戸田設備工業",
-		concept: "地域に根ざした信頼を、実直な情報設計で伝える。",
-		tags: ["地域密着型事業者", "多ページ構成", "施工事例訴求"],
-		image: thumbPlumbingB,
-		imageAlt: "緑豊かな渓流の写真を背景に「地元の水道屋だから、安心。」という見出しを掲げたトップページ",
+		category: "CAFE / SAMPLE",
+		name: "ROASTERY & CAFE",
+		concept: "自家焙煎の香りと余白を、静かな一杯とともに。",
+		tags: ["個人経営カフェ", "ダークトーン", "予約導線"],
+		image: thumbCafeD,
+		imageAlt: "夕暮れの光が差し込む木目調の店内を背景に、大きな見出しコピーを重ねたダークトーンのトップページ",
 	},
 ];

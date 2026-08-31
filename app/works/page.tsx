@@ -10,10 +10,14 @@ export const metadata: Metadata = {
 
 export default function WorksPage() {
 	return (
-		<section className="py-24 sm:py-32">
+		<section className="pt-16 pb-24 sm:pt-20 sm:pb-32">
 			<div className="mx-auto max-w-6xl px-6">
 				<p className="eyebrow">SAMPLE WORKS</p>
-				<h1 className="section-heading max-w-2xl">VESWERKがつくるWebサイト</h1>
+				<h1 className="section-heading max-w-2xl">
+					VESWERKがつくる
+					<br />
+					Webサイト
+				</h1>
 				<p className="mt-6 max-w-xl text-brown">
 					吉祥寺・武蔵野エリアの小さなお店・個人経営店を想定した制作サンプルです。
 					実際のご依頼をイメージしていただけるよう、デザインから情報設計まで、
@@ -21,7 +25,7 @@ export default function WorksPage() {
 				</p>
 			</div>
 
-			<div className="mt-24 flex flex-col gap-28 sm:mt-32 sm:gap-40">
+			<div className="mt-12 flex flex-col gap-28 sm:mt-16 sm:gap-40">
 				{workSamples.map((sample, i) => (
 					<article key={sample.name} className="mx-auto w-full max-w-6xl px-6">
 						<div
