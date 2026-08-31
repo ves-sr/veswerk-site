@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import IntroLoader from "./components/IntroLoader";
+import ParticleBackground from "./components/ParticleBackground";
 
 const notoSansJP = Noto_Sans_JP({
 	variable: "--font-noto-sans-jp",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 		<html lang="ja" className={`${notoSansJP.variable} h-full antialiased`}>
 			<body className="flex min-h-full flex-col">
 				<IntroLoader />
+				<ParticleBackground />
 				<Header />
 				<main className="flex-1">{children}</main>
 				<Footer />
