@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import profilePhoto from "../assets/images/profile.jpg";
+import { legalName } from "../content/site";
 
 export const metadata: Metadata = {
 	title: "WHY VESWERK｜VESWERK",
@@ -103,7 +104,7 @@ export default function WhyVeswerkPage() {
 							/>
 						</div>
 						<p className="mt-4 font-semibold text-ink">中井駿吾</p>
-						<p className="text-sm text-brown-light">VESWERK</p>
+						<p className="text-sm text-brown-light">{legalName} 代表</p>
 					</div>
 
 					<div>
