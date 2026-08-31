@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import profilePhoto from "../assets/images/profile.jpg";
 import { legalName } from "../content/site";
+import FadeInOnScroll from "../components/FadeInOnScroll";
 
 export const metadata: Metadata = {
 	title: "WHY VESWERK｜VESWERK",
@@ -139,22 +140,25 @@ export default function WhyVeswerkPage() {
 			</div>
 
 			<div className="mx-auto mt-24 max-w-6xl border-t border-border px-6 pt-20 sm:mt-32 sm:pt-28">
-				<div className="mx-auto max-w-2xl text-center">
-					<p className="eyebrow justify-center">VESWERK&apos;S PHILOSOPHY</p>
-					<p className="section-heading text-2xl leading-[1.9] sm:text-3xl">
-						ホームページは、ただ存在するだけでは意味がない。
-						<br />
-						お店を知ってもらい、魅力を伝え、
-						<br />
-						初めて訪れる人の不安をなくし、
-						<br />
-						予約や問い合わせにつなげ、長く使ってもらう。
-					</p>
-					<p className="mt-8 text-brown">
-						デザインと技術、そしてお店そのものへの理解を組み合わせて、
-						ホームページをつくっています。
-					</p>
-				</div>
+				<FadeInOnScroll>
+					<div className="mx-auto max-w-5xl text-center">
+						<p className="eyebrow justify-center">VESWERK&apos;S PHILOSOPHY</p>
+						<p
+							className="section-heading leading-[1.9]"
+							style={{ fontSize: "clamp(1.125rem, 3.4vw, 1.875rem)" }}
+						>
+							ホームページは、ただ存在するだけでは意味がない。
+							<br />
+							お店を知ってもらい、魅力を伝え、初めて訪れる人の不安をなくし、
+							<br />
+							予約や問い合わせにつなげ、長く使ってもらう。
+						</p>
+						<p className="mt-8 text-brown">
+							デザインと技術、そしてお店そのものへの理解を組み合わせて、
+							ホームページをつくっています。
+						</p>
+					</div>
+				</FadeInOnScroll>
 			</div>
 
 			<div className="mx-auto mt-24 max-w-6xl px-6 sm:mt-32">
