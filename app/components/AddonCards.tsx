@@ -1,21 +1,26 @@
 import { productionAddonItems, productionAddonNote } from "../content/plans";
 
+/**
+ * オプション料金は主役ではないため、カードグリッドではなくシンプルな
+ * 一覧行として並べる（FEEページ内でMaintenanceCards→ここ→
+ * MaintenanceAddonCardsと3セクション連続でカードUIが続くと単調になるため、
+ * ここでは視覚のトーンを変えて緩急をつける）。
+ */
 export default function AddonCards() {
 	return (
-		<>
-			<div className="mt-8 grid gap-6 sm:grid-cols-3">
+		<div className="mt-8 max-w-2xl">
+			<dl className="divide-y divide-border">
 				{productionAddonItems.map((item) => (
-					<div
-						key={item.name}
-						className="rounded-3xl border border-white/60 bg-white/45 p-6 text-center shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md"
-					>
-						<p className="text-sm font-medium text-ink">{item.name}</p>
-						<p className="mt-2 text-lg font-bold text-accent">{item.price}</p>
-						<p className="mt-1 text-xs text-brown-light">{item.unit}</p>
+					<div key={item.name} className="flex items-baseline justify-between gap-4 py-4">
+						<dt className="text-sm text-brown">{item.name}</dt>
+						<dd className="flex items-baseline gap-2 whitespace-nowrap">
+							<span className="text-base font-semibold text-ink">{item.price}</span>
+							<span className="text-xs text-brown-light">{item.unit}</span>
+						</dd>
 					</div>
 				))}
-			</div>
-			<p className="mt-6 max-w-2xl text-sm text-brown-light">{productionAddonNote}</p>
-		</>
+			</dl>
+			<p className="mt-6 text-sm text-brown-light">{productionAddonNote}</p>
+		</div>
 	);
 }

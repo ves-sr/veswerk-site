@@ -3,7 +3,6 @@ import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ParticleBackground from "./components/ParticleBackground";
 import IntroLoader from "./components/IntroLoader";
 
 const notoSansJP = Noto_Sans_JP({
@@ -15,7 +14,7 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
 	title: "VESWERK｜吉祥寺・武蔵野のホームページ制作",
 	description:
-		"吉祥寺・武蔵野エリアを中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。デザインだけでなく、検索対策・スマートフォン対応・公開後の保守まで、ひとりで一貫して手がけています。",
+		"吉祥寺・武蔵野エリアを中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。デザインだけでなく、検索対策・スマートフォン対応・公開後の保守まで、一貫して手がけています。",
 	verification: {
 		google: "kUfap1hsACbxei7rB2cPalQyMhwAtLt9NJFI3YEnSIQ",
 	},
@@ -26,7 +25,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 		<html lang="ja" className={`${notoSansJP.variable} h-full antialiased`}>
 			<body className="flex min-h-full flex-col">
 				<IntroLoader />
-				<ParticleBackground />
 				<Header />
 				<main className="flex-1">{children}</main>
 				<Footer />
