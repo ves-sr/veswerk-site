@@ -164,7 +164,7 @@ export default function WhyVeswerkPage() {
 			<div className="mx-auto mt-24 max-w-6xl px-6 sm:mt-32">
 				<div className="border-t border-border pt-16 text-center">
 					<h2 className="subsection-heading">
-						この考え方に共感いただけたら、お気軽にご相談ください。
+						気になることがあれば、お気軽にご相談ください。
 					</h2>
 					<a
 						href="/contact"
