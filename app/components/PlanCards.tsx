@@ -2,34 +2,48 @@ import { plan } from "../content/plans";
 
 export default function PlanCards() {
 	return (
-		<div className="mt-14 max-w-2xl">
-			<span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-semibold tracking-wide text-white">
-				{plan.campaignLabel}
-			</span>
-			<p className="mt-5 text-sm text-brown">
-				{plan.regularPriceLabel}：<span className="line-through decoration-brown-light">{plan.regularPrice}</span>
-			</p>
-
-			<div className="mt-5 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+		<div className="mt-14">
+			<div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_22rem] md:gap-16">
 				<div>
-					<p className="text-sm font-medium tracking-wide text-brown-light">{plan.priceLabel}</p>
-					<p className="mt-2 text-5xl font-semibold text-ink sm:text-6xl">{plan.price}</p>
+					<span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-semibold tracking-wide text-white">
+						{plan.campaignLabel}
+					</span>
+					<p className="mt-5 text-sm text-brown">
+						{plan.regularPriceLabel}：
+						<span className="line-through decoration-brown-light">{plan.regularPrice}</span>
+					</p>
+
+					<p className="mt-8 text-sm font-medium tracking-wide text-brown-light">{plan.priceLabel}</p>
+					<p className="mt-2 text-6xl font-semibold text-ink sm:text-7xl">{plan.price}</p>
+
+					<p className="mt-6 max-w-md text-sm leading-relaxed text-brown-light">{plan.campaignNote}</p>
+
+					<a
+						href="/contact"
+						className="btn-sweep mt-10 inline-block rounded-full bg-accent px-8 py-3 text-sm font-medium text-white"
+					>
+						相談する
+					</a>
 				</div>
-				<div className="sm:text-right">
-					<p className="text-lg font-semibold text-ink">{plan.maintenance}</p>
-					<p className="mt-1 text-sm text-brown-light">{plan.maintenanceNote}</p>
+
+				<div className="h-fit rounded-3xl border border-white/60 bg-white/45 p-7 shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md md:mt-2">
+					<p className="text-xs font-medium tracking-[0.2em] text-brown-light">MAINTENANCE</p>
+					<p className="mt-3 text-2xl font-semibold text-ink">{plan.maintenance}</p>
+					<p className="mt-2 text-sm text-brown-light">{plan.maintenanceNote}</p>
 				</div>
 			</div>
 
-			<p className="mt-4 max-w-lg text-sm leading-relaxed text-brown-light">{plan.campaignNote}</p>
+			{/* maintenanceHeading/Leadはcontent/plans.tsではMAINTENANCE価格と隣接しているが、
+			   ここではfeatures一覧の導入文として使うため意図的に離して配置している */}
+			<div className="mt-20 grid gap-8 border-t border-border pt-16 md:grid-cols-[20rem_minmax(0,1fr)] md:gap-16">
+				<div>
+					<p className="text-lg font-semibold text-ink">{plan.maintenanceHeading}</p>
+					<p className="mt-3 text-sm leading-relaxed text-brown">{plan.maintenanceLead}</p>
+				</div>
 
-			<div className="mt-10 border-t border-border pt-10">
-				<p className="text-base font-semibold text-ink">{plan.maintenanceHeading}</p>
-				<p className="mt-2 text-sm leading-relaxed text-brown">{plan.maintenanceLead}</p>
-
-				<ul className="mt-6 flex flex-col gap-4">
+				<ul className="grid gap-x-8 gap-y-7 md:grid-cols-2">
 					{plan.features.map((f) => (
-						<li key={f.title} className="flex items-start gap-2">
+						<li key={f.title} className="flex items-start gap-3">
 							<svg
 								aria-hidden="true"
 								viewBox="0 0 20 20"
@@ -50,13 +64,6 @@ export default function PlanCards() {
 					))}
 				</ul>
 			</div>
-
-			<a
-				href="/contact"
-				className="btn-sweep mt-10 inline-block rounded-full bg-accent px-8 py-3 text-sm font-medium text-white"
-			>
-				相談する
-			</a>
 		</div>
 	);
 }
