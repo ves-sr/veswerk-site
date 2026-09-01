@@ -38,15 +38,23 @@ export default function WorksPage() {
 						<Reveal key={sample.slug}>
 							<div className={`flex flex-col items-center gap-10 sm:gap-14 lg:flex-row lg:gap-20 ${i % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
 								<div className="w-full lg:w-1/2">
-									<div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] sm:rounded-[2.5rem]">
-										<Image
-											src={sample.image}
-											alt={sample.imageAlt}
-											fill
-											sizes="(min-width: 1024px) 42vw, 90vw"
-											className="object-cover"
-										/>
-									</div>
+									<a
+										href={sample.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="group block"
+										aria-label={`${sample.name}の制作サンプルサイトを新しいタブで見る`}
+									>
+										<div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] sm:rounded-[2.5rem]">
+											<Image
+												src={sample.image}
+												alt={sample.imageAlt}
+												fill
+												sizes="(min-width: 1024px) 42vw, 90vw"
+												className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+											/>
+										</div>
+									</a>
 								</div>
 								<div className="w-full lg:w-1/2">
 									<span className="hero-heading text-4xl font-light text-border sm:text-5xl" aria-hidden="true">

@@ -13,6 +13,7 @@ export type WorkSample = {
 	tags: string[];
 	image: typeof thumbCafeD;
 	imageAlt: string;
+	url: string;
 };
 
 export const workSamples: WorkSample[] = [
@@ -25,6 +26,7 @@ export const workSamples: WorkSample[] = [
 		tags: ["地域密着型事業者", "多ページ構成", "施工事例訴求"],
 		image: thumbPlumbingB,
 		imageAlt: "緑豊かな渓流の写真を背景に「地元の水道屋だから、安心。」という見出しを掲げたトップページ",
+		url: "https://plumbing-sample-b.pages.dev/",
 	},
 	{
 		slug: "compass-academy",
@@ -35,6 +37,7 @@ export const workSamples: WorkSample[] = [
 		tags: ["学習塾・予備校", "コース紹介", "生徒の声"],
 		image: thumbCramSchoolA,
 		imageAlt: "タブレットで学習する生徒の写真を背景に「『結果』にこだわる、英語専門塾という選択。」という見出しを掲げたトップページ",
+		url: "https://cram-school-sample-a.pages.dev/",
 	},
 	{
 		slug: "petit-ciel",
@@ -45,6 +48,7 @@ export const workSamples: WorkSample[] = [
 		tags: ["個人経営カフェ", "多言語対応", "ギャラリー訴求"],
 		image: thumbCafeE,
 		imageAlt: "レモンと緑を使った明るい料理写真の上に、英字コピーを添えたカードを重ねたトップページ",
+		url: "https://cafe-sample-e.pages.dev/",
 	},
 	{
 		slug: "mori-coffee-stand",
@@ -55,6 +59,7 @@ export const workSamples: WorkSample[] = [
 		tags: ["個人経営カフェ", "地図・経路案内", "SNS連携"],
 		image: thumbCafeF,
 		imageAlt: "観葉植物とラテアートのカップを配した、木の質感を活かした温かみのあるトップページ",
+		url: "https://cafe-sample-f.pages.dev/",
 	},
 	{
 		slug: "roastery-cafe",
@@ -65,5 +70,6 @@ export const workSamples: WorkSample[] = [
 		tags: ["個人経営カフェ", "ダークトーン", "予約導線"],
 		image: thumbCafeD,
 		imageAlt: "夕暮れの光が差し込む木目調の店内を背景に、大きな見出しコピーを重ねたダークトーンのトップページ",
+		url: "https://cafe-sample-d.pages.dev/",
 	},
 ];
