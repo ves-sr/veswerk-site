@@ -3,6 +3,8 @@ import Reveal from "./Reveal";
 export type NumberedFeatureItem = {
 	no: string;
 	title?: string;
+	/** 特定の見出しだけ改行を抑えたい場合などに、個別クラスを追加するための任意フィールド */
+	titleClassName?: string;
 	titleEn?: string;
 	desc: string;
 };
@@ -38,7 +40,9 @@ export default function NumberedFeature({ items, verticalLabel }: NumberedFeatur
 							<span className="hero-heading text-4xl font-light text-border sm:text-5xl" aria-hidden="true">
 								{item.no}
 							</span>
-							{item.title && <h3 className="subsection-heading mt-4">{item.title}</h3>}
+							{item.title && (
+								<h3 className={`subsection-heading mt-4 ${item.titleClassName ?? ""}`}>{item.title}</h3>
+							)}
 							{item.titleEn && <p className={`eyebrow ${item.title ? "mt-2" : "mt-4"}`}>{item.titleEn}</p>}
 							<p className="section-body mt-4 text-sm leading-[1.9]">{item.desc}</p>
 						</div>

@@ -19,6 +19,8 @@ const problemItems = heroProblems.map((p, i) => ({
 const serviceItems = services.map((s) => ({
 	no: s.no,
 	title: s.title,
+	// 「検索から見つけてもらう」はlg以上のカラム幅では2行に折り返されるため、この項目のみ1行表示に調整する
+	titleClassName: s.no === "03" ? "lg:whitespace-nowrap lg:text-[1.125rem]!" : undefined,
 	titleEn: s.titleEn,
 	desc: s.desc,
 }));
