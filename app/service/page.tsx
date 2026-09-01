@@ -75,7 +75,7 @@ export default function ServicePage() {
 			<section className="border-t border-border bg-bg-sub py-24 sm:py-28">
 				<Reveal>
 					<div className="mx-auto max-w-2xl px-6 text-center">
-						<h2 className="section-heading">{serviceClosing.heading}</h2>
+						<h2 className="section-heading sm:whitespace-nowrap sm:text-[1.75rem]!">{serviceClosing.heading}</h2>
 						<p className="section-body mt-4 text-sm sm:text-base">{serviceClosing.body}</p>
 						<a href="/contact" className="btn-fill mt-8 inline-flex">
 							無料で相談する
