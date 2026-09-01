@@ -1,86 +1,88 @@
 import type { Metadata } from "next";
-import NumberedTimeline from "../components/NumberedTimeline";
-import { services } from "../content/services";
+import SectionHeading from "../components/SectionHeading";
+import NumberedFeature from "../components/NumberedFeature";
+import Reveal from "../components/Reveal";
 import { serviceLeads, serviceClosing } from "../content/service";
-import {
-	OrganizeIllustration,
-	DesignIllustration,
-	SearchIllustration,
-	SupportIllustration,
-} from "../components/ServiceIllustrations";
-
-export const metadata: Metadata = {
-	title: "事業紹介｜VESWERK",
-	description:
-		"吉祥寺・武蔵野エリアを中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。デザイン・SEO・スマートフォン対応から公開後の保守まで、一貫して対応しています。",
-};
-
-const icons = [OrganizeIllustration, DesignIllustration, SearchIllustration, SupportIllustration];
-
-const servicesWithIcons = services.map((item, i) => {
-	const Icon = icons[i];
-	return { ...item, icon: <Icon className="h-9 w-9" /> };
-});
+import { services } from "../content/services";
 
 const [about, ...situations] = serviceLeads;
 
+const serviceItems = services.map((s) => ({
+	no: s.no,
+	title: s.title,
+	titleEn: s.titleEn,
+	desc: s.desc,
+}));
+
+const pageTitle = "事業紹介";
+const pageDescription =
+	"吉祥寺・武蔵野エリアを中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。デザイン・SEO・スマートフォン対応から公開後の保守まで、一貫して対応しています。";
+
+export const metadata: Metadata = {
+	title: pageTitle,
+	description: pageDescription,
+	alternates: { canonical: "/service" },
+	openGraph: { title: `${pageTitle}｜VESWERK`, description: pageDescription, url: "/service", images: ["/opengraph-image.jpg"] },
+	twitter: { title: `${pageTitle}｜VESWERK`, description: pageDescription },
+};
+
 export default function ServicePage() {
 	return (
-		<section className="py-24">
-			<div className="mx-auto max-w-6xl px-6">
-				<p className="eyebrow">事業紹介</p>
-				<h1 className="section-heading max-w-2xl">
-					ホームページを作る。
-					<br />
-					その先まで考える。
-				</h1>
-				<div className="mt-6 flex max-w-xl flex-col gap-3">
-					{about.body.map((p) => (
-						<p key={p} className="text-brown">
-							{p}
-						</p>
-					))}
+		<>
+			<section className="relative pt-28 pb-16 sm:pt-32 lg:pt-40">
+				<div className="mx-auto max-w-6xl px-6">
+					<p className="eyebrow">事業紹介</p>
+					<h1 className="page-heading mt-4 max-w-xl">
+						ホームページを作る。
+						<br />
+						その先まで考える。
+					</h1>
+					<div className="section-body mt-6 flex max-w-lg flex-col gap-4 text-sm sm:text-base">
+						{about.body.map((p, i) => (
+							<p key={i}>{p}</p>
+						))}
+					</div>
 				</div>
-			</div>
+			</section>
 
-			<div className="mx-auto mt-24 max-w-6xl border-t border-border px-6 pt-24">
-				<div className="grid gap-12 sm:grid-cols-3 sm:gap-8">
-					{situations.map((lead) => (
-						<div key={lead.heading}>
-							<span className="text-xs font-semibold tracking-[0.25em] text-brown-light">
-								{lead.label}
-							</span>
-							<h2 className="subsection-heading mt-3">{lead.heading}</h2>
-							<div className="mt-3 flex flex-col gap-2">
-								{lead.body.map((p) => (
-									<p key={p} className="text-sm leading-relaxed text-brown">
-										{p}
-									</p>
-								))}
-							</div>
-						</div>
-					))}
+			<section className="border-t border-border py-20 sm:py-24">
+				<div className="mx-auto max-w-6xl px-6">
+					<div className="grid gap-12 sm:grid-cols-3 sm:gap-8">
+						{situations.map((lead, i) => (
+							<Reveal key={lead.label} delay={i * 80}>
+								<p className="eyebrow">{lead.label}</p>
+								<h2 className="subsection-heading mt-3">{lead.heading}</h2>
+								<div className="section-body mt-3 flex flex-col gap-3 text-sm">
+									{lead.body.map((p, j) => (
+										<p key={j}>{p}</p>
+									))}
+								</div>
+							</Reveal>
+						))}
+					</div>
 				</div>
-			</div>
+			</section>
 
-			<div className="mx-auto mt-24 max-w-6xl border-t border-border px-6 pt-24">
-				<p className="eyebrow">具体的にできること</p>
-				<h2 className="subsection-heading">4つのステップで進めます</h2>
-				<NumberedTimeline items={servicesWithIcons} />
-			</div>
-
-			<div className="mx-auto mt-24 max-w-6xl px-6">
-				<div className="border-t border-border pt-16 text-center">
-					<h2 className="subsection-heading">{serviceClosing.heading}</h2>
-					<p className="mt-3 text-brown">{serviceClosing.body}</p>
-					<a
-						href="/contact"
-						className="btn-sweep mt-8 inline-block rounded-full bg-accent px-7 py-3 text-sm font-medium text-white"
-					>
-						無料で相談する
-					</a>
+			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
+				<div className="mx-auto max-w-6xl px-6">
+					<SectionHeading en="WHAT WE DO" ja="4つのステップで進めます" />
+					<div className="mt-16">
+						<NumberedFeature items={serviceItems} verticalLabel="制作の流れ" />
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+
+			<section className="border-t border-border bg-bg-sub py-24 sm:py-28">
+				<Reveal>
+					<div className="mx-auto max-w-2xl px-6 text-center">
+						<h2 className="section-heading">{serviceClosing.heading}</h2>
+						<p className="section-body mt-4 text-sm sm:text-base">{serviceClosing.body}</p>
+						<a href="/contact" className="btn-fill mt-8 inline-flex">
+							無料で相談する
+						</a>
+					</div>
+				</Reveal>
+			</section>
+		</>
 	);
 }

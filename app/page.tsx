@@ -1,90 +1,128 @@
-import ProblemCarousel from "./components/ProblemCarousel";
+import Hero from "./components/Hero";
+import SectionHeading from "./components/SectionHeading";
+import NumberedFeature from "./components/NumberedFeature";
+import ImageTextRow from "./components/ImageTextRow";
+import WorksPreview from "./components/WorksPreview";
 import HomePlanTeaser from "./components/HomePlanTeaser";
+import FaqAccordion from "./components/FaqAccordion";
+import Reveal from "./components/Reveal";
 import { heroProblems } from "./content/home";
-import {
-	OldSiteIllustration,
-	ConfusedIllustration,
-	DIYIllustration,
-	SearchWorryIllustration,
-	CostIllustration,
-	ResponsiveIllustration,
-	MaintainIllustration,
-} from "./components/ProblemIllustrations";
+import { services } from "./content/services";
+import workCode from "./assets/images/content/work-code.jpg";
 
-const problemIcons = [
-	OldSiteIllustration,
-	ConfusedIllustration,
-	DIYIllustration,
-	SearchWorryIllustration,
-	CostIllustration,
-	ResponsiveIllustration,
-	MaintainIllustration,
-];
+const problemItems = heroProblems.map((p, i) => ({
+	no: String(i + 1).padStart(2, "0"),
+	titleEn: p.label,
+	desc: p.text,
+}));
 
-const problemsWithIcons = heroProblems.map((item, i) => {
-	const Icon = problemIcons[i];
-	return { ...item, icon: <Icon className="h-6 w-6" /> };
-});
+const serviceItems = services.map((s) => ({
+	no: s.no,
+	title: s.title,
+	titleEn: s.titleEn,
+	desc: s.desc,
+}));
 
 export default function Home() {
 	return (
 		<>
-			<section className="relative pt-20 pb-28 sm:pt-28">
+			<Hero />
+
+			{/* 顧客の悩み／共感 */}
+			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					<p className="eyebrow">HOMEPAGE PRODUCTION</p>
-					<h1 className="section-heading section-heading--hero max-w-3xl">
-						<span className="block text-lg font-medium text-brown sm:text-xl">
-							吉祥寺・武蔵野で、
-						</span>
-						ホームページに、
-						<br />
-						お困りの方へ。
-					</h1>
-					<p className="mt-8 max-w-md text-brown">
-						そんな悩みを、VESWERKが解決します。
-					</p>
+					<SectionHeading en="COMMON CONCERNS" ja="こんなお悩み、ありませんか。" />
+					<div className="mt-16">
+						<NumberedFeature items={problemItems} verticalLabel="お悩み" />
+					</div>
 				</div>
+			</section>
 
-				<div className="mt-16">
-					<ProblemCarousel items={problemsWithIcons} />
-				</div>
-
+			{/* VESWERKが提供する価値 */}
+			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					<p className="mt-16 max-w-xl text-brown">
-						吉祥寺・武蔵野を中心に、業種や規模を問わず、必要なものに絞ったホームページを制作。
-						デザインだけでなく、検索で見つけてもらうための対策や、スマートフォンでの使いやすさ、
-						公開後の保守まで考えて制作します。
-					</p>
+					<SectionHeading en="WHAT WE DO" ja="VESWERKが提供する価値。" />
+					<div className="mt-16">
+						<NumberedFeature items={serviceItems} verticalLabel="提供価値" />
+					</div>
+				</div>
+			</section>
 
-					<div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
-						<a
-							href="/contact"
-							className="group inline-flex items-center gap-2 text-sm font-medium text-ink"
-						>
-							<span className="border-b border-accent pb-0.5">無料で相談する</span>
-							<span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-						</a>
-						<a
-							href="/works"
-							className="group inline-flex items-center gap-2 text-sm text-brown"
-						>
-							<span className="border-b border-transparent pb-0.5 transition-colors group-hover:border-brown">
-								制作サンプルを見る
+			{/* VESWERKという考え方 */}
+			<section className="border-t border-border bg-bg-sub py-24 sm:py-28 lg:py-32">
+				<div className="mx-auto max-w-6xl px-6">
+					<SectionHeading en="OUR PHILOSOPHY" ja="VESWERKという考え方。" />
+					<div className="mt-16">
+						<ImageTextRow
+							image={workCode}
+							imageAlt="コードが表示されたノートパソコン"
+							eyebrow="ENGINEERING EXPERIENCE"
+							heading="目的から、デザインする。"
+							body={[
+								"何を伝えたいのか。誰に来てほしいのか。見た目をつくる前に、その目的を整理することから始めます。ホームページは完成させることが目的ではなく、目的を達成するための手段だと考えています。",
+								"普段は東証プライム上場企業グループで自社開発に携わる、現役のソフトウェアエンジニアです。設計・開発・運用・保守まで一連の工程に日々携わっている経験を、Web制作にも活かしています。",
+							]}
+							cta={{ label: "VESWERKのこだわりを見る", href: "/why-veswerk" }}
+						/>
+					</div>
+					<div className="mt-14 flex flex-wrap justify-center gap-3">
+						{["東証プライム上場企業グループ", "自社開発", "現役ソフトウェアエンジニア"].map((badge) => (
+							<span
+								key={badge}
+								className="rounded-full border border-border bg-bg px-4 py-2 text-xs font-medium tracking-wide text-text"
+							>
+								{badge}
 							</span>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* 制作実績 */}
+			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
+				<div className="mx-auto max-w-6xl px-6">
+					<SectionHeading en="SAMPLE WORKS" ja="制作サンプル。" />
+					<WorksPreview />
+					<div className="mt-14 flex justify-center">
+						<a href="/works" className="btn-outline">
+							制作サンプルをもっと見る
 						</a>
 					</div>
 				</div>
 			</section>
 
-			<section id="plan" className="border-t border-border py-24">
+			{/* 料金 */}
+			<section id="plan" className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					<p className="eyebrow">ご利用料金</p>
-					<h2 className="section-heading">
-						費用も手間も、かけすぎない。
-					</h2>
-
+					<SectionHeading en="FEE" ja="費用も手間も、かけすぎない。" />
 					<HomePlanTeaser />
 				</div>
+			</section>
+
+			{/* FAQ */}
+			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
+				<div className="mx-auto max-w-6xl px-6">
+					<SectionHeading en="FAQ" ja="よくあるご質問。" />
+					<div className="mt-16">
+						<FaqAccordion />
+					</div>
+				</div>
+			</section>
+
+			{/* 締めCTA */}
+			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
+				<Reveal>
+					<div className="mx-auto max-w-2xl px-6 text-center">
+						<h2 className="section-heading">
+							気になることがあれば、
+							<br />
+							お気軽にご相談ください。
+						</h2>
+						<a href="/contact" className="btn-fill mt-10 inline-flex">
+							無料で相談する
+						</a>
+					</div>
+				</Reveal>
 			</section>
 		</>
 	);
