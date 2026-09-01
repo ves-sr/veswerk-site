@@ -111,18 +111,20 @@ export default function WhyVeswerkPage() {
 				</div>
 			</section>
 
-			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
+			<section className="border-t border-border py-28 sm:py-32 lg:py-40">
 				<Reveal>
-					<div className="mx-auto max-w-2xl px-6 text-center">
+					<div className="mx-auto max-w-3xl px-6 text-center">
 						<p className="eyebrow">VESWERK&apos;S PHILOSOPHY</p>
-						<h2 className="section-heading mt-4">
-							ホームページは、ただ存在するだけでは意味がない。
-							<br />
-							お店を知ってもらい、魅力を伝え、初めて訪れる人の不安をなくし、
-							<br />
-							予約や問い合わせにつなげ、長く使ってもらう。
+						<h2
+							className="mt-8 text-[1.25rem] leading-[1.9] font-medium tracking-[0.01em] text-ink sm:mt-10 sm:text-2xl sm:leading-[2.05] lg:text-[1.75rem] lg:leading-[2.15]"
+							style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+						>
+							<span className="block">ホームページは、ただ存在するだけでは意味がない。</span>
+							<span className="mt-6 block sm:mt-8">
+								お店を知ってもらい、魅力を伝え、初めて訪れる人の不安をなくし、予約や問い合わせにつなげ、長く使ってもらう。
+							</span>
 						</h2>
-						<p className="section-body mt-6 text-sm sm:text-base">
+						<p className="section-body mt-10 text-sm sm:mt-12 sm:text-base">
 							デザインと技術、そしてお店そのものへの理解を組み合わせて、ホームページをつくっています。
 						</p>
 					</div>
