@@ -1,6 +1,7 @@
 import thumbCafeD from "../assets/images/works/thumb-cafe-d.webp";
 import thumbCafeE from "../assets/images/works/thumb-cafe-e.webp";
 import thumbCafeF from "../assets/images/works/thumb-cafe-f.webp";
+import thumbCramSchoolA from "../assets/images/works/thumb-cram-school-a.webp";
 import thumbPlumbingB from "../assets/images/works/thumb-plumbing-b.webp";
 
 export type WorkSample = {
@@ -26,8 +27,18 @@ export const workSamples: WorkSample[] = [
 		imageAlt: "緑豊かな渓流の写真を背景に「地元の水道屋だから、安心。」という見出しを掲げたトップページ",
 	},
 	{
-		slug: "petit-ciel",
+		slug: "compass-academy",
 		no: "02",
+		category: "CRAM SCHOOL / SAMPLE",
+		name: "COMPASS Academy",
+		concept: "「結果」にこだわる指導姿勢を、実直な情報設計で伝える。",
+		tags: ["学習塾・予備校", "コース紹介", "生徒の声"],
+		image: thumbCramSchoolA,
+		imageAlt: "タブレットで学習する生徒の写真を背景に「『結果』にこだわる、英語専門塾という選択。」という見出しを掲げたトップページ",
+	},
+	{
+		slug: "petit-ciel",
+		no: "03",
 		category: "CAFE / SAMPLE",
 		name: "Petit Ciel",
 		concept: "軽やかな配色と写真で見せる、午後のひとやすみ。",
@@ -37,7 +48,7 @@ export const workSamples: WorkSample[] = [
 	},
 	{
 		slug: "mori-coffee-stand",
-		no: "03",
+		no: "04",
 		category: "CAFE / SAMPLE",
 		name: "MORI coffee stand",
 		concept: "木の匂いと緑に包まれた、街のコーヒースタンド。",
@@ -47,7 +58,7 @@ export const workSamples: WorkSample[] = [
 	},
 	{
 		slug: "roastery-cafe",
-		no: "04",
+		no: "05",
 		category: "CAFE / SAMPLE",
 		name: "ROASTERY & CAFE",
 		concept: "自家焙煎の香りと余白を、静かな一杯とともに。",
