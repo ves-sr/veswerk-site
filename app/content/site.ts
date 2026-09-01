@@ -2,6 +2,7 @@
 // 案件ごとに使い回すテンプレートのため、将来的にはここを差し替えるだけで済む構成にしていく。
 
 export const siteName = "VESWERK";
+export const siteUrl = "https://veswerk-site.pages.dev";
 // 特定商取引法上の正式な屋号。著作権表記やプライバシーポリシー等、法的な文脈ではこちらを使う
 export const legalName = "N-Tech";
 

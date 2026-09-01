@@ -1,332 +1,241 @@
 @import "tailwindcss";
 
+/*
+ * デザイントークン
+ * 参考サイト（タニカのあまざけ）の配色構造 = 白＋オフホワイト＋
+ * モノトーンのグレーのみで、装飾色をほとんど使わない落ち着いたトーンを
+ * VESWERK用の値で再構築したもの。値そのものは参考サイトから流用せず、
+ * 新規に決定している。
+ */
 :root {
-	--cream: #faf6ef;
-	--cream-deep: #f2ead9;
-	--ink: #2e2822;
-	--brown: #6b5a48;
-	--brown-light: #a98a6c;
-	--accent: #c98a4b;
-	--border: #e6ddcd;
+	--bg: #ffffff;
+	--bg-sub: #f4f1ea;
+	--ink: #33312d;
+	--text: #5c5a55;
+	--text-soft: #928f87;
+	--border: #e6e2d8;
+	--accent: #6b5f47;
+	--accent-soft: #ede8dc;
+	--white: #ffffff;
 }
 
 @theme inline {
-	--color-cream: var(--cream);
-	--color-cream-deep: var(--cream-deep);
+	--color-bg: var(--bg);
+	--color-bg-sub: var(--bg-sub);
 	--color-ink: var(--ink);
-	--color-brown: var(--brown);
-	--color-brown-light: var(--brown-light);
-	--color-accent: var(--accent);
+	--color-text: var(--text);
+	--color-text-soft: var(--text-soft);
 	--color-border: var(--border);
-	--font-sans: var(--font-noto-sans-jp);
+	--color-accent: var(--accent);
+	--color-accent-soft: var(--accent-soft);
+	--font-sans: var(--font-zen-kaku);
 }
 
 body {
-	background: var(--cream);
-	color: var(--ink);
+	background: var(--bg);
+	color: var(--text);
 	font-family: var(--font-sans), "Hiragino Sans", sans-serif;
-	line-height: 1.85;
+	line-height: 1.9;
 	font-feature-settings: "palt";
+	-webkit-font-smoothing: antialiased;
 }
 
 /*
  * タイポグラフィスケール
- * 「見出し＋カード」の反復で情報が均質化しないよう、H1/H2/H3/eyebrowに
- * それぞれ異なる役割と視覚的な重みを与える。太さで主張するのではなく、
- * サイズ差・字間・余白で階層を作る（section-headingの太字700→600に
- * 落とし、代わりにサイズのレンジを広げて階層をはっきりさせた）。
+ * 参考サイトの「大きな日本語見出し＋小さな英字ラベル」の組み合わせと、
+ * 画面幅に応じて自然にスケールする構成をclamp()で再現する。
  */
 
-/* eyebrow: ページの文脈を示す英字ラベル。装飾ではなく「今どの階層にいるか」を示す道標として使う */
+/* eyebrow: セクションの英字ラベル。参考サイトのsectionheading__en相当 */
 .eyebrow {
-	font-size: 0.6875rem;
+	display: block;
+	font-size: 0.8125rem;
 	font-weight: 500;
-	letter-spacing: 0.32em;
-	color: var(--brown-light);
-	margin-bottom: 0.6rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--text-soft);
 }
 
-/* H1: ページの主見出し。ページごとに1つだけ */
+/* セクション見出し（日本語）。参考サイトのsectionheading__ja相当。中央揃えで下にeyebrowを添える運用を基本形とする */
 .section-heading {
-	font-size: clamp(1.875rem, 4vw, 2.75rem);
-	font-weight: 600;
-	letter-spacing: 0.01em;
+	font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.1rem);
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 1.35;
+	color: var(--ink);
+}
+
+/* Hero専用の大見出し */
+.hero-heading {
+	font-size: clamp(2rem, 1.3rem + 3.2vw, 3.4rem);
+	font-weight: 500;
+	letter-spacing: 0;
 	line-height: 1.4;
 	color: var(--ink);
 }
 
-/* Homeのヒーローのみ、より大きく・より広い行間で「静かな主張」を持たせる */
-.section-heading--hero {
-	font-size: clamp(2rem, 5.2vw, 3.25rem);
-	font-weight: 600;
-	letter-spacing: 0.01em;
-	line-height: 1.45;
+/* ページヘッダー（下層ページ用）の見出し */
+.page-heading {
+	font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.6rem);
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 1.4;
+	color: var(--ink);
 }
 
-@media (max-width: 639px) {
-	.section-heading--hero {
-		font-size: 1.85rem;
-	}
-}
-
-/* H2: セクション内の中見出し。H1より明確に小さく、字間を締めて「本文に近い」トーンにする */
 .subsection-heading {
-	font-size: clamp(1.25rem, 2.2vw, 1.5rem);
-	font-weight: 600;
+	font-size: clamp(1.15rem, 1rem + 0.7vw, 1.4rem);
+	font-weight: 500;
 	letter-spacing: 0;
 	line-height: 1.6;
 	color: var(--ink);
 }
 
-/* ボタンのホバースイープ：白が左から右に広がり、文字色がアクセントカラーに反転する */
-.btn-sweep {
-	position: relative;
-	z-index: 0;
-	overflow: hidden;
-	transition: color 0.5s ease;
+.section-body {
+	color: var(--text);
+	line-height: 1.95;
 }
 
-.btn-sweep::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	z-index: -1;
-	background: #fff;
-	transform: scaleX(0);
-	transform-origin: left;
-	transition: transform 0.5s ease;
+/* ボタン：参考サイトのpill形状ボタンを踏襲。ホバーで塗りが濃色⇄アウトラインに反転する */
+.btn-fill {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	border-radius: 999px;
+	background: var(--ink);
+	color: var(--white);
+	padding: 0.95rem 2.1rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.03em;
+	transition: background-color 0.35s ease, color 0.35s ease, transform 0.35s ease;
 }
 
-.btn-sweep:hover,
-.btn-sweep:focus-visible {
-	color: var(--accent);
+.btn-fill:hover,
+.btn-fill:focus-visible {
+	background: var(--accent);
 }
 
-.btn-sweep:hover::before,
-.btn-sweep:focus-visible::before {
-	transform: scaleX(1);
+.btn-outline {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	border-radius: 999px;
+	border: 1px solid var(--border);
+	background: transparent;
+	color: var(--ink);
+	padding: 0.9rem 2rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.03em;
+	transition: border-color 0.35s ease, background-color 0.35s ease;
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+	border-color: var(--ink);
+	background: var(--bg-sub);
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.btn-sweep,
-	.btn-sweep::before {
+	.btn-fill,
+	.btn-outline {
 		transition: none;
 	}
 }
 
 /*
- * イントロローディング
- * ロゴが静かにフェードイン→少し遅れてコピーが浮かび上がる→細いラインが
- * 左から右へ流れる→短い余韻の後、画面全体がゆっくりフェードアウトして
- * Homeへ溶け込む。ダーク背景ではなくHomeと同じcream基調にすることで、
- * 切り替わりの瞬間に「別の画面に飛んだ」印象を与えない。
+ * ドットパターン背景
+ * 参考サイトのHero/Footerに使われている、丸い水玉を等間隔グリッドで
+ * 敷き詰めた背景装飾。radial-gradientの反復で軽量に再現する。
  */
-.intro-loader {
-	position: fixed;
-	inset: 0;
-	z-index: 200;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-	background: var(--cream);
-	opacity: 1;
-	transition: opacity 0.9s ease;
-}
-
-.intro-loader[data-exiting="true"] {
-	opacity: 0;
-	pointer-events: none;
-}
-
-.intro-loader__content {
-	position: relative;
-	z-index: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 1.25rem;
-	padding: 0 1.5rem;
-	text-align: center;
-}
-
-.intro-loader__mark {
-	opacity: 0;
-	transform: scale(0.9);
-	transition:
-		opacity 0.9s ease,
-		transform 0.9s ease;
-}
-
-.intro-loader__mark[data-mounted="true"] {
-	opacity: 1;
-	transform: scale(1);
+.dot-pattern {
+	background-image: radial-gradient(#d3ccb9 2px, transparent 2px);
+	background-size: 22px 22px;
 }
 
 /*
- * ロゴのPNGファイルは256x256のキャンバスに対し、実際のマーク部分は
- * 中央のごく一部（幅約47%・高さ約39%）にしか描かれていない
- * （ロゴファイル自体は変更しない方針のため、表示側で拡大して余白を相殺する）。
+ * スクロールリビール
+ * 要素がビューポートに入ったら、ふわっと下から浮かび上がる。
+ * 参考サイトの控えめなfade/slide演出を踏襲し、過度な動きにはしない。
  */
-.intro-loader__mark img {
-	transform: scale(2.4);
-}
-
-.intro-loader__copy {
-	margin: 0;
-	color: var(--ink);
-	font-weight: 400;
-	font-size: clamp(1.125rem, 1.5vw + 0.75rem, 2.25rem);
-	letter-spacing: 0.14em;
+.reveal {
 	opacity: 0;
-	transform: translateY(16px);
-	transition:
-		opacity 0.8s ease 0.35s,
-		transform 0.8s ease 0.35s;
+	transform: translateY(28px);
+	transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.intro-loader__copy[data-mounted="true"] {
+.reveal[data-visible="true"] {
 	opacity: 1;
 	transform: translateY(0);
 }
 
-.intro-loader__lines {
-	position: absolute;
-	inset: 0;
-	z-index: 0;
-}
-
-.intro-loader__line {
-	position: absolute;
-	left: 0;
-	width: 42%;
-	height: 1.5px;
-	background: linear-gradient(
-		90deg,
-		transparent 0%,
-		var(--accent) 40%,
-		var(--accent) 60%,
-		transparent 100%
-	);
-	opacity: 0;
-	transform: translateX(-100%);
-}
-
-.intro-loader__lines[data-mounted="true"] .intro-loader__line--1 {
-	top: 22%;
-	animation: intro-line-flow 3.2s ease-in-out 0.15s 1 both;
-}
-
-.intro-loader__lines[data-mounted="true"] .intro-loader__line--2 {
-	top: 78%;
-	animation: intro-line-flow 3.6s ease-in-out 0.55s 1 both;
-}
-
-.intro-loader__lines[data-mounted="true"] .intro-loader__line--3 {
-	top: 88%;
-	animation: intro-line-flow 3.4s ease-in-out 0.95s 1 both;
-}
-
-@keyframes intro-line-flow {
-	0% {
-		opacity: 0;
-		transform: translateX(-100%);
-	}
-	20% {
-		opacity: 0.85;
-	}
-	50% {
-		opacity: 0.85;
-	}
-	85% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
-		transform: translateX(250%);
-	}
-}
-
-@media (max-width: 639px) {
-	.intro-loader__mark img {
-		width: 56px;
-		height: 56px;
-	}
-
-	.intro-loader__line {
-		width: 60%;
-	}
-}
-
 @media (prefers-reduced-motion: reduce) {
-	.intro-loader {
-		transition: opacity 0.3s ease;
-	}
-
-	.intro-loader__mark,
-	.intro-loader__copy {
-		transition: opacity 0.3s ease;
+	.reveal {
+		opacity: 1;
 		transform: none;
-	}
-
-	.intro-loader__line {
-		display: none;
+		transition: none;
 	}
 }
 
 /*
- * 悩みカルーセル（Home）
- * 常時右から左へ流れ続けるマーキー形式。アイテム配列をJS側で2セット
- * 連結して描画し、CSSアニメーションで「1セット分の幅」だけ左へ移動して
- * 0%に戻す、を繰り返すことで、7→1の継ぎ目も途切れず流れて見える
- * （実写のトラックは2周目に入った瞬間、見た目が1周目と同じ地点に
- * 戻っているため、ユーザーには無限ループに見える）。
+ * モバイルメニュー
+ * ハンバーガー→X変形、フルスクリーンoverlayのフェード＋項目のstagger表示。
  */
-.problem-carousel-viewport {
-	overflow: hidden;
+.hamburger-line {
+	position: absolute;
+	left: 50%;
+	width: 22px;
+	height: 1.5px;
+	background: currentColor;
+	transform: translateX(-50%);
+	transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.3s ease, top 0.45s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.problem-carousel-track {
-	display: flex;
-	gap: 1rem;
-	width: max-content;
-	animation: problem-marquee 42s linear infinite;
+.mobile-menu-overlay {
+	transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
 }
 
-.problem-carousel-track[data-paused="true"] {
-	animation-play-state: paused;
+.mobile-menu-item {
+	opacity: 0;
+	transform: translateY(14px);
+	transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes problem-marquee {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(-50%);
-	}
+.mobile-menu-overlay[data-open="true"] .mobile-menu-item {
+	opacity: 1;
+	transform: translateY(0);
 }
 
-.problem-card {
-	width: 78vw;
-	max-width: 19rem;
-}
-
-@media (min-width: 640px) {
-	.problem-card {
-		width: 46vw;
-		max-width: 17rem;
+@media (prefers-reduced-motion: reduce) {
+	.hamburger-line,
+	.mobile-menu-overlay,
+	.mobile-menu-item {
+		transition: none;
 	}
 }
 
-@media (min-width: 1024px) {
-	.problem-card {
-		width: 22vw;
-		max-width: 15.5rem;
+/* Hero下部のscroll indicator */
+@keyframes scrollline {
+	0% {
+		transform: scaleY(0);
+		opacity: 0;
+	}
+	40% {
+		transform: scaleY(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scaleY(0);
+		opacity: 0;
 	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.problem-carousel-track {
+	[class*="animate-[scrollline"] {
 		animation: none;
+		opacity: 0.6;
 	}
 }

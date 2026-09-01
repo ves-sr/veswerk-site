@@ -16,7 +16,7 @@ const inquiryTypes = [
 ];
 
 const inputClass =
-	"w-full rounded-2xl border border-white/60 bg-white/70 px-5 py-3.5 text-ink placeholder:text-brown-light/70 backdrop-blur-sm outline-none transition-colors focus:border-accent";
+	"w-full rounded-2xl border border-border bg-bg px-5 py-3.5 text-ink placeholder:text-text-soft/70 outline-none transition-colors focus:border-accent";
 
 export default function ContactForm() {
 	const [submitted, setSubmitted] = useState(false);
@@ -48,11 +48,9 @@ export default function ContactForm() {
 
 	if (submitted) {
 		return (
-			<div className="rounded-3xl border border-white/60 bg-white/70 p-10 text-center shadow-[0_8px_30px_-12px_rgba(107,90,72,0.35)] backdrop-blur-md">
-				<p className="text-lg font-semibold text-ink">お問い合わせありがとうございます</p>
-				<p className="mt-3 text-brown">
-					内容を確認の上、通常1〜2営業日以内にご返信いたします。
-				</p>
+			<div className="rounded-3xl border border-border bg-bg p-10 text-center">
+				<p className="text-lg font-medium text-ink">お問い合わせありがとうございます</p>
+				<p className="mt-3 text-text">内容を確認の上、通常1〜2営業日以内にご返信いたします。</p>
 			</div>
 		);
 	}
@@ -60,22 +58,22 @@ export default function ContactForm() {
 	return (
 		<form onSubmit={handleSubmit} className="flex flex-col gap-8">
 			<div>
-				<label htmlFor="name" className="mb-2 block font-semibold text-ink">
-					お名前<span className="ml-2 rounded-full bg-accent/10 px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
+				<label htmlFor="name" className="mb-2 block font-medium text-ink">
+					お名前<span className="ml-2 rounded-full bg-accent-soft px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
 				</label>
 				<input id="name" name="name" type="text" required placeholder="山田 太郎" className={inputClass} />
 			</div>
 
 			<div>
-				<label htmlFor="shop" className="mb-2 block font-semibold text-ink">
+				<label htmlFor="shop" className="mb-2 block font-medium text-ink">
 					お店・屋号名
 				</label>
 				<input id="shop" name="shop" type="text" placeholder="例）カフェ○○" className={inputClass} />
 			</div>
 
 			<div>
-				<label htmlFor="email" className="mb-2 block font-semibold text-ink">
-					メールアドレス<span className="ml-2 rounded-full bg-accent/10 px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
+				<label htmlFor="email" className="mb-2 block font-medium text-ink">
+					メールアドレス<span className="ml-2 rounded-full bg-accent-soft px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
 				</label>
 				<input
 					id="email"
@@ -88,29 +86,23 @@ export default function ContactForm() {
 			</div>
 
 			<div>
-				<label htmlFor="phone" className="mb-2 block font-semibold text-ink">
+				<label htmlFor="phone" className="mb-2 block font-medium text-ink">
 					電話番号
 				</label>
 				<input id="phone" name="phone" type="tel" placeholder="例）000-0000-0000" className={inputClass} />
 			</div>
 
 			<fieldset>
-				<legend className="mb-3 font-semibold text-ink">
-					お問い合わせの種類<span className="ml-2 rounded-full bg-accent/10 px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
+				<legend className="mb-3 font-medium text-ink">
+					お問い合わせの種類<span className="ml-2 rounded-full bg-accent-soft px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
 				</legend>
 				<div className="grid gap-3 sm:grid-cols-2">
 					{inquiryTypes.map((type) => (
 						<label
 							key={type}
-							className="flex cursor-pointer items-center gap-3 rounded-2xl border border-white/60 bg-white/70 px-4 py-3 text-sm text-ink backdrop-blur-sm transition-colors has-checked:border-accent has-checked:bg-accent/10"
+							className="flex cursor-pointer items-center gap-3 rounded-2xl border border-border bg-bg px-4 py-3 text-sm text-ink transition-colors has-checked:border-accent has-checked:bg-accent-soft"
 						>
-							<input
-								type="radio"
-								name="inquiryType"
-								value={type}
-								required
-								className="h-4 w-4 accent-[var(--accent)]"
-							/>
+							<input type="radio" name="inquiryType" value={type} required className="h-4 w-4 accent-[var(--accent)]" />
 							{type}
 						</label>
 					))}
@@ -118,8 +110,8 @@ export default function ContactForm() {
 			</fieldset>
 
 			<div>
-				<label htmlFor="message" className="mb-2 block font-semibold text-ink">
-					お問い合わせ内容<span className="ml-2 rounded-full bg-accent/10 px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
+				<label htmlFor="message" className="mb-2 block font-medium text-ink">
+					お問い合わせ内容<span className="ml-2 rounded-full bg-accent-soft px-2 py-0.5 align-middle text-[0.65rem] font-medium text-accent">必須</span>
 				</label>
 				<textarea
 					id="message"
@@ -131,12 +123,8 @@ export default function ContactForm() {
 				/>
 			</div>
 
-			<label className="flex cursor-pointer items-start gap-3 text-sm text-brown">
-				<input
-					type="checkbox"
-					required
-					className="mt-1 h-4 w-4 accent-[var(--accent)]"
-				/>
+			<label className="flex cursor-pointer items-start gap-3 text-sm text-text">
+				<input type="checkbox" required className="mt-1 h-4 w-4 accent-[var(--accent)]" />
 				<span>
 					<a href="/privacy-policy" target="_blank" rel="noopener" className="text-accent underline underline-offset-2">
 						プライバシーポリシー
@@ -155,11 +143,7 @@ export default function ContactForm() {
 				</p>
 			)}
 
-			<button
-				type="submit"
-				disabled={sending}
-				className="btn-sweep self-start rounded-full bg-accent px-10 py-3.5 text-sm font-medium text-white disabled:opacity-60"
-			>
+			<button type="submit" disabled={sending} className="btn-fill self-start disabled:opacity-60">
 				{sending ? "送信中…" : "送信する"}
 			</button>
 		</form>

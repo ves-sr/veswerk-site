@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 
+const pageTitle = "特定商取引法に基づく表記";
+const pageDescription = "特定商取引法に基づく販売業者・お支払い方法・料金・キャンセルポリシーなどの表記です。";
+
 export const metadata: Metadata = {
-	title: "特定商取引法に基づく表記｜VESWERK",
-	description: "特定商取引法に基づく表記。",
+	title: pageTitle,
+	description: pageDescription,
+	alternates: { canonical: "/tokushoho" },
+	openGraph: { title: `${pageTitle}｜VESWERK`, description: pageDescription, url: "/tokushoho", images: ["/opengraph-image.jpg"] },
+	twitter: { title: `${pageTitle}｜VESWERK`, description: pageDescription },
 };
 
 const rows: { label: string; value: React.ReactNode }[] = [
@@ -71,19 +77,17 @@ const rows: { label: string; value: React.ReactNode }[] = [
 
 export default function TokushohoPage() {
 	return (
-		<section className="py-24">
+		<section className="pt-28 pb-24 sm:pt-32">
 			<div className="mx-auto max-w-3xl px-6">
 				<p className="eyebrow">特定商取引法に基づく表記</p>
-				<h1 className="section-heading">LEGAL NOTICE</h1>
-				<p className="mt-6 text-brown">
-					特定商取引法に基づき、以下のとおり表記いたします。
-				</p>
+				<h1 className="page-heading mt-4">LEGAL NOTICE</h1>
+				<p className="section-body mt-6 text-sm sm:text-base">特定商取引法に基づき、以下のとおり表記いたします。</p>
 
-				<div className="mt-10 divide-y divide-border overflow-hidden rounded-3xl border border-white/60 bg-white/55 backdrop-blur-md">
+				<div className="mt-10 divide-y divide-border overflow-hidden rounded-[2rem] border border-border bg-bg-sub">
 					{rows.map((row) => (
 						<div key={row.label} className="grid gap-1 p-6 sm:grid-cols-[10rem_1fr] sm:gap-6">
-							<dt className="text-sm font-semibold text-ink">{row.label}</dt>
-							<dd className="text-sm text-brown">{row.value}</dd>
+							<dt className="text-sm font-medium text-ink">{row.label}</dt>
+							<dd className="text-sm text-text">{row.value}</dd>
 						</div>
 					))}
 				</div>

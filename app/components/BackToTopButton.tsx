@@ -19,7 +19,7 @@ export default function BackToTopButton() {
 			type="button"
 			onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
 			aria-label="ページの先頭へ戻る"
-			className="fixed right-6 bottom-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-accent text-white shadow-[0_8px_24px_-8px_rgba(201,138,75,0.6)] transition-transform hover:-translate-y-0.5"
+			className="fixed right-6 bottom-24 z-30 flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-xs font-medium tracking-wide text-white shadow-[0_10px_28px_-12px_rgba(51,49,45,0.5)] transition-transform hover:-translate-y-0.5 sm:right-10"
 		>
 			<svg
 				aria-hidden="true"
@@ -29,11 +29,12 @@ export default function BackToTopButton() {
 				strokeWidth="2"
 				strokeLinecap="round"
 				strokeLinejoin="round"
-				className="h-5 w-5"
+				className="h-3.5 w-3.5"
 			>
 				<path d="M12 19V5" />
 				<path d="M5 12l7-7 7 7" />
 			</svg>
+			トップに戻る
 		</button>
 	);
 }
