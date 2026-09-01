@@ -81,7 +81,10 @@ export default function WorksPage() {
 				<Reveal>
 					<div className="mx-auto max-w-2xl px-6 text-center">
 						<h2 className="section-heading">自分のお店なら、どうなるだろう。</h2>
-						<div className="section-body mx-auto mt-6 flex max-w-lg flex-col gap-4 text-sm sm:text-base">
+						<div
+							className="section-body mx-auto mt-6 flex max-w-lg flex-col gap-4 text-sm sm:text-base"
+							style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+						>
 							<p>ここでご紹介しているWebサイトは、VESWERKが考えるデザインの一例です。</p>
 							<p>
 								実際のご依頼では、気になるデザインをひとつの方向性として、お店の雰囲気やこだわり、伝えたいことに合わせて内容やデザインを整えていきます。

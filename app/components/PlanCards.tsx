@@ -44,7 +44,7 @@ export default function PlanCards() {
 
 			<div className="mt-20 grid gap-8 border-t border-border pt-16 md:grid-cols-[20rem_minmax(0,1fr)] md:gap-16">
 				<div>
-					<p className="subsection-heading">{plan.maintenanceHeading}</p>
+					<p className="subsection-heading text-balance">{plan.maintenanceHeading}</p>
 					<p className="mt-3 text-sm leading-relaxed text-text">{plan.maintenanceLead}</p>
 				</div>
 
