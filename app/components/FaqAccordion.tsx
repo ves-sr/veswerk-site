@@ -25,7 +25,7 @@ export default function FaqAccordion() {
 								className="flex w-full items-start gap-5 py-6 text-left"
 							>
 								<span className="eyebrow !text-ink shrink-0 text-base">Q{i + 1}</span>
-								<span className="subsection-heading flex-1 !text-base font-medium">{item.q}</span>
+								<span className="subsection-heading min-w-0 flex-1 !text-base font-medium">{item.q}</span>
 								<span
 									aria-hidden="true"
 									className="relative mt-1 h-4 w-4 shrink-0 text-text-soft transition-transform duration-300"

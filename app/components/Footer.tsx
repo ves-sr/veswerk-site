@@ -10,7 +10,7 @@ import logo from "../assets/images/logo.png";
  */
 export default function Footer() {
 	return (
-		<footer className="relative overflow-hidden rounded-t-[2.5rem] bg-bg-sub pt-20 pb-10 sm:rounded-t-[3.5rem]">
+		<footer className="relative overflow-hidden rounded-t-[2.5rem] bg-bg-sub pt-20 pb-24 sm:rounded-t-[3.5rem] lg:pb-28">
 			<DotPattern />
 
 			<div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 text-center">
@@ -18,7 +18,10 @@ export default function Footer() {
 					<Image src={logo} alt="" fill sizes="80px" className="scale-[2.3] object-contain" />
 				</span>
 				<p className="mt-6 text-lg font-medium tracking-wide text-ink">{siteName}</p>
-				<p className="mt-3 max-w-xs text-sm text-text-soft">
+				<p
+					className="mt-3 max-w-xs text-sm text-text-soft"
+					style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+				>
 					吉祥寺・武蔵野を中心に、ホームページを要件定義から保守まで一貫して制作しています。
 				</p>
 

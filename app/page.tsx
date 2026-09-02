@@ -43,7 +43,8 @@ export default function Home() {
 			{/* VESWERKが提供する価値 */}
 			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					<SectionHeading en="WHAT WE DO" ja="VESWERKが提供する価値。" />
+					{/* 320px幅で「価値」が分断されないよう、U+2060(Word Joiner)で単語内改行を防止 */}
+					<SectionHeading en="WHAT WE DO" ja={"VESWERKが提供する価⁠値。"} />
 					<div className="mt-16">
 						<NumberedFeature items={serviceItems} verticalLabel="提供価値" />
 					</div>
@@ -53,7 +54,7 @@ export default function Home() {
 			{/* VESWERKという考え方 */}
 			<section className="border-t border-border bg-bg-sub py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					<SectionHeading en="OUR PHILOSOPHY" ja="VESWERKという考え方。" />
+					<SectionHeading en="OUR PHILOSOPHY" ja={"VESWERKという考え⁠方。"} />
 					<div className="mt-16">
 						<ImageTextRow
 							image={workCode}
