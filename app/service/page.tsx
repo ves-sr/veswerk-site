@@ -67,7 +67,7 @@ export default function ServicePage() {
 
 			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					<SectionHeading en="WHAT WE DO" ja="4つのステップで進めます" />
+					<SectionHeading en="WHAT WE DO" ja={"4つのステップで進め⁠ます"} />
 					<div className="mt-16">
 						<NumberedFeature items={serviceItems} verticalLabel="制作の流れ" />
 					</div>
