@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import PillNav from "./components/PillNav";
 import MobileMenu from "./components/MobileMenu";
 import Footer from "./components/Footer";
+import IntroLoader from "./components/IntroLoader";
 import { siteName, siteUrl, legalName, snsLinks } from "./content/site";
 
 const zenKakuGothic = Zen_Kaku_Gothic_New({
@@ -70,6 +71,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
+				<IntroLoader />
 				<Header />
 				<MobileMenu />
 				<main className="flex-1">{children}</main>
