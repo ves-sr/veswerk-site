@@ -2,12 +2,14 @@ import Hero from "./components/Hero";
 import SectionHeading from "./components/SectionHeading";
 import NumberedFeature from "./components/NumberedFeature";
 import ImageTextRow from "./components/ImageTextRow";
+import GrowthPath from "./components/GrowthPath";
 import WorksPreview from "./components/WorksPreview";
 import HomePlanTeaser from "./components/HomePlanTeaser";
 import FaqAccordion from "./components/FaqAccordion";
 import Reveal from "./components/Reveal";
 import { heroProblems } from "./content/home";
 import { services } from "./content/services";
+import { growthStages } from "./content/vision";
 import workCode from "./assets/images/content/work-code.jpg";
 
 const problemItems = heroProblems.map((p, i) => ({
@@ -77,6 +79,27 @@ export default function Home() {
 								{badge}
 							</span>
 						))}
+					</div>
+				</div>
+			</section>
+
+			{/* 今後の展望・技術領域の拡張 */}
+			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
+				<div className="mx-auto max-w-6xl px-6">
+					<SectionHeading en="OUR GROWTH" ja="Webの、その先へ。" />
+					<p
+						className="section-body mx-auto mt-6 max-w-2xl text-center text-sm sm:text-base"
+						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+					>
+						VESWERKは現在、ホームページ制作を中心に活動しています。培った技術をAI・データ活用、そしてドローンなど新しい領域へ少しずつ広げ、企業や現場が抱える課題を技術で解決できる会社を目指しています。
+					</p>
+					<div className="mt-16 sm:mt-20">
+						<GrowthPath items={growthStages} />
+					</div>
+					<div className="mt-14 flex justify-center">
+						<a href="/vision" className="btn-outline">
+							今後の展望を詳しく見る
+						</a>
 					</div>
 				</div>
 			</section>
