@@ -17,6 +17,7 @@ export const snsLinks = [
 export const navItems = [
 	{ href: "/service", label: "事業紹介", shortLabel: "事業紹介" },
 	{ href: "/why-veswerk", label: "WHY VESWERK", shortLabel: "こだわり" },
+	{ href: "/vision", label: "今後の展望", shortLabel: "今後の展望" },
 	{ href: "/works", label: "制作サンプル", shortLabel: "制作サンプル" },
 	{ href: "/pricing", label: "ご利用料金", shortLabel: "ご利用料金" },
 	{ href: "/contact", label: "お問い合わせ", shortLabel: "お問い合わせ" },

@@ -10,7 +10,7 @@ export type NumberedFeatureItem = {
 };
 
 type NumberedFeatureProps = {
-	items: NumberedFeatureItem[];
+	items: readonly NumberedFeatureItem[];
 	/** 参考サイトのfeature__section__headingに倣った縦書き装飾ラベル（Desktopのみ表示） */
 	verticalLabel?: string;
 };
