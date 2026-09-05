@@ -31,7 +31,7 @@ export const serviceLeads: readonly ServiceLead[] = [
 	},
 	{
 		label: "AFTER CARE",
-		heading: "作って終わりにしない。",
+		heading: "作って​終わりにしない。",
 		body: [
 			"ホームページは公開後も、情報の変更や修正が必要になります。VESWERKでは、制作・公開だけでなく、公開後の保守や更新まで継続してサポート。",
 			"「誰に頼めばいいか分からない」という状態をなくし、安心してホームページを運用できるようにします。",

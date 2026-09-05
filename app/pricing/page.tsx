@@ -77,7 +77,7 @@ export default function PricingPage() {
 			<section className="border-t border-border py-20 sm:py-24">
 				<div className="mx-auto max-w-2xl px-6 text-center">
 					<h2 className="subsection-heading lg:whitespace-nowrap lg:text-[1.3125rem]!">
-						料金について、気になる点があればお気軽にご相談ください。
+						料金について、気になる点があればお気軽に​ご相談ください。
 					</h2>
 					<a href="/contact" className="btn-fill mt-8 inline-flex">
 						無料で相談する

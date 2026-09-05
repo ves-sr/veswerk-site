@@ -22,7 +22,7 @@ export default function Footer() {
 					className="mt-3 max-w-xs text-sm text-text-soft"
 					style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 				>
-					吉祥寺・武蔵野を中心に、ホームページを要件定義から保守まで一貫して制作しています。
+					吉祥寺・武蔵野を中心に、ホームページを要件定義から保守まで一貫して​制作しています。
 				</p>
 
 				<nav

@@ -30,7 +30,10 @@ export default function VisionPage() {
 						<br />
 						技術の幅を、少しずつ広げていく。
 					</h1>
-					<p className="section-body mt-6 max-w-lg text-sm sm:text-base">
+					<p
+						className="section-body mt-6 max-w-lg text-sm sm:text-base"
+						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+					>
 						VESWERKは現在、ホームページ制作を中心に活動しています。しかし、それを最終的なゴールとは考えていません。培った技術を少しずつ広げ、企業や現場が抱える課題を技術で解決できる会社へ成長していくことを目指しています。
 					</p>
 				</div>

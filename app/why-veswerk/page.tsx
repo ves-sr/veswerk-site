@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ImageTextRow from "../components/ImageTextRow";
 import Reveal from "../components/Reveal";
 import { legalName } from "../content/site";
-import profilePhoto from "../assets/images/profile.jpg";
+import profilePhoto from "../assets/images/profile-outdoor.jpg";
 
 const pageTitle = "WHY VESWERK";
 const pageDescription =
@@ -26,7 +26,7 @@ const pillars = [
 	{
 		no: "02",
 		en: "LOCAL BUSINESS",
-		heading: "小さなお店に、本当に必要なホームページを。",
+		heading: "小さなお店に、本当に必要な​ホームページを。",
 		body: "吉祥寺・武蔵野エリアで営むお店・地域密着型の事業者を主な対象にしています。大企業のように情報を詰め込むのではなく、お店の雰囲気、商品・サービス、営業時間、アクセス、予約・問い合わせ、お店の想い——本当に必要な情報を、必要な人にきちんと届けることを大切にしています。",
 	},
 	{
@@ -91,7 +91,7 @@ export default function WhyVeswerkPage() {
 						image={profilePhoto}
 						imageAlt="中井駿吾"
 						eyebrow="ENGINEERING EXPERIENCE"
-						heading="実際のプロダクト開発の現場で培った経験を、Web制作へ。"
+						heading="実際のプロダクト開発の​現場で​培った経験を、Web制作へ。"
 						body={[
 							"普段は東証プライム上場企業グループで自社開発に携わる、現役のソフトウェアエンジニアです。要件定義、設計、開発、テスト、運用、保守——ソフトウェア開発の一連の工程に、日々携わっています。",
 							"この経験を活かし、VESWERKでも「見た目がきれいなホームページ」だけで終わらせず、実際に使われ、運用され続けるホームページを考えて設計することを強みにしています。",

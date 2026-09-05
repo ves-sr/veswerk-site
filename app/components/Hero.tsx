@@ -46,7 +46,9 @@ export default function Hero() {
 							まだ伝えられる。
 						</h1>
 						<p className="section-body mt-6 max-w-sm text-sm sm:text-base">
-							吉祥寺・武蔵野で、ホームページに、お困りの方へ。
+							吉祥寺・武蔵野で、
+							<br className="sm:hidden" />
+							ホームページに、お困りの方へ。
 							<br />
 							そんな悩みを、VESWERKが解決します。
 						</p>
