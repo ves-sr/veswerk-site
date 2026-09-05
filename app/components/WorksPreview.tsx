@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { workSamples } from "../content/works";
 import Reveal from "./Reveal";
-import thumbCramSchoolA from "../assets/images/works/thumb-cram-school-a.webp";
 
 /**
  * 参考サイトの商品カード（縦長画像＋価格＋ボタン）パターンを、
@@ -12,15 +11,13 @@ import thumbCramSchoolA from "../assets/images/works/thumb-cram-school-a.webp";
 // works一覧ページ（/works）にのみ追加された制作サンプルは、ここでは表示対象から除外する。
 const homeSamples = workSamples.filter((sample) => sample.slug !== "compass-academy").slice(0, 4);
 
-// Home縦長カード（aspect-[4/5]）用の画像調整。
-// works.ts側のデータ（画像ファイル・alt・リンク先等）は変更せず、Home表示時のみ
-// ・3番目のカード（mori-coffee-stand）の画像をCOMPASS Academyのスクリーンショットに差し替え
-// ・各サイトのロゴ／見出しが縦長クロップでも視認できるよう、画像ごとにobject-positionを調整
-// する。/worksページ（横長4:3カード）には影響しない。
-const homeImageOverrides: Record<string, { image?: typeof thumbCramSchoolA; objectPosition: string }> = {
-	"toda-setsubi": { objectPosition: "50% center" },
-	"petit-ciel": { objectPosition: "50% center" },
-	"mori-coffee-stand": { image: thumbCramSchoolA, objectPosition: "0% center" },
+// Home縦長カード（aspect-[4/5]）で、各サイトの被写体の中心（建物・外観の特徴部分）が
+// クロップで欠けないよう、サンプルごとにobject-positionだけ調整する。
+// /worksページ（横長4:3カード）は既定の中央クロップのままで影響しない。
+const homeImageOverrides: Record<string, { objectPosition: string }> = {
+	"orihara-koumuten": { objectPosition: "30% center" },
+	"ono-kensetsu": { objectPosition: "55% center" },
+	"dandan-day-service": { objectPosition: "75% center" },
 	"roastery-cafe": { objectPosition: "15% center" },
 };
 
@@ -28,15 +25,13 @@ export default function WorksPreview() {
 	return (
 		<div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
 			{homeSamples.map((sample, i) => {
-				const override = homeImageOverrides[sample.slug];
-				const image = override?.image ?? sample.image;
-				const objectPosition = override?.objectPosition ?? "50% center";
+				const objectPosition = homeImageOverrides[sample.slug]?.objectPosition ?? "50% center";
 				return (
 					<Reveal key={sample.slug} delay={i * 70}>
 						<Link href="/works" className="group block">
 							<div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem]">
 								<Image
-									src={image}
+									src={sample.image}
 									alt={sample.imageAlt}
 									fill
 									sizes="(min-width: 1024px) 24vw, 45vw"
