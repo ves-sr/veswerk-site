@@ -20,21 +20,21 @@ export default function PrivacyPolicyPage() {
 				<h1 className="page-heading mt-4">PRIVACY POLICY</h1>
 
 				<div className="mt-10 flex flex-col gap-8 text-text">
-					<p>
+					<p style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
 						{siteName}（以下「当方」といいます）は、お客様の個人情報を大切に取り扱います。
-						本ページでは、当方が取得する個人情報の取り扱いについて説明します。
+						本⁠ページで⁠は、当方が取得する個人情報の取り⁠扱いについて説明します。
 					</p>
 
 					<div>
 						<h2 className="text-lg font-medium text-ink">運営者情報</h2>
 						<p className="mt-2">
-							屋号：{legalName}（個人事業主として運営、サイト名「{siteName}」）
+							屋号：{legalName}（個人事業主として運営、サ⁠イ⁠ト名「{siteName}」）
 						</p>
 					</div>
 
 					<div>
 						<h2 className="text-lg font-medium text-ink">取得する情報</h2>
-						<p className="mt-2">お問い合わせフォームより、以下の情報をご入力いただく場合があります。</p>
+						<p className="mt-2">お問い合わせフォームより、以下の情報をご⁠入力いただく場合があります。</p>
 						<ul className="mt-2 list-disc pl-5">
 							<li>お名前</li>
 							<li>お店・屋号名</li>

@@ -11,7 +11,7 @@ export const maintenanceHighlights: MaintenanceItem[] = [
 	{
 		key: "update",
 		title: "軽微な更新代行",
-		description: "営業時間や料金など、ちょっとした文章・写真の差し替えに対応します（月2回まで）。",
+		description: "営業時間や料金など、ち⁠ょ⁠っ⁠と⁠した文章・写真の差し替えに対応します（月2回まで）。",
 	},
 	{
 		key: "trouble",

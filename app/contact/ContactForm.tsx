@@ -135,7 +135,7 @@ export default function ContactForm() {
 
 			{error && (
 				<p className="text-sm text-red-600">
-					送信に失敗しました。時間を置いて再度お試しいただくか、直接{" "}
+					送信に失敗しました。時間を置いて再度お⁠試しいただくか、直接{" "}
 					<a href="mailto:veswerk@gmail.com" className="underline underline-offset-2">
 						veswerk@gmail.com
 					</a>{" "}

@@ -22,7 +22,7 @@ export default function ContactPage() {
 					<p className="section-body mt-6 text-sm sm:text-base">
 						お問い合わせ、ご相談を受け付けております。
 						<br />
-						入力フォームに必要事項をご記入の上、お気軽にお問い合わせください。
+						入力フォームに必要事項をご記入の上、お気軽にお⁠問い合わせください。
 					</p>
 				</div>
 

@@ -49,7 +49,7 @@ const rows: { label: string; value: React.ReactNode }[] = [
 		),
 	},
 	{
-		label: "販売価格以外に必要な料金",
+		label: "販売価格以外に必要な料⁠金",
 		value: "銀行振込の振込手数料はお客様のご負担となります。追加のご要望・オプションについては、事前にお見積りをご提示したうえで進めます。",
 	},
 	{
@@ -65,7 +65,7 @@ const rows: { label: string; value: React.ReactNode }[] = [
 		value: "ヒアリング完了後、通常2〜4週間程度で納品いたします（案件の内容により前後します）。",
 	},
 	{
-		label: "キャンセル・返品について",
+		label: "キャンセル・返品につ⁠い⁠て",
 		value:
 			"ホームページ制作は形のないサービス（役務）のため、ご契約成立後のキャンセル・返品は原則としてお受けできません。ご契約成立後、制作着手前にキャンセルされる場合も、既にお支払いいただいた着手金（制作費の50%）は返金いたしません。保守契約の途中解約については、最低契約期間（1年間）に満たない場合、残期間分の実費相当額を精算のうえ解約いただけます。",
 	},
@@ -81,7 +81,7 @@ export default function TokushohoPage() {
 			<div className="mx-auto max-w-3xl px-6">
 				<p className="eyebrow">特定商取引法に基づく表記</p>
 				<h1 className="page-heading mt-4">LEGAL NOTICE</h1>
-				<p className="section-body mt-6 text-sm sm:text-base">特定商取引法に基づき、以下のとおり表記いたします。</p>
+				<p className="section-body mt-6 text-sm sm:text-base">特定商取引法に基づき、以下のとおり表記い⁠た⁠し⁠ま⁠す⁠。</p>
 
 				<div className="mt-10 divide-y divide-border overflow-hidden rounded-[2rem] border border-border bg-bg-sub">
 					{rows.map((row) => (

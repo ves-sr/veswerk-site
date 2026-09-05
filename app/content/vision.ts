@@ -56,7 +56,7 @@ export const growthStages: readonly GrowthStage[] = [
 export const droneSteps = [
 	{
 		no: "01",
-		title: "ドローンでデータを取得",
+		title: "ドローンで​データを取得",
 		titleEn: "CAPTURE",
 		desc: "ドローンによって、画像・映像・位置情報などのデータを取得します。",
 	},
