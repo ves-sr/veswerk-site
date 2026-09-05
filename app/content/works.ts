@@ -1,8 +1,8 @@
 import thumbCafeD from "../assets/images/works/thumb-cafe-d.webp";
-import thumbCafeE from "../assets/images/works/thumb-cafe-e.webp";
-import thumbCafeF from "../assets/images/works/thumb-cafe-f.webp";
 import thumbCramSchoolA from "../assets/images/works/thumb-cram-school-a.webp";
-import thumbPlumbingB from "../assets/images/works/thumb-plumbing-b.webp";
+import thumbDayServiceA from "../assets/images/works/thumb-day-service-a.webp";
+import thumbHousingA from "../assets/images/works/thumb-housing-a.webp";
+import thumbConstructionA from "../assets/images/works/thumb-construction-a.webp";
 
 export type WorkSample = {
 	slug: string;
@@ -18,15 +18,15 @@ export type WorkSample = {
 
 export const workSamples: WorkSample[] = [
 	{
-		slug: "toda-setsubi",
+		slug: "orihara-koumuten",
 		no: "01",
 		category: "LOCAL BUSINESS / SAMPLE",
-		name: "戸田設備工業",
-		concept: "地域に根ざした信頼を、実直な情報設計で伝える。",
-		tags: ["地域密着型事業者", "多ページ構成", "施工事例訴求"],
-		image: thumbPlumbingB,
-		imageAlt: "緑豊かな渓流の写真を背景に「地元の水道屋だから、安心。」という見出しを掲げたトップページ",
-		url: "https://plumbing-sample-b.pages.dev/",
+		name: "折原工務店",
+		concept: "半世紀の実績を、施工事例を軸にした構成で伝⁠え⁠る。",
+		tags: ["地域密着型の工務店", "施工事例ギャラリー", "相談導線の設計"],
+		image: thumbConstructionA,
+		imageAlt: "石積みの壁と木の床が調和する、折原工務店施工のリビング空間",
+		url: "https://orihara-koumuten-renewal-mockup.pages.dev/",
 	},
 	{
 		slug: "compass-academy",
@@ -40,26 +40,26 @@ export const workSamples: WorkSample[] = [
 		url: "https://cram-school-sample-a.pages.dev/",
 	},
 	{
-		slug: "petit-ciel",
+		slug: "ono-kensetsu",
 		no: "03",
-		category: "CAFE / SAMPLE",
-		name: "Petit Ciel",
-		concept: "軽やかな配色と写真で見せる、午後のひとやすみ。",
-		tags: ["個人経営カフェ", "多言語対応", "ギャラリー訴求"],
-		image: thumbCafeE,
-		imageAlt: "レモンと緑を使った明るい料理写真の上に、英字コピーを添えたカードを重ねたトップページ",
-		url: "https://cafe-sample-e.pages.dev/",
+		category: "HOUSING / SAMPLE",
+		name: "小野建設",
+		concept: "狭小地に応える設計力を、施工実績の見せ方で表⁠現⁠す⁠る。",
+		tags: ["都市型住宅", "狭小地対応の実例", "施工実績ギャラリー"],
+		image: thumbHousingA,
+		imageAlt: "グレーのタイル外壁が印象的な、小野建設が手がけた都市型住宅の外観",
+		url: "https://ono-kensetsu-renewal-mockup.veswerk.workers.dev/",
 	},
 	{
-		slug: "mori-coffee-stand",
+		slug: "dandan-day-service",
 		no: "04",
-		category: "CAFE / SAMPLE",
-		name: "MORI coffee stand",
-		concept: "木の匂いと緑に包まれた、街のコーヒースタンド。",
-		tags: ["個人経営カフェ", "地図・経路案内", "SNS連携"],
-		image: thumbCafeF,
-		imageAlt: "観葉植物とラテアートのカップを配した、木の質感を活かした温かみのあるトップページ",
-		url: "https://cafe-sample-f.pages.dev/",
+		category: "DAY SERVICE / SAMPLE",
+		name: "デイサービスだん・だん",
+		concept: "自然に囲まれた温かみを、見学につながる構成で伝⁠え⁠る。",
+		tags: ["地域密着型デイサービス", "見学・体験への導線", "一日の流れ紹介"],
+		image: thumbDayServiceA,
+		imageAlt: "山あいの緑に囲まれた、デイサービスだん・だんの建物外観",
+		url: "https://dandan-day-service-renewal-mockup.pages.dev/",
 	},
 	{
 		slug: "roastery-cafe",
