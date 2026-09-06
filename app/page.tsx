@@ -107,7 +107,7 @@ export default function Home() {
 			{/* 制作実績 */}
 			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					<SectionHeading en="SAMPLE WORKS" ja="制作サンプル。" />
+					<SectionHeading en="SAMPLE WORKS" ja="制作サンプル" />
 					<WorksPreview />
 					<div className="mt-14 flex justify-center">
 						<a href="/works" className="btn-outline">

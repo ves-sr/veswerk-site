@@ -9,6 +9,6 @@ export const sample03 = {
 	concept: "初めて訪れる方の視点に立ち、施設の雰囲気を写真で丁寧に紹介。安心感のある情報設計に。",
 	tags: ["福祉・施設", "情報設計", "導線設計"],
 	image,
-	imageAlt: "観葉植物と自然光が心地よい、福祉・施設サイト向けの明るい共有スペース",
-	url: "https://dandan-day-service-renewal-mockup.pages.dev/",
+	imageAlt: "Sample 03｜福祉・施設サイトの制作サンプル",
+	url: "https://veswerk-sample-03.pages.dev/",
 };

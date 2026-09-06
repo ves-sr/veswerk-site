@@ -7,24 +7,24 @@ import Reveal from "./Reveal";
  * 参考サイトの商品カード（縦長画像＋価格＋ボタン）パターンを、
  * 制作サンプルの縦長サムネイル＋カテゴリ＋名前＋コンセプトへ置き換えて再現する。
  */
-// Home（トップページ）は従来どおり4件のみを表示し、既存の見た目・レイアウトを変更しない。
-// works一覧ページ（/works）にのみ追加された制作サンプルは、ここでは表示対象から除外する。
-const homeSamples = workSamples.filter((sample) => sample.slug !== "compass-academy").slice(0, 4);
+// Home（トップページ）は/worksと同じ4件（Sample 01〜04）をすべて表示する。
+// 表示内容はworkSamples（Home/works共通のデータソース）のみに依存するため、
+// 今後Sampleを追加・変更してもHomeと/worksの表示がズレることはない。
 
-// Home縦長カード（aspect-[4/5]）で、各サイトの被写体の中心（建物・外観の特徴部分）が
-// クロップで欠けないよう、サンプルごとにobject-positionだけ調整する。
+// Home縦長カード（aspect-[4/5]）で、各Sampleサイトのスクリーンショットのうち
+// 見せたい部分（ロゴ・見出し側）がクロップで欠けないよう、object-positionだけ調整する。
 // /worksページ（横長4:3カード）は既定の中央クロップのままで影響しない。
 const homeImageOverrides: Record<string, { objectPosition: string }> = {
-	"sample-01": { objectPosition: "50% center" },
-	"sample-02": { objectPosition: "60% center" },
-	"sample-03": { objectPosition: "55% center" },
-	"roastery-cafe": { objectPosition: "15% center" },
+	"sample-01": { objectPosition: "0% 30%" },
+	"sample-02": { objectPosition: "0% 30%" },
+	"sample-03": { objectPosition: "0% 30%" },
+	"sample-04": { objectPosition: "0% 40%" },
 };
 
 export default function WorksPreview() {
 	return (
 		<div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-			{homeSamples.map((sample, i) => {
+			{workSamples.map((sample, i) => {
 				const objectPosition = homeImageOverrides[sample.slug]?.objectPosition ?? "50% center";
 				return (
 					<Reveal key={sample.slug} delay={i * 70}>
