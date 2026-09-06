@@ -62,7 +62,12 @@ export default function WorksPage() {
 									</span>
 									<p className="eyebrow mt-3">{sample.category}</p>
 									<h2 className="section-heading mt-3 text-left">{sample.name}</h2>
-									<p className="section-body mt-4 text-sm sm:text-base">{sample.concept}</p>
+									<p
+										className="section-body mt-4 text-sm sm:text-base"
+										style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+									>
+										{sample.concept}
+									</p>
 									<div className="mt-6 flex flex-wrap gap-2">
 										{sample.tags.map((tag) => (
 											<span key={tag} className="rounded-full border border-border px-3 py-1.5 text-xs text-text-soft">

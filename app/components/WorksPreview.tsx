@@ -15,9 +15,9 @@ const homeSamples = workSamples.filter((sample) => sample.slug !== "compass-acad
 // クロップで欠けないよう、サンプルごとにobject-positionだけ調整する。
 // /worksページ（横長4:3カード）は既定の中央クロップのままで影響しない。
 const homeImageOverrides: Record<string, { objectPosition: string }> = {
-	"orihara-koumuten": { objectPosition: "30% center" },
-	"ono-kensetsu": { objectPosition: "55% center" },
-	"dandan-day-service": { objectPosition: "75% center" },
+	"sample-01": { objectPosition: "50% center" },
+	"sample-02": { objectPosition: "60% center" },
+	"sample-03": { objectPosition: "55% center" },
 	"roastery-cafe": { objectPosition: "15% center" },
 };
 
@@ -41,7 +41,12 @@ export default function WorksPreview() {
 							</div>
 							<p className="eyebrow mt-4">{sample.category}</p>
 							<h3 className="mt-2 text-base font-medium text-ink">{sample.name}</h3>
-							<p className="mt-1 text-sm text-text-soft">{sample.concept}</p>
+							<p
+								className="mt-1 text-sm text-text-soft"
+								style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+							>
+								{sample.concept}
+							</p>
 						</Link>
 					</Reveal>
 				);

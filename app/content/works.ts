@@ -1,8 +1,8 @@
 import thumbCafeD from "../assets/images/works/thumb-cafe-d.webp";
 import thumbCramSchoolA from "../assets/images/works/thumb-cram-school-a.webp";
-import thumbDayServiceA from "../assets/images/works/thumb-day-service-a.webp";
-import thumbHousingA from "../assets/images/works/thumb-housing-a.webp";
-import thumbConstructionA from "../assets/images/works/thumb-construction-a.webp";
+import { sample01 } from "../../sample/sample-01/data";
+import { sample02 } from "../../sample/sample-02/data";
+import { sample03 } from "../../sample/sample-03/data";
 
 export type WorkSample = {
 	slug: string;
@@ -16,21 +16,15 @@ export type WorkSample = {
 	url: string;
 };
 
+// sample-01〜03はVESWERKが営業用に制作した架空のSample（sample/配下で管理）。
+// 実在企業の情報は含まず、リンク先のみ既存の完成済みモックアップサイトを使用する。
 export const workSamples: WorkSample[] = [
-	{
-		slug: "orihara-koumuten",
-		no: "01",
-		category: "LOCAL BUSINESS / SAMPLE",
-		name: "折原工務店",
-		concept: "半世紀の実績を、施工事例を軸にした構成で伝⁠え⁠る。",
-		tags: ["地域密着型の工務店", "施工事例ギャラリー", "相談導線の設計"],
-		image: thumbConstructionA,
-		imageAlt: "石積みの壁と木の床が調和する、折原工務店施工のリビング空間",
-		url: "https://orihara-koumuten-renewal-mockup.pages.dev/",
-	},
+	{ ...sample01, no: "01" },
+	{ ...sample02, no: "02" },
+	{ ...sample03, no: "03" },
 	{
 		slug: "compass-academy",
-		no: "02",
+		no: "04",
 		category: "CRAM SCHOOL / SAMPLE",
 		name: "COMPASS Academy",
 		concept: "「結果」にこだわる指導姿勢を、実直な情報設計で伝える。",
@@ -38,28 +32,6 @@ export const workSamples: WorkSample[] = [
 		image: thumbCramSchoolA,
 		imageAlt: "タブレットで学習する生徒の写真を背景に「『結果』にこだわる、英語専門塾という選択。」という見出しを掲げたトップページ",
 		url: "https://cram-school-sample-a.pages.dev/",
-	},
-	{
-		slug: "ono-kensetsu",
-		no: "03",
-		category: "HOUSING / SAMPLE",
-		name: "小野建設",
-		concept: "狭小地に応える設計力を、施工実績の見せ方で表⁠現⁠す⁠る。",
-		tags: ["都市型住宅", "狭小地対応の実例", "施工実績ギャラリー"],
-		image: thumbHousingA,
-		imageAlt: "グレーのタイル外壁が印象的な、小野建設が手がけた都市型住宅の外観",
-		url: "https://ono-kensetsu-renewal-mockup.veswerk.workers.dev/",
-	},
-	{
-		slug: "dandan-day-service",
-		no: "04",
-		category: "DAY SERVICE / SAMPLE",
-		name: "デイサービスだん・だん",
-		concept: "自然に囲まれた温かみを、見学につながる構成で伝⁠え⁠る。",
-		tags: ["地域密着型デイサービス", "見学・体験への導線", "一日の流れ紹介"],
-		image: thumbDayServiceA,
-		imageAlt: "山あいの緑に囲まれた、デイサービスだん・だんの建物外観",
-		url: "https://dandan-day-service-renewal-mockup.pages.dev/",
 	},
 	{
 		slug: "roastery-cafe",
