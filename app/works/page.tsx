@@ -3,6 +3,14 @@ import Image from "next/image";
 import Reveal from "../components/Reveal";
 import { workSamples } from "../content/works";
 
+// カード画像はSampleサイトのファーストビューをそのままスクリーンショットしたもの
+// （1440×900、デスクトップ比率）のため、横長4:3カードでは既定の中央クロップだと
+// 見出し・ロゴが左端で切れてしまうSampleがある。該当するSampleだけobject-positionを
+// 左寄りに調整する。
+const imageObjectPositionOverrides: Record<string, string> = {
+	"sample-03": "20% center",
+};
+
 const pageTitle = "制作サンプル";
 const pageDescription =
 	"VESWERKが手がけるホームページの制作サンプルを掲載。カフェ・地域密着型事業者など、小さなお店・個人経営に向けたデザインの方向性をご覧いただけます。";
@@ -51,6 +59,7 @@ export default function WorksPage() {
 												alt={sample.imageAlt}
 												fill
 												sizes="(min-width: 1024px) 42vw, 90vw"
+												style={{ objectPosition: imageObjectPositionOverrides[sample.slug] ?? "50% center" }}
 												className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
 											/>
 										</div>
