@@ -14,7 +14,11 @@ export default function MaintenanceAddonCards() {
 							<dt className="text-sm text-text">{item.name}</dt>
 							<dd className="text-base font-medium text-ink">{item.price}</dd>
 						</div>
-						<p className="mt-1 text-xs leading-relaxed text-text-soft">{item.description}</p>
+						<p className="mt-1 text-xs leading-relaxed text-text-soft">
+							{/* 末尾の「（ご希望の方のみ）。」だけが行頭に孤立・はみ出しやすいため一塊にする */}
+							{item.description.slice(0, -11)}
+							<span className="whitespace-nowrap">{item.description.slice(-11)}</span>
+						</p>
 					</div>
 				))}
 			</dl>
