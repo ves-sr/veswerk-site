@@ -57,17 +57,17 @@ export const maintenanceAddonItems: MaintenanceAddonItem[] = [
 	{
 		name: "Instagram連携",
 		price: "月1,000円",
-		description: "InstagramのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方の⁠み）。",
+		description: "InstagramのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方のみ）。",
 	},
 	{
 		name: "X（Twitter）連携",
 		price: "月1,000円",
-		description: "XのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方の⁠み）。",
+		description: "XのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方のみ）。",
 	},
 	{
 		name: "Facebook連携",
 		price: "月1,000円",
-		description: "FacebookのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方の⁠み）。",
+		description: "FacebookのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方のみ）。",
 	},
 ];
 
