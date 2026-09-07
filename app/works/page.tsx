@@ -75,7 +75,15 @@ export default function WorksPage() {
 										className="section-body mt-4 text-sm sm:text-base"
 										style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 									>
-										{sample.concept}
+										{/* 375px幅で末尾の「。」だけが孤立するため、「スクールサイト。」を一塊にする */}
+										{sample.concept.endsWith("スクールサイト。") ? (
+											<>
+												{sample.concept.slice(0, -8)}
+												<span className="whitespace-nowrap">スクールサイト。</span>
+											</>
+										) : (
+											sample.concept
+										)}
 									</p>
 									<div className="mt-6 flex flex-wrap gap-2">
 										{sample.tags.map((tag) => (
@@ -97,7 +105,7 @@ export default function WorksPage() {
 						<h2 className="section-heading">自分のお店なら、どうなるだろう。</h2>
 						<div
 							className="section-body mx-auto mt-6 flex max-w-lg flex-col gap-4 text-sm sm:text-base"
-							style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+							style={{ wordBreak: "normal", overflowWrap: "break-word" }}
 						>
 							<p>ここでご紹介しているWebサイトは、VESWERKが考えるデザインの一例です。</p>
 							<p>

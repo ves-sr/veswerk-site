@@ -1,6 +1,8 @@
+import type { ReactNode } from "react";
+
 type SectionHeadingProps = {
 	en: string;
-	ja: string;
+	ja: ReactNode;
 	align?: "center" | "left";
 	className?: string;
 };

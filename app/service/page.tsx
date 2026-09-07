@@ -35,7 +35,8 @@ export default function ServicePage() {
 				<div className="mx-auto max-w-6xl px-6">
 					<p className="eyebrow">事業紹介</p>
 					<h1 className="page-heading mt-4 max-w-xl">
-						ホームページを作る。
+						{/* 320px幅で末尾の句点だけが孤立しないよう、「作る。」をnowrapで一塊にする */}
+						ホームページを<span className="whitespace-nowrap">作る。</span>
 						<br />
 						その先まで考える。
 					</h1>
@@ -67,7 +68,15 @@ export default function ServicePage() {
 
 			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					<SectionHeading en="WHAT WE DO" ja={"4つのステップで進め⁠ます"} />
+					{/* 320px幅で「進めます」が分断されないよう、nowrap spanで一塊にする（word-break:keep-all環境ではWord Joinerが効かないため） */}
+					<SectionHeading
+						en="WHAT WE DO"
+						ja={
+							<>
+								4つのステップで<span className="whitespace-nowrap">進めます</span>
+							</>
+						}
+					/>
 					<div className="mt-16">
 						<NumberedFeature items={serviceItems} verticalLabel="制作の流れ" />
 					</div>
@@ -77,7 +86,11 @@ export default function ServicePage() {
 			<section className="border-t border-border bg-bg-sub py-24 sm:py-28">
 				<Reveal>
 					<div className="mx-auto max-w-2xl px-6 text-center">
-						<h2 className="section-heading sm:whitespace-nowrap sm:text-[1.75rem]!">{serviceClosing.heading}</h2>
+						<h2 className="section-heading sm:whitespace-nowrap sm:text-[1.75rem]!">
+							{/* 320px幅で末尾の助詞・句点だけが分断されないよう、末尾3文字をnowrapで一塊にする */}
+							{serviceClosing.heading.slice(0, -3)}
+							<span className="whitespace-nowrap">{serviceClosing.heading.slice(-3)}</span>
+						</h2>
 						<p className="section-body mt-4 text-sm sm:text-base">{serviceClosing.body}</p>
 						<a href="/contact" className="btn-fill mt-8 inline-flex">
 							無料で相談する

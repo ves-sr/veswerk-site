@@ -4,6 +4,26 @@ import { useState } from "react";
 import { faqItems } from "../content/faq";
 import Reveal from "./Reveal";
 
+// モバイル幅で助詞・句点だけが孤立して見える質問文だけ、末尾の一塊をnowrapで保護する。
+// 文言自体は変更せず、改行位置の見た目だけを調整するための対応。
+const QUESTION_TAIL_FIXES: Record<string, string> = {
+	"制作費用はどのくらいかかりますか？": "かかりますか？",
+	"自分のお店の雰囲気に合うデザインになるか不安です。": "デザインになるか不安です。",
+	"スマートフォンでもきちんと表示されますか？": "されますか？",
+	"問い合わせてから、公開までどのくらいかかりますか？": "かかりますか？",
+};
+
+function renderQuestion(q: string) {
+	const tail = QUESTION_TAIL_FIXES[q];
+	if (!tail) return q;
+	return (
+		<>
+			{q.slice(0, -tail.length)}
+			<span className="whitespace-nowrap">{tail}</span>
+		</>
+	);
+}
+
 /**
  * 参考サイトのQ&Aセクションに倣ったアコーディオン。1件ずつ開閉し、
  * 開いた項目のみ回答が展開される（複数同時展開はしない、静かな挙動）。
@@ -25,7 +45,9 @@ export default function FaqAccordion() {
 								className="flex w-full items-start gap-5 py-6 text-left"
 							>
 								<span className="eyebrow !text-ink shrink-0 text-base">Q{i + 1}</span>
-								<span className="subsection-heading min-w-0 flex-1 !text-base font-medium">{item.q}</span>
+								<span className="subsection-heading min-w-0 flex-1 !text-base font-medium">
+									{renderQuestion(item.q)}
+								</span>
 								<span
 									aria-hidden="true"
 									className="relative mt-1 h-4 w-4 shrink-0 text-text-soft transition-transform duration-300"

@@ -15,19 +15,19 @@ import Reveal from "./Reveal";
 // 見せたい部分（ロゴ・見出し側）がクロップで欠けないよう、object-positionだけ調整する。
 // /worksページ（横長4:3カード）は既定の中央クロップのままで影響しない。
 const homeImageOverrides: Record<string, { objectPosition: string }> = {
-	"sample-01": { objectPosition: "0% 30%" },
+	"sample-01": { objectPosition: "100% center" },
 	"sample-02": { objectPosition: "0% 30%" },
-	"sample-03": { objectPosition: "0% 30%" },
-	"sample-04": { objectPosition: "0% 40%" },
+	"sample-03": { objectPosition: "100% center" },
+	"sample-04": { objectPosition: "100% center" },
 };
 
 export default function WorksPreview() {
 	return (
-		<div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+		<div className="mt-14 grid min-w-0 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
 			{workSamples.map((sample, i) => {
 				const objectPosition = homeImageOverrides[sample.slug]?.objectPosition ?? "50% center";
 				return (
-					<Reveal key={sample.slug} delay={i * 70}>
+					<Reveal key={sample.slug} delay={i * 70} className="min-w-0">
 						<Link href="/works" className="group block">
 							<div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem]">
 								<Image
@@ -45,7 +45,15 @@ export default function WorksPreview() {
 								className="mt-1 text-sm text-text-soft"
 								style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 							>
-								{sample.concept}
+								{/* 375px幅で末尾の「。」だけが孤立するため、「スクールサイト。」を一塊にする */}
+								{sample.concept.endsWith("スクールサイト。") ? (
+									<>
+										{sample.concept.slice(0, -8)}
+										<span className="whitespace-nowrap">スクールサイト。</span>
+									</>
+								) : (
+									sample.concept
+								)}
 							</p>
 						</Link>
 					</Reveal>

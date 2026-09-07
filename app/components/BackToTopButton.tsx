@@ -6,10 +6,20 @@ export default function BackToTopButton() {
 	const [visible, setVisible] = useState(false);
 
 	useEffect(() => {
-		const onScroll = () => setVisible(window.scrollY > 480);
+		// fixed配置のため、ページ最下部までスクロールするとFooterの著作権表記等と
+		// 見た目上重なってしまう。ドキュメント最下部付近では非表示にして回避する。
+		const onScroll = () => {
+			const nearBottom =
+				window.scrollY + window.innerHeight > document.documentElement.scrollHeight - 160;
+			setVisible(window.scrollY > 480 && !nearBottom);
+		};
 		onScroll();
 		window.addEventListener("scroll", onScroll, { passive: true });
-		return () => window.removeEventListener("scroll", onScroll);
+		window.addEventListener("resize", onScroll);
+		return () => {
+			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("resize", onScroll);
+		};
 	}, []);
 
 	if (!visible) return null;

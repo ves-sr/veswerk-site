@@ -101,6 +101,7 @@ export default function ContactForm() {
 						<label
 							key={type}
 							className="flex cursor-pointer items-center gap-3 rounded-2xl border border-border bg-bg px-4 py-3 text-sm text-ink transition-colors has-checked:border-accent has-checked:bg-accent-soft"
+							style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 						>
 							<input type="radio" name="inquiryType" value={type} required className="h-4 w-4 accent-[var(--accent)]" />
 							{type}
@@ -125,7 +126,7 @@ export default function ContactForm() {
 
 			<label className="flex cursor-pointer items-start gap-3 text-sm text-text">
 				<input type="checkbox" required className="mt-1 h-4 w-4 accent-[var(--accent)]" />
-				<span>
+				<span style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
 					<a href="/privacy-policy" target="_blank" rel="noopener" className="text-accent underline underline-offset-2">
 						プライバシーポリシー
 					</a>

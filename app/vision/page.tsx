@@ -25,14 +25,17 @@ export default function VisionPage() {
 			<section className="relative pt-28 pb-16 sm:pt-32 lg:pt-40">
 				<div className="mx-auto max-w-6xl px-6">
 					<p className="eyebrow">VISION</p>
-					<h1 className="page-heading mt-4 max-w-xl">
+					<h1
+						className="page-heading mt-4 max-w-xl"
+						style={{ wordBreak: "normal", overflowWrap: "break-word" }}
+					>
 						Webのその先へ。
 						<br />
-						技術の幅を、少しずつ広げていく。
+						技術の幅を、少しずつ<span className="whitespace-nowrap">広げていく。</span>
 					</h1>
 					<p
 						className="section-body mt-6 max-w-lg text-sm sm:text-base"
-						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+						style={{ wordBreak: "normal", overflowWrap: "break-word" }}
 					>
 						VESWERKは現在、ホームページ制作を中心に活動しています。しかし、それを最終的なゴールとは考えていません。培った技術を少しずつ広げ、企業や現場が抱える課題を技術で解決できる会社へ成長していくことを目指しています。
 					</p>
@@ -66,7 +69,14 @@ export default function VisionPage() {
 
 			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					<SectionHeading en="DRONE × AI" ja="ドローン×AIで、現場の確認・点検を支援する仕組みへ。" />
+					<SectionHeading
+						en="DRONE × AI"
+						ja={
+							<span style={{ wordBreak: "normal", overflowWrap: "break-word" }}>
+								ドローン×AIで、現場の確認・点検を支援する仕組みへ。
+							</span>
+						}
+					/>
 					<div
 						className="section-body mx-auto mt-8 flex max-w-2xl flex-col gap-4 text-center text-sm sm:text-base"
 						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
@@ -91,7 +101,7 @@ export default function VisionPage() {
 							<p className="eyebrow">現在の状況</p>
 							<p
 								className="section-body mt-4 text-sm sm:text-base"
-								style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+								style={{ wordBreak: "normal", overflowWrap: "break-word" }}
 							>
 								現時点では、ドローンを活用したサービスをすでに提供しているわけではありません。今後1年ほどを目安に、実際のドローンを用いたデータ取得・画像解析・AI活用・Webシステム開発などの検証を進め、企業や現場の課題解決につながる用途を見つけていく段階です。
 							</p>

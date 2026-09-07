@@ -53,7 +53,8 @@ export default function WhyVeswerkPage() {
 					<h1 className="page-heading mt-4 max-w-xl">
 						お店の魅力を、
 						<br />
-						Webで伝わるかたちに。
+						{/* 320px幅で末尾の助詞・句点だけが分断されないよう、「かたちに。」をnowrapで一塊にする */}
+						Webで伝わる<span className="whitespace-nowrap">かたちに。</span>
 					</h1>
 					<p className="section-body mt-6 max-w-lg text-sm sm:text-base">
 						VESWERKがホームページ制作で大切にしている考え方について。
@@ -119,9 +120,13 @@ export default function WhyVeswerkPage() {
 							className="mt-8 text-[1.25rem] leading-[1.9] font-medium tracking-[0.01em] text-ink sm:mt-10 sm:text-2xl sm:leading-[2.05] lg:text-[1.75rem] lg:leading-[2.15]"
 							style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 						>
-							<span className="block">ホームページは、ただ存在するだけでは意味がない。</span>
+							{/* 320px幅で「意味がない」「なくし」が分断されないよう、nowrap spanで一塊にする */}
+							<span className="block">
+								ホームページは、ただ存在するだけでは<span className="whitespace-nowrap">意味がない。</span>
+							</span>
 							<span className="mt-6 block sm:mt-8">
-								お店を知ってもらい、魅力を伝え、初めて訪れる人の不安をなくし、予約や問い合わせにつなげ、長く使ってもらう。
+								お店を知ってもらい、魅力を伝え、初めて訪れる人の不安を<span className="whitespace-nowrap">なくし、</span>
+								予約や問い合わせにつなげ、長く使ってもらう。
 							</span>
 						</h2>
 						<p className="section-body mt-10 text-sm sm:mt-12 sm:text-base">
