@@ -46,11 +46,18 @@ export default function PrivacyPolicyPage() {
 
 					<div>
 						<h2 className="text-lg font-medium text-ink">利用目的</h2>
-						<p className="mt-2">取得した情報は、以下の目的の範囲内で利用します。</p>
+						<p className="mt-2">
+							取得した情報は、以下の目的の範囲内で<span className="whitespace-nowrap">利用します。</span>
+						</p>
 						<ul className="mt-2 list-disc pl-5">
-							<li>お問い合わせ・ご相談への対応、お見積りのご案内</li>
+							<li>
+								お問い合わせ・ご相談への対応、<span className="whitespace-nowrap">お見積りのご案内</span>
+							</li>
 							<li>ご契約後の制作・保守業務に関するご連絡</li>
-							<li>制作サンプル・実績としてご案内する場合の事前確認（掲載前に必ずお客様の許可を得ます）</li>
+							<li>
+								制作サンプル・実績としてご案内する場合の事前確認（掲載前に必ず
+								<span className="whitespace-nowrap">お客様の許可を得ます）</span>
+							</li>
 						</ul>
 					</div>
 
@@ -64,8 +71,8 @@ export default function PrivacyPolicyPage() {
 					<div>
 						<h2 className="text-lg font-medium text-ink">外部サービスの利用</h2>
 						<p className="mt-2">
-							お問い合わせフォームの送信・メールでのご連絡にあたり、外部の送信サービスを利用する場合があります。
-							この場合、当該サービスの提供事業者にも情報が渡りますが、目的外の利用がないよう管理された事業者を選定します。
+							お問い合わせフォームの送信・メールでのご連絡にあたり、外部の送信サ⁠ー⁠ビ⁠スを利用する場合があります。
+							この場合、当該サ⁠ー⁠ビ⁠スの提供事業者にも情報が渡りますが、目的外の利用がないよう管理された事業者を選定します。
 						</p>
 					</div>
 
@@ -81,7 +88,7 @@ export default function PrivacyPolicyPage() {
 					<div>
 						<h2 className="text-lg font-medium text-ink">開示・訂正・削除について</h2>
 						<p className="mt-2">
-							ご自身の個人情報の開示・訂正・削除をご希望の場合は、下記のお問い合わせ窓口までご連絡ください。
+							ご自身の個人情報の開示・訂正・削除をご希望の場合は、下記のお⁠問⁠い⁠合⁠わ⁠せ窓口までご連絡ください。
 							内容を確認のうえ、合理的な範囲で速やかに対応いたします。
 						</p>
 					</div>
@@ -89,7 +96,7 @@ export default function PrivacyPolicyPage() {
 					<div>
 						<h2 className="text-lg font-medium text-ink">お問い合わせ窓口</h2>
 						<p className="mt-2">
-							個人情報の取り扱いに関するお問い合わせは、
+							個人情報の取り扱いに関する<span className="whitespace-nowrap">お問い合わせは、</span>
 							<a href="/contact" className="text-accent underline underline-offset-2">
 								お問い合わせフォーム
 							</a>

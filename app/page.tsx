@@ -45,8 +45,15 @@ export default function Home() {
 			{/* VESWERKが提供する価値 */}
 			<section className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					{/* 320px幅で「価値」が分断されないよう、U+2060(Word Joiner)で単語内改行を防止 */}
-					<SectionHeading en="WHAT WE DO" ja={"VESWERKが提供する価⁠値。"} />
+					{/* 320px幅で「価値」が分断されないよう、nowrap spanで単語内改行を防止（word-break:keep-all環境ではWord Joinerが効かないため） */}
+					<SectionHeading
+						en="WHAT WE DO"
+						ja={
+							<>
+								VESWERKが提供する<span className="whitespace-nowrap">価値</span>。
+							</>
+						}
+					/>
 					<div className="mt-16">
 						<NumberedFeature items={serviceItems} verticalLabel="提供価値" />
 					</div>
@@ -56,7 +63,15 @@ export default function Home() {
 			{/* VESWERKという考え方 */}
 			<section className="border-t border-border bg-bg-sub py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
-					<SectionHeading en="OUR PHILOSOPHY" ja={"VESWERKという考え⁠方。"} />
+					{/* 320px幅で末尾の句点だけが孤立しないよう、「考え方。」をnowrapで一塊にする */}
+					<SectionHeading
+						en="OUR PHILOSOPHY"
+						ja={
+							<>
+								VESWERKという<span className="whitespace-nowrap">考え方。</span>
+							</>
+						}
+					/>
 					<div className="mt-16">
 						<ImageTextRow
 							image={workCode}
@@ -91,7 +106,9 @@ export default function Home() {
 						className="section-body mx-auto mt-6 max-w-2xl text-center text-sm sm:text-base"
 						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 					>
-						VESWERKは現在、ホームページ制作を中心に活動しています。培った技術をAI・データ活用、そしてドローンなど新しい領域へ少しずつ広げ、企業や現場が抱える課題を技術で解決できる会社を目指しています。
+						VESWERKは現在、ホームページ制作を中心に<span className="whitespace-nowrap">活動しています。</span>
+						培った技術をAI・データ活用、そしてドローンなど新しい領域へ少しずつ広げ、企業や現場が抱える課題を技術で
+						<span className="whitespace-nowrap">解決できる</span>会社を目指しています。
 					</p>
 					<div className="mt-16 sm:mt-20">
 						<GrowthPath items={growthStages} />
@@ -142,7 +159,7 @@ export default function Home() {
 						<h2 className="section-heading">
 							気になることがあれば、
 							<br />
-							お気軽にご相談ください。
+							お気軽にご相談<span className="whitespace-nowrap">ください。</span>
 						</h2>
 						<a href="/contact" className="btn-fill mt-10 inline-flex">
 							無料で相談する

@@ -66,6 +66,7 @@ body {
 	color: var(--ink);
 	word-break: keep-all;
 	overflow-wrap: break-word;
+	text-wrap: balance;
 }
 
 /* Hero専用の大見出し */
@@ -77,6 +78,7 @@ body {
 	color: var(--ink);
 	word-break: keep-all;
 	overflow-wrap: break-word;
+	text-wrap: balance;
 }
 
 /* ページヘッダー（下層ページ用）の見出し */
@@ -88,6 +90,7 @@ body {
 	color: var(--ink);
 	word-break: keep-all;
 	overflow-wrap: break-word;
+	text-wrap: balance;
 }
 
 .subsection-heading {
@@ -98,11 +101,13 @@ body {
 	color: var(--ink);
 	word-break: keep-all;
 	overflow-wrap: break-word;
+	text-wrap: balance;
 }
 
 .section-body {
 	color: var(--text);
 	line-height: 1.95;
+	text-wrap: pretty;
 }
 
 /* ボタン：参考サイトのpill形状ボタンを踏襲。ホバーで塗りが濃色⇄アウトラインに反転する */

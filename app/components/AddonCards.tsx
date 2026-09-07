@@ -14,7 +14,10 @@ export default function AddonCards() {
 					</div>
 				))}
 			</dl>
-			<p className="mt-6 text-sm text-text-soft">{productionAddonNote}</p>
+			<p className="mt-6 text-sm text-text-soft">
+				{productionAddonNote.slice(0, -10)}
+				<span className="whitespace-nowrap">{productionAddonNote.slice(-10)}</span>
+			</p>
 		</div>
 	);
 }

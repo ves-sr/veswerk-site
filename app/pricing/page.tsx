@@ -7,7 +7,7 @@ import SectionHeading from "../components/SectionHeading";
 import { notIncludedItems } from "../content/plans";
 
 const pageTitle = "ご利用料金";
-const pageDescription = "実績作りのための特別価格プラン。ヒアリングから公開後の保守まで、一貫して制作します。";
+const pageDescription = "初期制作費50,000円・保守費月19,800円。ヒアリングから公開後の保守まで、一貫して制作します。";
 
 export const metadata: Metadata = {
 	title: pageTitle,
@@ -25,7 +25,7 @@ export default function PricingPage() {
 					<p className="eyebrow">ご利用料金</p>
 					<h1 className="page-heading mt-4">FEE</h1>
 					<p className="section-body mt-6 max-w-lg text-sm sm:text-base">
-						実績作りのため、現在は特別価格でホームページ制作を承っています。
+						ヒアリングから公開後の保守まで、一貫してホームページ制作を承っています。
 					</p>
 					<PlanCards />
 				</div>
@@ -46,7 +46,8 @@ export default function PricingPage() {
 					<div>
 						<SectionHeading en="CUSTOMIZE" ja="制作時の追加オプション" align="left" />
 						<p className="section-body mt-5 text-sm sm:text-base">
-							最初にご提案する内容から、色・フォント・お写真を追加したい場合は、項目ごとに以下の費用をいただいております。
+							最初にご提案する内容から、色・フォント・お写真を追加したい場合は、項目ごとに以下の費用を
+							<span className="whitespace-nowrap">いただいております。</span>
 						</p>
 						<AddonCards />
 					</div>
@@ -62,7 +63,7 @@ export default function PricingPage() {
 				<div className="mx-auto max-w-6xl px-6">
 					<SectionHeading en="NOT INCLUDED" ja="含まれないもの" align="left" />
 					<p className="section-body mt-5 max-w-2xl text-sm sm:text-base">
-						実績作りを目的とした特別価格プランのため、以下の機能は今回のサイトには含まれません。ご契約期間（1年間）終了後にご希望される場合は、正式なご依頼として別途お見積もりいたします。
+						標準プランには、以下の機能は含まれません。ご希望の場合は、<span className="whitespace-nowrap">別途お見積もりいたします。</span>
 					</p>
 					<ul className="mt-8 flex flex-wrap gap-3">
 						{notIncludedItems.map((item) => (
@@ -76,7 +77,7 @@ export default function PricingPage() {
 
 			<section className="border-t border-border py-20 sm:py-24">
 				<div className="mx-auto max-w-2xl px-6 text-center">
-					<h2 className="subsection-heading lg:whitespace-nowrap lg:text-[1.3125rem]!">
+					<h2 className="subsection-heading max-sm:text-[1rem] lg:whitespace-nowrap lg:text-[1.3125rem]!">
 						料金について、気になる点があればお気軽に​ご相談ください。
 					</h2>
 					<a href="/contact" className="btn-fill mt-8 inline-flex">

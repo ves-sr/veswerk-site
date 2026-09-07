@@ -8,12 +8,31 @@ import Reveal from "./Reveal";
 export default function MaintenanceCards() {
 	return (
 		<div className="mt-8">
-			<div className="grid gap-6 sm:grid-cols-3">
+			<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 				{maintenanceHighlights.map((item, i) => (
-					<Reveal key={item.key} delay={i * 70}>
+					<Reveal key={item.key} delay={i * 70} className="min-w-0">
 						<div className="h-full rounded-[1.5rem] border border-border bg-bg p-6">
 							<h3 className="text-base font-medium text-ink">{item.title}</h3>
-							<p className="mt-2 text-sm leading-relaxed text-text">{item.description}</p>
+							<p
+								className="mt-2 text-sm leading-relaxed text-text"
+								style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+							>
+								{/* 390px幅で読点だけが行頭に孤立するため、「る、と」の3文字だけ分断されないようにする */}
+								{item.description.includes("見つからなくなる、といった") ? (
+									(() => {
+										const [before, after] = item.description.split("見つからなくなる、と");
+										return (
+											<>
+												{before}見つからなくな
+												<span className="whitespace-nowrap">る、と</span>
+												{after}
+											</>
+										);
+									})()
+								) : (
+									item.description
+								)}
+							</p>
 						</div>
 					</Reveal>
 				))}
@@ -25,7 +44,21 @@ export default function MaintenanceCards() {
 					{maintenanceBackground.map((item) => (
 						<div key={item.key} className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:gap-4">
 							<dt className="shrink-0 text-sm font-medium text-ink sm:w-56">{item.title}</dt>
-							<dd className="text-sm text-text-soft">{item.description}</dd>
+							{item.key === "backup" ? (
+								// この文だけkeep-allだと320px幅で読点が単独行に孤立するため、
+								// 自然な改行に任せつつ末尾の一文だけ分断されないようにする。
+								<dd className="text-sm text-text-soft" style={{ wordBreak: "normal", overflowWrap: "break-word" }}>
+									{item.description.slice(0, -14)}
+									<span className="whitespace-nowrap">{item.description.slice(-14)}</span>
+								</dd>
+							) : (
+								<dd
+									className="text-sm text-text-soft"
+									style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+								>
+									{item.description}
+								</dd>
+							)}
 						</div>
 					))}
 				</dl>
