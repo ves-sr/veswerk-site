@@ -16,10 +16,12 @@ export default function HomePlanTeaser() {
 					<p className="eyebrow">{plan.priceLabel}</p>
 					<p className="mt-2 text-5xl font-medium text-ink sm:text-6xl">{plan.price}</p>
 					<p
-						className="mt-3 max-w-sm text-sm leading-relaxed text-text"
+						className="mt-3 max-w-sm text-xs leading-relaxed text-text sm:text-sm"
 						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 					>
-						ヒアリングから公開後の保守まで、一貫してご依頼いただけます。
+						ヒアリングから公開後の保守まで、
+						<br />
+						一貫してご依頼いただけます。
 					</p>
 				</div>
 
