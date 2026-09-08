@@ -19,8 +19,7 @@ export default function HomePlanTeaser() {
 						className="mt-3 max-w-sm text-sm leading-relaxed text-text"
 						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 					>
-						ヒアリングから公開後の<span className="whitespace-nowrap">保守まで、</span>一貫して
-						<span className="whitespace-nowrap">ご依頼いただけます。</span>
+						ヒアリングから公開後の<span className="whitespace-nowrap">保守まで、</span>一貫してご依頼いただけます。
 					</p>
 				</div>
 
