@@ -29,7 +29,9 @@ export default function PlanCards() {
 						className="mt-8 max-w-2xl text-sm leading-relaxed text-text-soft"
 						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 					>
-						{plan.planNote}
+						ヒアリングから公開後の保守まで、
+						<br />
+						一貫してご依頼いただけます。
 					</p>
 
 					<a href="/contact" className="btn-fill mt-8">
