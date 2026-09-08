@@ -50,7 +50,16 @@ export default function ContactForm() {
 		return (
 			<div className="rounded-3xl border border-border bg-bg p-10 text-center">
 				<p className="text-lg font-medium text-ink">お問い合わせありがとうございます</p>
-				<p className="mt-3 text-text">内容を確認の上、通常1〜2営業日以内にご返信いたします。</p>
+				<p className="mt-3 text-text" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
+					内容を確認の上、<wbr />
+					通常<wbr />
+					<span className="whitespace-nowrap">1〜2営業日</span>
+					<wbr />
+					以内に<wbr />
+					ご返信
+					<wbr />
+					いたします。
+				</p>
 			</div>
 		);
 	}
