@@ -31,7 +31,7 @@ export default function MaintenanceCards() {
 									})()
 								) : item.description.endsWith("（月2回まで）。") ? (
 									<>
-										{item.description.slice(0, -9)}
+										{item.description.slice(0, -8)}
 										<span className="whitespace-nowrap">（月2回まで）。</span>
 									</>
 								) : (

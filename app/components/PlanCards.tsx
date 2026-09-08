@@ -21,7 +21,12 @@ export default function PlanCards() {
 							<p className="mt-2 text-3xl font-medium whitespace-nowrap text-ink sm:text-4xl">
 								{plan.maintenance.replace("保守：", "")}
 							</p>
-							<p className="mt-1 text-sm text-text-soft">{plan.maintenanceNote}</p>
+							<p
+								className="mt-1 text-sm text-text-soft"
+								style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+							>
+								{plan.maintenanceNote}
+							</p>
 						</div>
 					</div>
 
