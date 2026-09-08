@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // 静的サイトのためバックエンドを持たず、FormSubmit（外部の代行送信サービス）経由でメールに転送する。
 // 初回送信のみ、宛先メールアドレスに届く有効化リンクのクリックが必要。
@@ -22,6 +22,10 @@ export default function ContactForm() {
 	const [submitted, setSubmitted] = useState(false);
 	const [error, setError] = useState(false);
 	const [sending, setSending] = useState(false);
+
+	useEffect(() => {
+		if (submitted) window.scrollTo(0, 0);
+	}, [submitted]);
 
 	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
