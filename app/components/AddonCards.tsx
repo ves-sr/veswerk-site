@@ -1,18 +1,22 @@
+import { Fragment } from "react";
 import { productionAddonItems, productionAddonNote } from "../content/plans";
 
 export default function AddonCards() {
 	return (
 		<div className="mt-8 max-w-2xl">
-			<dl className="divide-y divide-border">
-				{productionAddonItems.map((item) => (
-					<div key={item.name} className="flex items-baseline justify-between gap-4 py-4">
-						<dt className="text-sm text-text">{item.name}</dt>
-						<dd className="flex items-baseline gap-2 whitespace-nowrap">
-							<span className="text-base font-medium text-ink">{item.price}</span>
-							<span className="text-xs text-text-soft">{item.unit}</span>
-						</dd>
-					</div>
-				))}
+			<dl className="grid grid-cols-[1fr_auto_auto] items-baseline gap-x-4">
+				{productionAddonItems.map((item, i) => {
+					const border = i > 0 ? "border-t border-border" : "";
+					return (
+						<Fragment key={item.name}>
+							<dt className={`col-start-1 py-4 text-sm text-text ${border}`}>{item.name}</dt>
+							<dd className={`col-start-2 py-4 text-right text-base font-medium whitespace-nowrap text-ink ${border}`}>
+								{item.price}
+							</dd>
+							<dd className={`col-start-3 py-4 pl-2 text-xs whitespace-nowrap text-text-soft ${border}`}>{item.unit}</dd>
+						</Fragment>
+					);
+				})}
 			</dl>
 			<p className="mt-6 text-sm text-text-soft">
 				{productionAddonNote.slice(0, -10)}
