@@ -1,4 +1,9 @@
-import { maintenanceHighlights, maintenanceBackground } from "../content/maintenance";
+import {
+	maintenanceHighlights,
+	maintenanceBackground,
+	maintenanceExclusionNote,
+	maintenanceExternalCostNote,
+} from "../content/maintenance";
 import Reveal from "./Reveal";
 
 /**
@@ -29,11 +34,17 @@ export default function MaintenanceCards() {
 											</>
 										);
 									})()
-								) : item.description.endsWith("（月2回まで）。") ? (
-									<>
-										{item.description.slice(0, -8)}
-										<span className="whitespace-nowrap">（月2回まで）。</span>
-									</>
+								) : item.description.includes("（月2回まで）。") ? (
+									(() => {
+										const [before, after] = item.description.split("（月2回まで）。");
+										return (
+											<>
+												{before}
+												<span className="whitespace-nowrap">（月2回まで）。</span>
+												{after}
+											</>
+										);
+									})()
 								) : (
 									item.description
 								)}
@@ -67,6 +78,20 @@ export default function MaintenanceCards() {
 						</div>
 					))}
 				</dl>
+
+				<p
+					className="mt-6 text-sm text-text-soft"
+					style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+				>
+					{maintenanceExclusionNote.slice(0, -6)}
+					<span className="whitespace-nowrap">{maintenanceExclusionNote.slice(-6)}</span>
+				</p>
+				<p
+					className="mt-2 text-sm text-text-soft"
+					style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+				>
+					{maintenanceExternalCostNote}
+				</p>
 			</div>
 		</div>
 	);

@@ -7,7 +7,7 @@ import SectionHeading from "../components/SectionHeading";
 import { notIncludedItems } from "../content/plans";
 
 const pageTitle = "ご利用料金";
-const pageDescription = "初期制作費50,000円・保守費月19,800円。ヒアリングから公開後の保守まで、一貫して制作します。";
+const pageDescription = "初期制作費50,000円〜・保守費月19,800円（税込）。ヒアリングから公開後の保守まで、一貫して制作します。";
 
 export const metadata: Metadata = {
 	title: pageTitle,
@@ -53,7 +53,9 @@ export default function PricingPage() {
 					</div>
 					<div>
 						<SectionHeading en="MAINTENANCE ADD-ON" ja="保守の追加オプション" align="left" />
-						<p className="section-body mt-5 text-sm sm:text-base">ご希望の方のみ、保守費に追加してご案内しているオプションです。</p>
+						<p className="section-body mt-5 text-sm sm:text-base">
+							SNSへのリンクボタンの設置は制作費に含みます。投稿の自動表示など、ご希望の方のみ保守費に追加してご案内しているオプションです。
+						</p>
 						<MaintenanceAddonCards />
 					</div>
 				</div>
@@ -63,7 +65,7 @@ export default function PricingPage() {
 				<div className="mx-auto max-w-6xl px-6">
 					<SectionHeading en="NOT INCLUDED" ja="含まれないもの" align="left" />
 					<p className="section-body mt-5 max-w-2xl text-sm sm:text-base">
-						標準プランには、以下の機能は含まれません。ご希望の場合は、<span className="whitespace-nowrap">別途お見積もりいたします。</span>
+						標準プランには、以下の機能は含まれません。内容に応じて<span className="whitespace-nowrap">別途お見積り・ご相談ください。</span>
 					</p>
 					<ul className="mt-8 flex flex-wrap gap-3">
 						{notIncludedItems.map((item) => (

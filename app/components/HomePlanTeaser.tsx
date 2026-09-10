@@ -14,7 +14,8 @@ export default function HomePlanTeaser() {
 			<div className="mt-5 flex min-w-0 flex-col items-start gap-10 sm:flex-row sm:items-end sm:justify-between">
 				<div className="w-full min-w-0 sm:w-auto">
 					<p className="eyebrow">{plan.priceLabel}</p>
-					<p className="mt-2 text-5xl font-medium text-ink sm:text-6xl">{plan.price}</p>
+					<p className="mt-2 text-5xl font-medium whitespace-nowrap text-ink sm:text-6xl">{plan.price}</p>
+					<p className="mt-1 text-xs whitespace-nowrap text-text-soft sm:text-sm">{plan.priceNote}</p>
 					<p
 						className="mt-3 max-w-sm text-xs leading-relaxed text-text sm:text-sm"
 						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
@@ -26,7 +27,7 @@ export default function HomePlanTeaser() {
 				</div>
 
 				<div className="flex flex-col items-start gap-6 sm:items-end">
-					<p className="text-text">
+					<p className="text-text" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
 						公開後の保守は
 						<span className="mx-1 font-medium text-ink">{plan.maintenance.replace("保守：", "")}</span>
 						<br />

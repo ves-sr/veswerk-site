@@ -6,7 +6,8 @@ export type PlanFeature = {
 export const plan = {
 	planNote: "ヒアリングから公開後の保守まで、一貫してご依頼いただけます。",
 	priceLabel: "初期制作費",
-	price: "50,000円",
+	price: "50,000円〜",
+	priceNote: "1〜5ページの場合",
 	maintenance: "保守：月19,800円",
 	maintenanceNote: "サイト公開月から、毎月お支払いいただきます。",
 	maintenanceHeading: "ホームページを作った後も、ずっとお店の味方で。",
@@ -31,6 +32,21 @@ export const plan = {
 		},
 	] satisfies PlanFeature[],
 };
+
+export type PricingTier = {
+	pages: string;
+	price: string;
+};
+
+export const pricingTiers: PricingTier[] = [
+	{ pages: "1〜5ページ", price: "50,000円〜" },
+	{ pages: "6〜10ページ", price: "80,000円〜" },
+	{ pages: "11〜15ページ", price: "120,000円〜" },
+	{ pages: "16ページ以上", price: "個別見積" },
+];
+
+export const pricingTiersNote =
+	"独立したWebページを1ページとして数え、ページ内のセクションは含みません。ブログ・コラム等のCMS機能は、別途ご相談ください。";
 
 export type ProductionAddonItem = {
 	name: string;
@@ -57,17 +73,17 @@ export const maintenanceAddonItems: MaintenanceAddonItem[] = [
 	{
 		name: "Instagram連携",
 		price: "月1,000円",
-		description: "InstagramのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方のみ）。",
+		description: "InstagramのURL連携が正しく表示され続けているか、継続的に確認します（ご希望の方のみ）。",
 	},
 	{
 		name: "X（Twitter）連携",
 		price: "月1,000円",
-		description: "XのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方のみ）。",
+		description: "XのURL連携が正しく表示され続けているか、継続的に確認します（ご希望の方のみ）。",
 	},
 	{
 		name: "Facebook連携",
 		price: "月1,000円",
-		description: "FacebookのURLをサイトに連携し、正しく表示され続けているか継続的に確認します（ご希望の方のみ）。",
+		description: "FacebookのURL連携が正しく表示され続けているか、継続的に確認します（ご希望の方のみ）。",
 	},
 ];
 
@@ -76,7 +92,15 @@ export const maintenanceAddonNotePrefix =
 export const maintenanceAddonNoteEmphasis = "月2,000円）。";
 
 export const notIncludedItems = [
-	"ブログ機能",
-	"LINE通知連携",
+	"ブログ・コラム等のCMS機能",
+	"予約システム",
+	"EC・オンラインショップ",
+	"決済機能",
+	"会員機能",
+	"LINE連携",
 	"多言語対応",
+	"高度な検索機能",
+	"API連携",
+	"Googleビジネスプロフィール等の高度な連携",
+	"Googleカレンダー等の外部連携",
 ];

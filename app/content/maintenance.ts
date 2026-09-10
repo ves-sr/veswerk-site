@@ -11,7 +11,8 @@ export const maintenanceHighlights: MaintenanceItem[] = [
 	{
 		key: "update",
 		title: "軽微な更新代行",
-		description: "営業時間や料金など、ちょっとした文章・写真の差し替えに対応します（月2回まで）。",
+		description:
+			"営業時間や料金など、ちょっとした文章・写真の差し替えに対応します（月2回まで）。大規模な変更や新機能の追加は、別途お見積りとなります。",
 	},
 	{
 		key: "trouble",
@@ -50,3 +51,8 @@ export const maintenanceBackground: MaintenanceItem[] = [
 		description: "コードやデータの変更履歴をすべて記録し、いつでも過去の状態に戻せる体制を維持しています。",
 	},
 ];
+
+export const maintenanceExclusionNote =
+	"大規模なページ追加・変更、デザインの全面変更、新機能開発、CMS・予約・EC機能の導入などは、通常の保守範囲を超えるため別途お見積りとなります。";
+
+export const maintenanceExternalCostNote = "外部サービスをご利用の場合、その利用料はお客様のご負担となります。";

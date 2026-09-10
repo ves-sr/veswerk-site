@@ -1,4 +1,5 @@
-import { plan } from "../content/plans";
+import { Fragment } from "react";
+import { plan, pricingTiers, pricingTiersNote } from "../content/plans";
 import Reveal from "./Reveal";
 
 export default function PlanCards() {
@@ -12,6 +13,7 @@ export default function PlanCards() {
 						<div>
 							<p className="eyebrow">{plan.priceLabel}</p>
 							<p className="mt-2 text-3xl font-medium whitespace-nowrap text-ink sm:text-4xl">{plan.price}</p>
+							<p className="mt-1 text-sm whitespace-nowrap text-text-soft">{plan.priceNote}</p>
 						</div>
 
 						<span className="text-xl font-light text-border sm:pt-9 sm:text-2xl">＋</span>
@@ -28,6 +30,27 @@ export default function PlanCards() {
 								{plan.maintenanceNote}
 							</p>
 						</div>
+					</div>
+
+					<div className="mt-8 w-full max-w-xs">
+						<p className="eyebrow">制作料金の目安（税込）</p>
+						<dl className="mt-3 grid grid-cols-[1fr_auto] gap-x-4">
+							{pricingTiers.map((tier, i) => (
+								<Fragment key={tier.pages}>
+									{i > 0 && <div aria-hidden="true" className="col-span-2 border-t border-border" />}
+									<dt className="col-start-1 py-2 text-left text-sm text-text">{tier.pages}</dt>
+									<dd className="col-start-2 py-2 text-right text-sm font-medium whitespace-nowrap text-ink">
+										{tier.price}
+									</dd>
+								</Fragment>
+							))}
+						</dl>
+						<p
+							className="mt-4 text-xs leading-relaxed text-text-soft"
+							style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+						>
+							{pricingTiersNote}
+						</p>
 					</div>
 
 					<p
