@@ -9,8 +9,8 @@ export default function PlanCards() {
 				<div className="flex flex-col items-center rounded-[2rem] border border-border bg-bg-sub p-8 text-center sm:mx-16 sm:rounded-[2.5rem] sm:p-14">
 					<p className="eyebrow">PLAN</p>
 
-					<div className="mt-6 flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:gap-8">
-						<div>
+					<div className="mt-6 flex w-full min-w-0 flex-col items-center gap-6 sm:flex-row sm:items-start sm:gap-8">
+						<div className="min-w-0">
 							<p className="eyebrow">{plan.priceLabel}</p>
 							<p className="mt-2 text-3xl font-medium whitespace-nowrap text-ink sm:text-4xl">{plan.price}</p>
 							<p className="mt-1 text-sm whitespace-nowrap text-text-soft">{plan.priceNote}</p>
@@ -18,7 +18,7 @@ export default function PlanCards() {
 
 						<span className="text-xl font-light text-border sm:pt-9 sm:text-2xl">＋</span>
 
-						<div>
+						<div className="min-w-0">
 							<p className="eyebrow">保守費</p>
 							<p className="mt-2 text-3xl font-medium whitespace-nowrap text-ink sm:text-4xl">
 								{plan.maintenance.replace("保守：", "")}
