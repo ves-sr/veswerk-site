@@ -11,10 +11,10 @@ export default function HomePlanTeaser() {
 		<div className="mt-14 rounded-[2rem] border border-border bg-bg-sub p-8 sm:rounded-[2.5rem] sm:p-12">
 			<p className="eyebrow">PLAN</p>
 
-			<div className="mt-5 flex min-w-0 flex-col items-start gap-10 sm:flex-row sm:items-end sm:justify-between">
-				<div className="w-full min-w-0 sm:w-auto">
+			<div className="mt-5 grid grid-cols-1 gap-10 sm:flex sm:flex-row sm:items-end sm:justify-between">
+				<div className="min-w-0">
 					<p className="eyebrow">{plan.priceLabel}</p>
-					<p className="mt-2 text-5xl font-medium whitespace-nowrap text-ink sm:text-6xl">{plan.price}</p>
+					<p className="mt-2 text-4xl font-medium whitespace-nowrap text-ink sm:text-6xl">{plan.price}</p>
 					<p className="mt-1 text-xs whitespace-nowrap text-text-soft sm:text-sm">{plan.priceNote}</p>
 					<p
 						className="mt-3 max-w-sm text-xs leading-relaxed text-text sm:text-sm"
@@ -26,7 +26,7 @@ export default function HomePlanTeaser() {
 					</p>
 				</div>
 
-				<div className="flex w-full min-w-0 flex-col items-start gap-6 sm:w-auto sm:items-end">
+				<div className="flex min-w-0 flex-col items-start gap-6 sm:items-end">
 					<p className="text-text" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
 						公開後の保守は
 						<span className="mx-1 font-medium text-ink">{plan.maintenance.replace("保守：", "")}</span>
