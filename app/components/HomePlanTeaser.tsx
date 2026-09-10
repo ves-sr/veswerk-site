@@ -26,7 +26,7 @@ export default function HomePlanTeaser() {
 					</p>
 				</div>
 
-				<div className="flex flex-col items-start gap-6 sm:items-end">
+				<div className="flex w-full min-w-0 flex-col items-start gap-6 sm:w-auto sm:items-end">
 					<p className="text-text" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
 						公開後の保守は
 						<span className="mx-1 font-medium text-ink">{plan.maintenance.replace("保守：", "")}</span>
