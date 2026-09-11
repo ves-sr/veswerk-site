@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import { Zen_Kaku_Gothic_New } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Header from "./components/Header";
 import PillNav from "./components/PillNav";
 import MobileMenu from "./components/MobileMenu";
 import Footer from "./components/Footer";
 import { siteName, siteUrl, legalName, snsLinks } from "./content/site";
+
+// GA4測定ID。クライアントに配信されるJSに埋め込まれる前提の公開値であり、
+// APIシークレットのような機密情報ではないため、.envを介さずここに直接定義する。
+const GA_MEASUREMENT_ID = "G-NK4E50PK0H";
 
 const zenKakuGothic = Zen_Kaku_Gothic_New({
 	variable: "--font-zen-kaku",
@@ -76,6 +81,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 				<PillNav />
 				<Footer />
 			</body>
+			<GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
 		</html>
 	);
 }
