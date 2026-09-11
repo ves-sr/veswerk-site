@@ -19,6 +19,7 @@ export const navItems = [
 	{ href: "/why-veswerk", label: "WHY VESWERK", shortLabel: "こだわり" },
 	{ href: "/vision", label: "今後の展望", shortLabel: "今後の展望" },
 	{ href: "/works", label: "制作サンプル", shortLabel: "制作サンプル" },
+	{ href: "/flow", label: "制作の流れ", shortLabel: "制作の流れ" },
 	{ href: "/pricing", label: "ご利用料金", shortLabel: "ご利用料金" },
 	{ href: "/contact", label: "お問い合わせ", shortLabel: "お問い合わせ" },
 ] as const;
