@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import ObfuscatedEmail from "../components/ObfuscatedEmail";
 
 // 静的サイトのためバックエンドを持たず、FormSubmit（外部の代行送信サービス）経由でメールに転送する。
 // 初回送信のみ、宛先メールアドレスに届く有効化リンクのクリックが必要。
@@ -150,9 +151,7 @@ export default function ContactForm() {
 			{error && (
 				<p className="text-sm text-red-600">
 					送信に失敗しました。時間を置いて再度お⁠試しいただくか、直接{" "}
-					<a href="mailto:veswerk@gmail.com" className="underline underline-offset-2">
-						veswerk@gmail.com
-					</a>{" "}
+					<ObfuscatedEmail user="veswerk" domain="gmail.com" className="underline underline-offset-2" />{" "}
 					までご連絡ください。
 				</p>
 			)}

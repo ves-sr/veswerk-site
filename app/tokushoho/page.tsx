@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ObfuscatedEmail from "../components/ObfuscatedEmail";
 
 const pageTitle = "特定商取引法に基づく表記";
 const pageDescription = "特定商取引法に基づく販売業者・お支払い方法・料金・キャンセルポリシーなどの表記です。";
@@ -24,7 +25,7 @@ const rows: { label: string; value: React.ReactNode }[] = [
 	},
 	{
 		label: "メールアドレス",
-		value: "veswerk@gmail.com",
+		value: <ObfuscatedEmail user="veswerk" domain="gmail.com" link={false} />,
 	},
 	{
 		label: "お問い合わせ方法",
