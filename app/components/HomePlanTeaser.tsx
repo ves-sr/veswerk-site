@@ -4,7 +4,7 @@ import { plan } from "../content/plans";
 /**
  * Homeでは料金ページのカードを丸ごと転載せず、価格の核だけを大きく見せて
  * pricingページへ誘導する。詳細な保守内容の箇条書きはpricingページの役割とし、
- * Homeは「初期制作費」「保守費」という価格の核だけに絞る。
+ * Homeは「制作費」「保守・管理費」という価格の核だけに絞る。
  */
 export default function HomePlanTeaser() {
 	return (
@@ -28,8 +28,8 @@ export default function HomePlanTeaser() {
 
 				<div className="flex min-w-0 flex-col items-start gap-6 sm:items-end">
 					<p className="text-text" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
-						公開後の保守は
-						<span className="mx-1 font-medium text-ink">{plan.maintenance.replace("保守：", "")}</span>
+						保守・管理をご希望の場合は
+						<span className="mx-1 font-medium text-ink">{plan.maintenance}</span>
 						<br />
 						{plan.maintenanceNote}
 					</p>

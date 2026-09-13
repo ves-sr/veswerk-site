@@ -19,10 +19,8 @@ export default function PlanCards() {
 						<span className="text-xl font-light text-border sm:pt-9 sm:text-2xl">＋</span>
 
 						<div className="min-w-0">
-							<p className="eyebrow">保守費</p>
-							<p className="mt-2 text-3xl font-medium whitespace-nowrap text-ink sm:text-4xl">
-								{plan.maintenance.replace("保守：", "")}
-							</p>
+							<p className="eyebrow">{plan.maintenanceLabel}</p>
+							<p className="mt-2 text-3xl font-medium whitespace-nowrap text-ink sm:text-4xl">{plan.maintenance}</p>
 							<p
 								className="mt-1 text-sm text-text-soft"
 								style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
@@ -57,9 +55,7 @@ export default function PlanCards() {
 						className="mt-8 max-w-2xl text-sm leading-relaxed text-text-soft"
 						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 					>
-						ヒアリングから公開後の保守まで、
-						<br />
-						一貫してご依頼いただけます。
+						制作費はホームページを制作・公開するための費用です。保守・管理は任意で、ご契約いただく場合は月24,000円（税込）が公開後も継続して発生します。
 					</p>
 
 					<a href="/contact" className="btn-fill mt-8">
@@ -101,15 +97,7 @@ export default function PlanCards() {
 										className="mt-1.5 text-sm leading-relaxed text-text"
 										style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 									>
-										{/* 430px幅で末尾の句点だけが孤立するため、最後の一文だけ分断されないようにする */}
-										{f.text.endsWith("継続サポートします。") ? (
-											<>
-												{f.text.slice(0, -15)}
-												<span className="whitespace-nowrap">{f.text.slice(-15)}</span>
-											</>
-										) : (
-											f.text
-										)}
+										{f.text}
 									</p>
 								</div>
 							</div>

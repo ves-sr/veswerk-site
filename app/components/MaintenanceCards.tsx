@@ -22,32 +22,7 @@ export default function MaintenanceCards() {
 								className="mt-2 text-sm leading-relaxed text-text"
 								style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 							>
-								{/* 390px幅で読点だけが行頭に孤立するため、「る、と」の3文字だけ分断されないようにする */}
-								{item.description.includes("見つからなくなる、といった") ? (
-									(() => {
-										const [before, after] = item.description.split("見つからなくなる、と");
-										return (
-											<>
-												{before}見つからなくな
-												<span className="whitespace-nowrap">る、と</span>
-												{after}
-											</>
-										);
-									})()
-								) : item.description.includes("（月2回まで）。") ? (
-									(() => {
-										const [before, after] = item.description.split("（月2回まで）。");
-										return (
-											<>
-												{before}
-												<span className="whitespace-nowrap">（月2回まで）。</span>
-												{after}
-											</>
-										);
-									})()
-								) : (
-									item.description
-								)}
+								{item.description}
 							</p>
 						</div>
 					</Reveal>
@@ -60,21 +35,12 @@ export default function MaintenanceCards() {
 					{maintenanceBackground.map((item) => (
 						<div key={item.key} className="flex flex-col gap-1 py-3 sm:flex-row sm:items-baseline sm:gap-4">
 							<dt className="shrink-0 text-sm font-medium text-ink sm:w-56">{item.title}</dt>
-							{item.key === "backup" ? (
-								// この文だけkeep-allだと320px幅で読点が単独行に孤立するため、
-								// 自然な改行に任せつつ末尾の一文だけ分断されないようにする。
-								<dd className="text-sm text-text-soft" style={{ wordBreak: "normal", overflowWrap: "break-word" }}>
-									{item.description.slice(0, -14)}
-									<span className="whitespace-nowrap">{item.description.slice(-14)}</span>
-								</dd>
-							) : (
-								<dd
-									className="text-sm text-text-soft"
-									style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
-								>
-									{item.description}
-								</dd>
-							)}
+							<dd
+								className="text-sm text-text-soft"
+								style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+							>
+								{item.description}
+							</dd>
 						</div>
 					))}
 				</dl>
@@ -83,8 +49,7 @@ export default function MaintenanceCards() {
 					className="mt-6 text-sm text-text-soft"
 					style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 				>
-					{maintenanceExclusionNote.slice(0, -6)}
-					<span className="whitespace-nowrap">{maintenanceExclusionNote.slice(-6)}</span>
+					{maintenanceExclusionNote}
 				</p>
 				<p
 					className="mt-2 text-sm text-text-soft"
