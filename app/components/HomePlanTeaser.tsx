@@ -28,7 +28,7 @@ export default function HomePlanTeaser() {
 
 				<div className="flex min-w-0 flex-col items-start gap-6 sm:items-end">
 					<p className="text-text" style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}>
-						保守・管理をご希望の場合は
+						公開後の保守・管理は
 						<span className="mx-1 font-medium text-ink">{plan.maintenance}</span>
 						<br />
 						{plan.maintenanceNote}
