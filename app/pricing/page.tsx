@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import PlanCards from "../components/PlanCards";
 import MaintenanceCards from "../components/MaintenanceCards";
-import AddonCards from "../components/AddonCards";
-import MaintenanceAddonCards from "../components/MaintenanceAddonCards";
 import SectionHeading from "../components/SectionHeading";
-import { notIncludedItems } from "../content/plans";
+import { additionalWorkNote } from "../content/plans";
 
 const pageTitle = "ご利用料金";
-const pageDescription = "初期制作費50,000円〜・保守費月19,800円（税込）。ヒアリングから公開後の保守まで、一貫して制作します。";
+const pageDescription =
+	"ホームページ制作98,000円〜（1〜6ページ）。保守・管理はご契約の場合のみ、月24,000円（税込）。ヒアリングから公開後の保守まで、一貫して制作します。";
 
 export const metadata: Metadata = {
 	title: pageTitle,
@@ -27,6 +26,12 @@ export default function PricingPage() {
 					<p className="section-body mt-6 max-w-lg text-sm sm:text-base">
 						ヒアリングから公開後の保守まで、一貫してホームページ制作を承っています。
 					</p>
+					<p
+						className="section-body mt-4 max-w-xl text-sm sm:text-base"
+						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+					>
+						現在のホームページの内容や事業内容を確認したうえで、必要なページ・機能・デザインを整理し、正式なお見積りを作成します。
+					</p>
 					<PlanCards />
 				</div>
 			</section>
@@ -34,46 +39,25 @@ export default function PricingPage() {
 			<section className="border-t border-border py-24 sm:py-28">
 				<div className="mx-auto max-w-6xl px-6">
 					<SectionHeading en="MAINTENANCE" ja="公開後も、継続して見守ります" align="left" />
-					<p className="section-body mt-5 max-w-lg text-sm sm:text-base">
-						公開後も、サイトが正常に動き続けるように継続的に見守ります。保守契約には以下の内容が含まれます。
+					<p
+						className="section-body mt-5 max-w-lg text-sm sm:text-base"
+						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+					>
+						保守・管理をご契約いただく場合、月24,000円（税込）で、公開後も以下の内容を継続してサポートします。
 					</p>
 					<MaintenanceCards />
 				</div>
 			</section>
 
-			<section className="border-t border-border py-24 sm:py-28">
-				<div className="mx-auto grid max-w-6xl gap-16 px-6 sm:grid-cols-2 sm:gap-12">
-					<div>
-						<SectionHeading en="CUSTOMIZE" ja="制作時の追加オプション" align="left" />
-						<p className="section-body mt-5 text-sm sm:text-base">
-							最初にご提案する内容から、色・フォント・お写真を追加したい場合は、項目ごとに以下の費用を
-							<span className="whitespace-nowrap">いただいております。</span>
-						</p>
-						<AddonCards />
-					</div>
-					<div>
-						<SectionHeading en="MAINTENANCE ADD-ON" ja="保守の追加オプション" align="left" />
-						<p className="section-body mt-5 text-sm sm:text-base">
-							SNSへのリンクボタンの設置は制作費に含みます。投稿の自動表示など、ご希望の方のみ保守費に追加してご案内しているオプションです。
-						</p>
-						<MaintenanceAddonCards />
-					</div>
-				</div>
-			</section>
-
 			<section className="border-t border-border bg-bg-sub py-24 sm:py-28">
-				<div className="mx-auto max-w-6xl px-6">
-					<SectionHeading en="NOT INCLUDED" ja="含まれないもの" align="left" />
-					<p className="section-body mt-5 max-w-2xl text-sm sm:text-base">
-						標準プランには、以下の機能は含まれません。内容に応じて<span className="whitespace-nowrap">別途お見積り・ご相談ください。</span>
+				<div className="mx-auto max-w-3xl px-6">
+					<SectionHeading en="ADDITIONAL WORK" ja="追加費用について" align="left" />
+					<p
+						className="section-body mt-5 text-sm sm:text-base"
+						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+					>
+						{additionalWorkNote}
 					</p>
-					<ul className="mt-8 flex flex-wrap gap-3">
-						{notIncludedItems.map((item) => (
-							<li key={item} className="rounded-full border border-border bg-bg px-4 py-2 text-sm text-text">
-								{item}
-							</li>
-						))}
-					</ul>
 				</div>
 			</section>
 
