@@ -52,7 +52,7 @@ export default function PlanCards() {
 					</div>
 
 					<p
-						className="mt-8 max-w-2xl text-sm leading-relaxed text-text-soft"
+						className="mt-8 w-full min-w-0 max-w-2xl text-sm leading-relaxed text-text-soft"
 						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 					>
 						制作費はホームページを制作・公開するための費用です。保守・管理費は公開後も継続してサポートするための費用で、公開後は月24,000円（税込）が継続して発生します。
