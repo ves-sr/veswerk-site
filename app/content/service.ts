@@ -40,6 +40,6 @@ export const serviceLeads: readonly ServiceLead[] = [
 ] as const;
 
 export const serviceClosing = {
-	heading: "吉祥寺・武蔵野で、ホームページにお困りなら。",
+	heading: "武蔵野市内で、ホームページにお困りなら。",
 	body: "制作から公開後まで、VESWERKにお任せください。",
 };
