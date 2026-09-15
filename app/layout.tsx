@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import PillNav from "./components/PillNav";
 import MobileMenu from "./components/MobileMenu";
 import Footer from "./components/Footer";
+import IntroLoader from "./components/IntroLoader";
 import { siteName, siteUrl, legalName, snsLinks } from "./content/site";
 
 // GA4測定ID。クライアントに配信されるJSに埋め込まれる前提の公開値であり、
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
+				<IntroLoader />
 				<Header />
 				<MobileMenu />
 				<main className="flex-1">{children}</main>
