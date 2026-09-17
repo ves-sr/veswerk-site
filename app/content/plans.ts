@@ -8,7 +8,7 @@ export const plan = {
 	price: "98,000円〜",
 	priceNote: "1〜6ページの場合",
 	maintenanceLabel: "保守・管理費",
-	maintenance: "24,000円／月",
+	maintenance: "27,500円／月",
 	maintenanceNote: "税込・サイト公開月から毎月のお支払いです。",
 	maintenanceHeading: "ホームページを作った後も、継続してサポートします。",
 	maintenanceLead:

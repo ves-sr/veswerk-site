@@ -6,7 +6,7 @@ import { additionalWorkNote } from "../content/plans";
 
 const pageTitle = "ご利用料金";
 const pageDescription =
-	"ホームページ制作98,000円〜（1〜6ページ）。公開後の保守・管理は月24,000円（税込）。ヒアリングから公開後の保守まで、一貫して制作します。";
+	"ホームページ制作98,000円〜（1〜6ページ）。公開後の保守・管理は月27,500円（税込）。ヒアリングから公開後の保守まで、一貫して制作します。";
 
 export const metadata: Metadata = {
 	title: pageTitle,
@@ -43,7 +43,7 @@ export default function PricingPage() {
 						className="section-body mt-5 max-w-lg text-sm sm:text-base"
 						style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 					>
-						公開後は、月24,000円（税込）の保守・管理費で、以下の内容を継続してサポートします。
+						公開後は、月27,500円（税込）の保守・管理費で、以下の内容を継続してサポートします。
 					</p>
 					<MaintenanceCards />
 				</div>
