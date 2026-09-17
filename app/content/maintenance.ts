@@ -58,3 +58,9 @@ export const maintenanceExclusionNote =
 	"新しいページの追加、大幅なデザイン変更、新しい機能の追加など、通常の軽微な更新を超える作業は、内容を確認したうえで別途お見積りします。";
 
 export const maintenanceExternalCostNote = "外部サービスをご利用の場合、その利用料はお客様のご負担となります。";
+
+export const maintenanceResponseTimeNote =
+	"通常のご依頼は5営業日以内を目安に初回対応します。表示できないなど緊急性の高い不具合には、可能な限り速やかに対応します。";
+
+export const maintenanceContractNote =
+	"保守・管理は別途契約書を締結のうえでのご提供となり、最低契約期間は1年間（以降は1か月単位で自動更新）です。開始はサイト公開月からとなります。";
