@@ -267,6 +267,23 @@ body {
 	}
 }
 
+/* ローディング画面が消えるのに合わせて、サイト本体をふわっと表示する */
+.site-content {
+	opacity: 0;
+	transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-content[data-revealed="true"] {
+	opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.site-content {
+		transition: none;
+		opacity: 1;
+	}
+}
+
 /*
  * モバイルメニュー
  * ハンバーガー→X変形、フルスクリーンoverlayのフェード＋項目のstagger表示。

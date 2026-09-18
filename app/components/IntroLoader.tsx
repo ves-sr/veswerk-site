@@ -34,7 +34,14 @@ export default function IntroLoader() {
 			if (settled) return;
 			settled = true;
 			const elapsed = Date.now() - start;
-			window.setTimeout(() => setFading(true), Math.max(MIN_VISIBLE_MS - elapsed, 0));
+			window.setTimeout(
+				() => {
+					setFading(true);
+					// ローディングが消えるのと同じタイミングで、サイト本体をふわっと表示する。
+					document.getElementById("site-content")?.setAttribute("data-revealed", "true");
+				},
+				Math.max(MIN_VISIBLE_MS - elapsed, 0),
+			);
 		}
 
 		if (document.readyState === "complete") {
@@ -65,7 +72,7 @@ export default function IntroLoader() {
 	return (
 		<>
 			<noscript>
-				<style>{".intro-loader{display:none}"}</style>
+				<style>{".intro-loader{display:none} .site-content{opacity:1}"}</style>
 			</noscript>
 			<div className="intro-loader" data-fading={fading} aria-hidden="true">
 				<span

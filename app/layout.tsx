@@ -77,11 +77,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
 				<IntroLoader />
-				<Header />
-				<MobileMenu />
-				<main className="flex-1">{children}</main>
-				<PillNav />
-				<Footer />
+				<div id="site-content" className="site-content flex flex-1 flex-col">
+					<Header />
+					<MobileMenu />
+					<main className="flex-1">{children}</main>
+					<PillNav />
+					<Footer />
+				</div>
 			</body>
 			<GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
 		</html>
