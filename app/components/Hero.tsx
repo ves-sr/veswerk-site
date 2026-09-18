@@ -52,6 +52,12 @@ export default function Hero() {
 							<br />
 							そんな悩みを、VESWERKが解決します。
 						</p>
+						<p
+							className="mt-3 max-w-sm text-xs text-text-soft sm:text-sm"
+							style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+						>
+							専門の制作会社に依頼するほどの費用はかけず、自分で作るのは難しい方のための選択肢です。
+						</p>
 						<div className="mt-9 flex flex-wrap gap-4">
 							<a href="/contact" className="btn-fill">
 								無料で相談する
