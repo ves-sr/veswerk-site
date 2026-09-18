@@ -5,31 +5,27 @@ export type Problem = {
 
 export const heroProblems: readonly Problem[] = [
 	{
-		label: "OLD SITE",
-		text: "ホームページが古くなってしまったけど、作り直すのは高そう。",
+		label: "OLD INFO",
+		text: "ホームページに、昔の情報が残っている。",
 	},
 	{
-		label: "WHO TO ASK",
-		text: "必要なのは分かっているけど、どこに頼めばいいか分からない。",
-	},
-	{
-		label: "DIY",
-		text: "自分で作ろうとしても、思ったようにならない。",
-	},
-	{
-		label: "SEO",
-		text: "せっかく作っても、検索で見つけてもらえるか不安。",
-	},
-	{
-		label: "COST",
-		text: "公開した後も、高い保守費用を払い続けるのはちょっと……。",
+		label: "STRENGTH",
+		text: "会社の良さや強みが、うまく伝わらない。",
 	},
 	{
 		label: "RESPONSIVE",
-		text: "スマートフォンでも見やすいホームページにしたい。",
+		text: "スマートフォンでは、見づらい。",
 	},
 	{
-		label: "MAINTENANCE",
-		text: "作った後も、更新や管理を誰かに任せたい。",
+		label: "FIND INFO",
+		text: "情報が多く、必要な情報を見つけにくい。",
+	},
+	{
+		label: "DIY",
+		text: "直したいけれど、自分たちでは難しい。",
+	},
+	{
+		label: "MANAGEMENT",
+		text: "作った後の管理も、任せたい。",
 	},
 ] as const;

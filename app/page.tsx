@@ -21,8 +21,6 @@ const problemItems = heroProblems.map((p, i) => ({
 const serviceItems = services.map((s) => ({
 	no: s.no,
 	title: s.title,
-	// 「検索から見つけてもらう」はlg以上のカラム幅では2行に折り返されるため、この項目のみ1行表示に調整する
-	titleClassName: s.no === "03" ? "lg:whitespace-nowrap lg:text-[1.125rem]!" : undefined,
 	titleEn: s.titleEn,
 	desc: s.desc,
 }));
@@ -95,6 +93,17 @@ export default function Home() {
 							</span>
 						))}
 					</div>
+
+					<div className="mt-16 border-t border-border pt-16 text-center lg:mt-20 lg:pt-20">
+						<p className="eyebrow">LOCAL &amp; RESPONSIVE</p>
+						<h3 className="section-heading mt-3">武蔵野市を中心に、身近な距離で。</h3>
+						<p
+							className="section-body mx-auto mt-5 max-w-2xl text-sm sm:text-base"
+							style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+						>
+							武蔵野市で育ち、今も武蔵野市内を拠点に活動しています。ちょっとした相談から改善・制作・公開後の管理まで、身近な距離でご相談いただけます。地元密着だからこそのフットワークの軽さで、必要に応じて対面でのお打ち合わせにも対応します。
+						</p>
+					</div>
 				</div>
 			</section>
 
@@ -138,6 +147,9 @@ export default function Home() {
 			<section id="plan" className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
 					<SectionHeading en="FEE" ja="費用も手間も、かけすぎない。" />
+					<p className="section-body mx-auto mt-4 max-w-md text-center text-sm sm:text-base">
+						高すぎない。でも、安いだけでもない。
+					</p>
 					<HomePlanTeaser />
 				</div>
 			</section>
