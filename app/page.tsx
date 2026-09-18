@@ -147,6 +147,9 @@ export default function Home() {
 			<section id="plan" className="border-t border-border py-24 sm:py-28 lg:py-32">
 				<div className="mx-auto max-w-6xl px-6">
 					<SectionHeading en="FEE" ja="費用も手間も、かけすぎない。" />
+					<p className="section-body mx-auto mt-4 max-w-md text-center text-sm sm:text-base">
+						高すぎない。でも、安いだけでもない。
+					</p>
 					<HomePlanTeaser />
 				</div>
 			</section>
