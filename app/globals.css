@@ -195,6 +195,50 @@ body {
 }
 
 /*
+ * ページ初回読み込み時のブランドローディング画面。
+ * .revealと同じ「控えめなfade/slide」の演出言語を踏襲する。
+ */
+.intro-loader {
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: var(--bg);
+	opacity: 1;
+	transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intro-loader[data-fading="true"] {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.intro-loader-item {
+	opacity: 0;
+	transform: translateY(12px);
+	transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.intro-loader-item[data-visible="true"] {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.intro-loader,
+	.intro-loader-item {
+		transition: none;
+	}
+	.intro-loader-item {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/*
  * モバイルメニュー
  * ハンバーガー→X変形、フルスクリーンoverlayのフェード＋項目のstagger表示。
  */
