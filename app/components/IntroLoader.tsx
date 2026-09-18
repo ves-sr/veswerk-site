@@ -6,11 +6,12 @@ import { siteName } from "../content/site";
 import logo from "../assets/images/logo.png";
 
 // 通常時の最低表示時間。読み込みが一瞬で終わってもチラつかないようにする下限。
-const MIN_VISIBLE_MS = 900;
+// 下のバーが左から右まで到達する時間と一致させ、「到達し終わったら消える」体験にする。
+const MIN_VISIBLE_MS = 1800;
 // フェードアウトのCSS transitionと同じ長さ（.intro-loaderのopacity transition）。
 const FADE_MS = 500;
 // 何らかの理由でloadイベントが発火しない場合に備えた保険の最大表示時間。
-const SAFETY_TIMEOUT_MS = 4000;
+const SAFETY_TIMEOUT_MS = 5000;
 
 /**
  * ページ初回読み込み時に表示するブランドローディング画面。
@@ -33,7 +34,14 @@ export default function IntroLoader() {
 			if (settled) return;
 			settled = true;
 			const elapsed = Date.now() - start;
-			window.setTimeout(() => setFading(true), Math.max(MIN_VISIBLE_MS - elapsed, 0));
+			window.setTimeout(
+				() => {
+					setFading(true);
+					// ローディングが消えるのと同じタイミングで、サイト本体をふわっと表示する。
+					document.getElementById("site-content")?.setAttribute("data-revealed", "true");
+				},
+				Math.max(MIN_VISIBLE_MS - elapsed, 0),
+			);
 		}
 
 		if (document.readyState === "complete") {
@@ -64,7 +72,7 @@ export default function IntroLoader() {
 	return (
 		<>
 			<noscript>
-				<style>{".intro-loader{display:none}"}</style>
+				<style>{".intro-loader{display:none} .site-content{opacity:1}"}</style>
 			</noscript>
 			<div className="intro-loader" data-fading={fading} aria-hidden="true">
 				<span
@@ -87,6 +95,13 @@ export default function IntroLoader() {
 				>
 					想いを、かたちに。
 				</p>
+				<div className="intro-loader-bar">
+					<span
+						className="intro-loader-bar-fill"
+						data-visible={itemsVisible}
+						style={{ transitionDuration: `${MIN_VISIBLE_MS}ms` }}
+					/>
+				</div>
 			</div>
 		</>
 	);
