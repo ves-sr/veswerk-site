@@ -3,6 +3,8 @@ import {
 	maintenanceBackground,
 	maintenanceExclusionNote,
 	maintenanceExternalCostNote,
+	maintenanceResponseTimeNote,
+	maintenanceContractNote,
 } from "../content/maintenance";
 import Reveal from "./Reveal";
 
@@ -56,6 +58,18 @@ export default function MaintenanceCards() {
 					style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
 				>
 					{maintenanceExternalCostNote}
+				</p>
+				<p
+					className="mt-6 text-sm text-text-soft"
+					style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+				>
+					{maintenanceResponseTimeNote}
+				</p>
+				<p
+					className="mt-2 text-sm text-text-soft"
+					style={{ wordBreak: "keep-all", overflowWrap: "break-word" }}
+				>
+					{maintenanceContractNote}
 				</p>
 			</div>
 		</div>
