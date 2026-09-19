@@ -89,11 +89,11 @@ export default function IntroLoader() {
 					{siteName}
 				</p>
 				<p
-					className="intro-loader-item mt-2 text-sm text-text-soft"
+					className="intro-loader-item mt-2 max-w-xs px-6 text-center text-sm text-text-soft"
 					data-visible={itemsVisible}
-					style={{ transitionDelay: "160ms" }}
+					style={{ transitionDelay: "160ms", wordBreak: "keep-all", overflowWrap: "break-word" }}
 				>
-					想いを、かたちに。
+					その魅力、伝わらないHPのままにしていませんか？
 				</p>
 				<div className="intro-loader-bar">
 					<span

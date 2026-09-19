@@ -33,7 +33,7 @@ const pillars = [
 		no: "03",
 		en: "DESIGN × FUNCTION",
 		heading: "見た目だけでは、終わらせない。",
-		body: "お店の雰囲気が伝わること。初めて訪れる人でも安心できること。必要な情報がすぐ見つかること。スマートフォンでも快適に使えること。そして、予約や問い合わせにつながること。デザイン性と使いやすさ、そして目的、そのバランスを考えて設計します。",
+		body: "お店の雰囲気が伝わること。初めて訪れる人でも安心できること。必要な情報がすぐ見つかること。スマートフォンでも快適に使えること。そして、次の行動につながること。デザイン性と使いやすさ、そして目的、そのバランスを考えて設計します。",
 	},
 	{
 		no: "04",
@@ -126,7 +126,7 @@ export default function WhyVeswerkPage() {
 							</span>
 							<span className="mt-6 block sm:mt-8">
 								お店を知ってもらい、魅力を伝え、初めて訪れる人の不安を<span className="whitespace-nowrap">なくし、</span>
-								予約や問い合わせにつなげ、長く使ってもらう。
+								次の行動につなげ、長く使ってもらう。
 							</span>
 						</h2>
 						<p className="section-body mt-10 text-sm sm:mt-12 sm:text-base">
